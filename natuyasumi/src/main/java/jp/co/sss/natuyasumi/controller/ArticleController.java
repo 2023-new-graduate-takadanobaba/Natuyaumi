@@ -1,5 +1,14 @@
 package jp.co.sss.natuyasumi.controller;
 
-public class ArticleController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
+
+public class ArticleController {
+	@RequestMapping(path = "/top")
+	public String top() {
+		return "top";	
+	}
+	
 }
