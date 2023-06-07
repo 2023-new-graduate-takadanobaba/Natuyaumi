@@ -7,10 +7,14 @@
 </head>
 <body>
 	<div id="header">TOP
+		<form>
 		<input type="text",name = "doSearch"/>
 		<input type="submit", value="検索"/>
-		<input type="submit", value="登録"/>
-		
+		</form>
+<!--		<form action = "@{/doPost}" method = "get">-->
+<!--		<input type="submit", value="投稿"/>-->
+<!--		</form>-->
+	<a th:href = "@{/post}" >投稿</a>
 	</div>
 	
 

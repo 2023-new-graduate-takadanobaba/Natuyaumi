@@ -12,8 +12,14 @@ public class ArticleController {
 		return "top";	
 	}
 	
-	@RequestMapping(path = "/doPost")
+	@RequestMapping(path = "/post")
 	public String post() {
+		return "post";	
+	}
+	
+	
+	@RequestMapping(path = "/doPost")
+	public String doPost() {
 		return "redirect:/post";
 	}
 	
