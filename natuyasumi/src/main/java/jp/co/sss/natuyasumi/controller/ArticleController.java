@@ -18,10 +18,10 @@ public class ArticleController {
 	}
 	
 	
-	@RequestMapping(path = "/doPost")
-	public String doPost() {
-		return "redirect:/post";
-	}
+//	@RequestMapping(path = "/post")
+//	public String doPost() {
+//		return "post";
+//	}
 	
 	
 	@RequestMapping(path = "/doSearchGenre", method = RequestMethod.GET)
