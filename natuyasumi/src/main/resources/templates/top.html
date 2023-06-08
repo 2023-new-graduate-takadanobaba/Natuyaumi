@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" type="text/css" href="css/top.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="header">TOP
-		<form action = "@{/doSearchGenre}", method = "get">
+	<header class="header">
+		<p>TOP</p>
+		<div><form action = "@{/doSearchGenre}", method = "get">
 		<input type="text",name = "doSearch"/>
 		<input type="submit", value="検索"/>
-		</form>
-<!--		<form action = "@{/doPost}" method = "get">-->
-<!--		<input type="submit", value="投稿"/>-->
-<!--		</form>-->
-	<a th:href = "@{/post}" >投稿</a>
+		</form></div>
+		<a th:href = "@{/post}" >投稿</a>
+	</header>
 	
-<!--	<form action="@{http://localhost:7777/natuyasumi/post}">-->
-<!--        <button type="submit">投稿</button>-->
-<!--    </form>-->
 
 	<a th:href = "@{/doSearchGenre}">ジャンル検索</a>
-	</div>
+	
 	
 
 </body>
