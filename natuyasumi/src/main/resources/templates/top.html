@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<link rel="stylesheet" type="text/css" href="css/top.css">
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="css/top.css">
+	<meta charset="UTF-8">
+	<title>遊び場掲示板</title>
 </head>
+
 <body>
-	<header class="header">
-		<p>TOP</p>
-		<div><form action = "@{/doSearchGenre}", method = "get">
-		<input type="text",name = "doSearch"/>
-		<input type="submit", value="検索"/>
-		</form></div>
-		<a th:href = "@{/post}" >投稿</a>
-	</header>
-	
+	<div class="textalign">
+		<header class="header">
+			<h1>みんなで新しい遊びを見つけよう～遊び場掲示板～</h1>
+			
 
-	<a th:href = "@{/doSearchGenre}">ジャンル検索</a>
-	<img src=
-	
+			<div class="search">
+				<form action="@{/doSearchGenre}" , method="get">
+					<input type="text" ,name="doSearch" />
+					<input type="submit" , value="検索" />
+				</form>
+				<div class="post">
+					<a th:href="@{/post}">投稿はこちらから！</a>
+				</div>
+			</div>
 
+		</header>
+
+
+		<a th:href="@{/doSearchGenre}">ジャンル検索</a>
+
+		<div class="wrapper">
+			<div id="aside">aside</div><!-- #aside -->
+			<div class="image">
+				<!--				<p>ドライブで一番おすすめのスポットはどーこだっ！</p>-->
+				<img class="img" src="https://www.shutoko.jp/ss/shutokodeikou/blog/1105.jpg" alt="ドライブ" ></img>
+				<!--				<p>登山するならどこがおすすめかしってる？</p>-->
+				<div class="img-wrapper">
+					<img class="img-sub"
+						src="https://th.bing.com/th/id/R.03e81101c9fac8d440f56522125d053d?rik=FEmVCVkIJ5Orwg&riu=http%3a%2f%2fpic31.nipic.com%2f20130806%2f11947767_124722338178_2.jpg&ehk=m1%2bKj9NA21Mue8zrt8jWqEoqV0Njxg%2f7djlUtKhMMYM%3d&risl=&pid=ImgRaw&r=0"
+						alt="登山"></img>
+					<!--				<p>たまには家であそぶのもいいよね</p>-->
+					<img class="img-sub" src="https://gamebar-tokyo.com/wpgame/wp-content/uploads/2016/11/boardgames.jpg"
+						alt="ボードゲーム"></img>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </body>
+
 </html>
