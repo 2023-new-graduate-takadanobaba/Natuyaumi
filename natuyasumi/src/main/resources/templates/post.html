@@ -45,22 +45,22 @@
     <div>
         <label>駐車場の有無:</label>
         <div>
-            <label for="parking-yes">
-                <input type="checkbox" id="parking-yes" name="parking" value="yes">
-                あり
+            <label for="car-spot-ok">
+                <input type="radio" id="car-spot-ok" name="car" value="ok" required>
+                〇
             </label>
         </div>
         <div>
-            <label for="parking-no">
-                <input type="checkbox" id="parking-no" name="parking" value="no">
-                なし
+            <label for="car-spot-ng">
+                <input type="radio" id="car-spot-ng" name="car" value="ng" required>
+                ×
             </label>
         </div>
     </div>
-    <div>
+    <!--  <div>
     <label for="review">レビュー内容:</label>
     <textarea id="review" name="review" rows="5" cols="40" maxlength="2000" required></textarea>
-    </div>
+    </div>-->
     <div>
     <label for="review" style="display: block; margin-bottom: 5px;">レビュー内容:</label>
     <textarea id="review" name="review" rows="5" cols="40" maxlength="2000" required></textarea>
