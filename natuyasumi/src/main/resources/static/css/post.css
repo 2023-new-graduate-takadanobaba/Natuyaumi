@@ -28,15 +28,12 @@
   border-radius: 3px;
 }
 
+
+
 .form-group textarea {
   resize: vertical;
 }
 
-.form-group .radio-group {
-  display: flex;
-  
-  margin-top: 5px;
-}
 
 .form-group .radio-group label {
   margin-right: 10px;
