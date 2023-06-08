@@ -26,11 +26,11 @@ public class ArticleController {
 	
 	@RequestMapping(path = "/doSearchGenre", method = RequestMethod.GET)
 	public String genre() {
-		return "redirect:/genre";
+		return "genre";
 	}
 	
 	@RequestMapping(path = "/doDisplayAirticle", method = RequestMethod.GET)
 	public String airticle() {
-		return "redirect:/airticle";
+		return "article";
 	}
 }
