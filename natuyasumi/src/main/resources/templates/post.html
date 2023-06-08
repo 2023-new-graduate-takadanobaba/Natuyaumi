@@ -1,91 +1,158 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-<link rel="stylesheet" href="css/post.css">
-<meta charset="UTF-8">
-<title>Post form</title>
+  <link rel="stylesheet"  href="css/post.css">
+  <meta charset="UTF-8">
+  <title>Post form</title>
 </head>
 <body>
-	<form>
-     <!--DBと関連付けるのでユーザーID入力はいらないよね！       <div>
-        <label for="username">ユーザー名:</label>
-        <input type="text" id="username" name="username" required>
-    </div>
-    <div>
-        <label for="userid">ユーザーID:</label>
-        <input type="text" id="userid" name="userid" required>
-    </div>
-    <div>
-        <label>性別:</label>
-        <div>
-            <label for="gender-male">
-                <input type="radio" id="gender-male" name="gender" value="male" required>
-                男性
-            </label>
-        </div>
-        <div>
-            <label for="gender-female">
-                <input type="radio" id="gender-female" name="gender" value="female" required>
-                女性
-            </label>
-        </div>
-    </div>
-    <div>
-        <label for="age">年齢:</label>
-        <input type="number" id="age" name="age" required>
-    </div  -->
-    <div class="wrapper">
-    <div>
-        <label for="title">タイトル:</label>
-        <input type="text" id="title" name="title" required>
-    </div>
-    <div>
+  <div class="wrapper">
+    <form>
+    <div class="form-group">
+        <label for="post-title">投稿タイトル:</label>
+        <input type="text" id="post-title" name="post-title" required>
+      </div>
+      <div class="form-group">
         <label for="facility">施設名:</label>
         <input type="text" id="facility" name="facility" required>
-    </div>
-    <div>
-        <label for="facility">施設名:</label>
-        <input type="text" id="facility" name="facility" required>
-    </div>
-    <div>
+      </div>
+      <div class="form-group">
         <label for="address">施設住所:</label>
         <input type="text" id="address" name="address" required>
-    </div>
-    <div>
+      </div>
+      <div class="form-group">
         <label>駐車場の有無:</label>
-        <div>
-            <label for="car-spot-ok">
-                <input type="radio" id="car-spot-ok" name="car" value="ok" required>
-                〇
-            </label>
+        <div class="radio-group">
+          <label for="car-spot-ok">
+            <input type="radio" id="car-spot-ok" name="car" value="ok" required>
+            〇
+          </label>
+          <label for="car-spot-ng">
+            <input type="radio" id="car-spot-ng" name="car" value="ng" required>
+            ×
+          </label>
         </div>
-        <div>
-            <label for="car-spot-ng">
-                <input type="radio" id="car-spot-ng" name="car" value="ng" required>
-                ×
-            </label>
+      </div>
+      <div class="form-group">
+        <label>ジャンル:</label>
+        <div class="checkbox-group">
+          <label for="genre-indoor">
+            <input type="checkbox" id="genre-indoor" name="genre" value="indoor">
+            インドア
+          </label>
+          <label for="genre-outdoor">
+            <input type="checkbox" id="genre-outdoor" name="genre" value="outdoor">
+            アウトドア
+          </label>
+          <label for="genre-art">
+            <input type="checkbox" id="genre-art" name="genre" value="art">
+            アート・文化
+          </label>
+          <label for="genre-history">
+            <input type="checkbox" id="genre-history" name="genre" value="history">
+            歴史・遺産
+          </label>
+          <label for="genre-nature">
+            <input type="checkbox" id="genre-nature" name="genre" value="nature">
+            自然・公園
+          </label>
+          <label for="genre-zoo">
+            <input type="checkbox" id="genre-zoo" name="genre" value="zoo">
+            動物園・水族館
+          </label>
+          <label for="genre-shopping">
+            <input type="checkbox" id="genre-shopping" name="genre" value="shopping">
+            ショッピング
+          </label>
+          <label for="genre-food">
+            <input type="checkbox" id="genre-food" name="genre" value="food">
+            食べ物・グルメ
+          </label>
+          <label for="genre-sightseeing">
+            <input type="checkbox" id="genre-sightseeing" name="genre" value="sightseeing">
+            観光名所
+          </label>
+          <label for="genre-museum">
+            <input type="checkbox" id="genre-museum" name="genre" value="museum">
+            美術館・博物館
+          </label>
+          <label for="genre-music">
+            <input type="checkbox" id="genre-music" name="genre" value="music">
+            音楽・ライブ
+          </label>
+          <label for="genre-activity">
+            <input type="checkbox" id="genre-activity" name="genre" value="activity">
+            アクティビティ・体験
+          </label>
+          <label for="genre-leisure">
+            <input type="checkbox" id="genre-leisure" name="genre" value="leisure">
+            レジャー施設
+          </label>
+          <label for="genre-education">
+            <input type="checkbox" id="genre-education" name="genre" value="education">
+            教育・学習
+          </label>
+          <label for="genre-relaxation">
+            <input type="checkbox" id="genre-relaxation" name="genre" value="relaxation">
+            リラックス・スパ
+          </label>
+          <label for="genre-flower">
+            <input type="checkbox" id="genre-flower" name="genre" value="flower">
+            花・庭園
+          </label>
+          <label for="genre-movie">
+            <input type="checkbox" id="genre-movie" name="genre" value="movie">
+            映画鑑賞
+          </label>
+          <label for="genre-game">
+            <input type="checkbox" id="genre-game" name="genre" value="game">
+            ゲームセンター
+          </label>
+          <label for="genre-amusement">
+            <input type="checkbox" id="genre-amusement" name="genre" value="amusement">
+            アミューズメントパーク
+          </label>
+          <label for="genre-car-convenient">
+            <input type="checkbox" id="genre-car-convenient" name="genre" value="car-convenient">
+            車が便利
+          </label>
+          <label for="genre-public-transport">
+            <input type="checkbox" id="genre-public-transport" name="genre" value="public-transport">
+            公共交通機関でも行ける
+          </label>
+          <label for="genre-group-enjoyable">
+            <input type="checkbox" id="genre-group-enjoyable" name="genre" value="group-enjoyable">
+            2～５人で楽しめる
+             </label>
+          <label for="genre-solo-enjoyable">
+            <input type="checkbox" id="genre-solo-enjoyable" name="genre" value="solo-enjoyable">
+            1人で楽しめる
+          </label>
+          <label for="genre-large-group">
+            <input type="checkbox" id="genre-large-group" name="genre" value="large-group">
+            大人数可
+          </label>
+          <label for="genre-reservation">
+            <input type="checkbox" id="genre-reservation" name="genre" value="reservation">
+            予約可
+          </label>
+          <label for="genre-other">
+            <input type="checkbox" id="genre-other" name="genre" value="other">
+            その他のジャンル
+          </label>
         </div>
-    </div>
-    <!--  <div>
-    <label for="review">レビュー内容:</label>
-    <textarea id="review" name="review" rows="5" cols="40" maxlength="2000" required></textarea>
-    </div>-->
-    <div>
-    <label for="review" style="display: block; margin-bottom: 5px;">レビュー内容:</label>
-    <textarea id="review" name="review" rows="5" cols="40" maxlength="2000" required></textarea>
-    </div>
-    <div>
-    <label for="photo">写真:</label>
-    <input type="file" id="photo" name="photo">
-    </div>
-    
-    </div>
-    
-
-    <button type="submit">投稿</button>
-</form>
-
-
-
+      </div>
+      <div class="form-group">
+        <label for="review">レビュー内容:</label>
+        <textarea id="review" name="review"rows="10" cols="40"
+					maxlength="2000" required placeholder="レビューを書いてください。(検索結果にも表示されます)"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="photo">写真を選択:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+      </div>
+      <button type="submit" class="submit-btn">投稿</button>
+    </form>
+  </div>
 </body>
 </html>

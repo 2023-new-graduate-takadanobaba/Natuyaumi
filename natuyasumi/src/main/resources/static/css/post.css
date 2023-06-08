@@ -1,17 +1,61 @@
 @charset "UTF-8";
 
+/* ラッパー */
 .wrapper {
-	background-color:#DDA0DD;
+  max-width: 40%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-button {
-  background-color: #4CAF50; /* ボタンの背景色 */
-  color: white; /* ボタンの文字色 */
-  padding: 10px 20px; /* ボタンのパディング（上下左右の余白） */
-  border: none; /* ボタンの枠線をなくす */
-  cursor: pointer; /* カーソルをポインターに変更 */
+/* フォーム要素 */
+.form-group {
+  margin-bottom: 20px;
 }
 
-button:hover {
-  background-color: #45a049; /* ホバーエフェクト時の背景色 */
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group .radio-group {
+  display: flex;
+  
+  margin-top: 5px;
+}
+
+.form-group .radio-group label {
+  margin-right: 10px;
+}
+
+
+.form-group .radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.submit-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
 }
