@@ -2,12 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert ti
-	tle here</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<div id="header">TOP
-		<form>
+		<form action = "@{/doSearchGenre}", method = "get">
 		<input type="text",name = "doSearch"/>
 		<input type="submit", value="検索"/>
 		</form>
@@ -19,6 +18,8 @@
 <!--	<form action="@{http://localhost:7777/natuyasumi/post}">-->
 <!--        <button type="submit">投稿</button>-->
 <!--    </form>-->
+
+	<a th:href = "@{/doSearchGenre}">ジャンル検索</a>
 	</div>
 	
 
