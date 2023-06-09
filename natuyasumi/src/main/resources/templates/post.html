@@ -47,13 +47,17 @@
 					<option value="12">12月</option>
 				</select>
 			</div>
-			<div class="form-group">
-				<label for="hidden-gem">穴場度:</label>
+			<div class="form-group4">
+				<label for="hidden-gem">穴場度(1-5):</label>
+				<div class="number-list">
+				1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			    3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			    4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				5</div>
 				<div class="slider">
-					<input type="range" min="1" max="5" step="1" id="hidden-gem"
-						name="hidden-gem">
-					<div class="slider-bar"></div>
-					<div class="slider-handle"></div>
+					<input type="range" class="input-range" min="1" max="5" step="1"
+						id="hidden-gem" name="hidden-gem">
 				</div>
 				<span class="hidden-gem-value"></span>
 			</div>
@@ -127,9 +131,9 @@
 					</label>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group5">
 				<label for="review">レビュー内容:</label>
-				<textarea id="review" name="review" rows="10" cols="40"
+				<textarea id="review" name="review" rows="8" cols="40"
 					maxlength="2000" required placeholder="レビューを書いてください。(検索結果にも表示されます)"></textarea>
 			</div>
 			<div class="form-group">
