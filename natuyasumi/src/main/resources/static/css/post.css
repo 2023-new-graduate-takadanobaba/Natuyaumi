@@ -154,6 +154,25 @@ body{
   box-sizing: border-box;
 }
 
+.photo-upload-box {
+  display: inline-block;
+  padding: 180px 50px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #D3E6E6;
+}
+
+.photo-upload-box:hover {
+  background-color: #f5f5f5;
+}
+
+#upload-text {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
 
 .submit-btn {
 	background-color: #4caf50;
