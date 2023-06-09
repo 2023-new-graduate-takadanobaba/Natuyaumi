@@ -8,7 +8,7 @@
 <body>
 	<div class="wrapper">
 		<form>
-			<div class="form-group">
+			<div class="form-group0">
 				<label for="post-title">投稿タイトル:</label> <input type="text"
 					id="post-title" name="post-title" required>
 			</div>
@@ -30,13 +30,42 @@
 					</label>
 				</div>
 			</div>
+			<div class="form-group2">
+				<label for="visit-month">行った時期:</label> <select id="visit-month"
+					name="visit-month">
+					<option value="1">1月</option>
+					<option value="2">2月</option>
+					<option value="3">3月</option>
+					<option value="4">4月</option>
+					<option value="5">5月</option>
+					<option value="6">6月</option>
+					<option value="7">7月</option>
+					<option value="8">8月</option>
+					<option value="9">9月</option>
+					<option value="10">10月</option>
+					<option value="11">11月</option>
+					<option value="12">12月</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="hidden-gem">穴場度:</label>
+				<div class="slider">
+					<input type="range" min="1" max="5" step="1" id="hidden-gem"
+						name="hidden-gem">
+					<div class="slider-bar"></div>
+					<div class="slider-handle"></div>
+				</div>
+				<span class="hidden-gem-value"></span>
+			</div>
 			<div class="form-group3">
-				<label>ジャンル:</label>
+				<label class="genre-title">ジャンル:</label>
 				<div class="checkbox-group">
 					<label for="genre-indoor"> <input type="checkbox"
 						id="genre-indoor" name="genre" value="indoor"> インドア
 					</label> <label for="genre-outdoor"> <input type="checkbox"
 						id="genre-outdoor" name="genre" value="outdoor"> アウトドア
+					</label> <label for="genre-drive"> <input type="checkbox"
+						id="genre-drive" name="genre" value="drive"> ドライブ
 					</label> <label for="genre-art"> <input type="checkbox"
 						id="genre-art" name="genre" value="art"> アート・文化
 					</label> <label for="genre-history"> <input type="checkbox"
