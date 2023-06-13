@@ -1,0 +1,54 @@
+create table natuyasumi.User(
+user_id varchar(10),
+user_name varchar(10),
+user_gender varchar(1),
+user_age int
+);
+
+use natuyasumi;
+insert into User values(2,'小曽根りな',1,22);
+
+use natuyasumi;
+create table natuyasumi.Article(
+art_id int(50) not null auto_increment,
+art_title varchar(60),
+art_name varchar(60),
+art_address varchar(100),
+art_parking boolean,
+art_month int(4),
+art_picture varchar(21000),
+art_level int(10),
+genre_id int(50),
+art_text TEXT,
+primary key(art_id)
+);
+
+select * from natuyasumi.article;
+
+
+insert into natuyasumi.Article values(1,'東京ディズニーランド行ってきた、フォーー','ディズニーランド','千葉県浦安市',true,4,'https://image.itmedia.co.jp/nl/articles/2011/06/nk_tdrgoto_01_w590.jpg',1,1,'夢の国に穴場という概念はないですね！幸せです！！');
+select * from natuyasumi.article;
+
+use natuyasumi;
+update Article set art_name = '東京ディズニーランド';
+
+commit;
+
+drop table natuyasumi.Article;
+
+create table natuyasumi.Article(
+id int(50) not null auto_increment,
+title varchar(60),
+name varchar(60),
+address varchar(100),
+has_parking boolean,
+month int(4),
+image_url varchar(21000),
+level int(10),
+genre_id int(50),
+review TEXT,
+primary key(id)
+);
+insert into natuyasumi.Article values(1,'東京ディズニーランド行ってきた、フォーー','ディズニーランド','千葉県浦安市',true,4,'https://image.itmedia.co.jp/nl/articles/2011/06/nk_tdrgoto_01_w590.jpg',1,1,'夢の国に穴場という概念はないですね！幸せです！！');
+
+alter 
