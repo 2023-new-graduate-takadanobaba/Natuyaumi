@@ -10,6 +10,18 @@
 		<img src="https://www.bepal.net/wp-content/uploads/2019/07/01_MG_1266A.jpg" width="200" alt="キャンプ" />
 		<a th:href = "@{/doDisplayAirticle}">東京ディズニーランド</a>
 		<p>東京都</p>
+		<div>アウトドア一覧</div>
+	
+		<div th:each="article: ${articles}">
+			<p th:text="${article.name}"></p>
+			<p th:text="${article.title}"></p>
+			<p th:text="${article.address}"></p>
+			<p th:text="${article.hasParking}"></p>
+			<p th:text="${article.month}"></p>
+			<p th:text="${article.level}"></p>
+			<p th:text="${article.review}"></p>
+			<img th:src="${article.imageUrl}"/>
+		</div>
 	</div>
 	
 </body>
