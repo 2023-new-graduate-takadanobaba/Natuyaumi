@@ -119,5 +119,8 @@ public class ArticleEntity {
 		this.review = review;
 	}
 	 
+	
 
 }
+
+
