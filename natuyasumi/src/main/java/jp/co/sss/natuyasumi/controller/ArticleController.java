@@ -32,7 +32,8 @@ public class ArticleController {
 	
 	
 	@RequestMapping(path = "/doSearchGenre", method = RequestMethod.GET)
-	public String genre() {
+	public String genreList(Model model) {
+		model.addAttribute("articles", repository.findAll());
 		return "genre";
 	}
 	
