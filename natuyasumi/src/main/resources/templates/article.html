@@ -6,28 +6,18 @@
 </head>
 <body>
 	<div>アウトドア一覧</div>
-	<table>
-		<tr>
-			<th>商品番号</th>
-			<th>商品名</th>
-			<th>価格</th>
-			<th>商品番号</th>
-			<th>商品名</th>
-			<th>価格</th>
-			<th>商品番号</th>
-			<th>商品名</th>
-		</tr>
-		<tr th:each="article: ${articles}">
-			<td th:text="${article.name}"></td>
-			<td th:text="${article.title}"></td>
-			<td th:text="${article.address}"></td>
-			<td th:text="${article.hasParking}"></td>
-			<td th:text="${article.month}"></td>
-			<td th:text="${article.level}"></td>
-			<td th:text="${article.review}"></td>
-			<td th:text="${article.imageUrl}"></td>
-		</tr>
-	</table>
+	
+		<div th:each="article: ${articles}">
+			<p th:text="${article.name}"></p>
+			<p th:text="${article.title}"></p>
+			<p th:text="${article.address}"></p>
+			<p th:text="${article.hasParking}"></p>
+			<p th:text="${article.month}"></p>
+			<p th:text="${article.level}"></p>
+			<p th:text="${article.review}"></p>
+			<img th:src="${article.imageUrl}"/>
+		</div>
+	
 </body>
 
 </body>
