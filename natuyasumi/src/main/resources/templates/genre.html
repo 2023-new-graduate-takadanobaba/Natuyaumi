@@ -10,7 +10,7 @@
 		<div>アウトドア一覧</div>
 	
 		<div th:each="article: ${articles}">
-			<a th:href = "@{/doDisplayAirticle}" th:text="${article.name}"></a>
+			<a th:href = "@{/doDisplayAirticle/{id}(id=${article.id})}" th:text="${article.name}"></a>
 			<p th:text="${article.title}"></p>
 			<p th:text="${article.address}"></p>
 			<p th:text="${article.level}"></p>
