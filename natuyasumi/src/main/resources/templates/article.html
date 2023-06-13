@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<div>遷移して詳細表示</div>
+	<div>アウトドア一覧</div>
+	<table>
+		<tr th:each="article: ${articles}">
+			<td th:text="${articleEntity.artName}"></td>
+			<td th:text="${articleEntity.artTitle}"></td>
+			<td th:text="${articleEntity.artAdress}"></td>
+			<td th:text="${articleEntity.artParking}"></td>
+			<td th:text="${articleEntity.artMonth}"></td>
+			<td th:text="${articleEntity.artLevel}"></td>
+			<td th:text="${articleEntity.artText}"></td>
+		</tr>
+	</table>
+</body>
 
 </body>
 </html>
