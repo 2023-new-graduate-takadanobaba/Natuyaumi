@@ -8,6 +8,6 @@ import jp.co.sss.natuyasumi.entity.ArticleEntity;
 
 public interface ArticleRepository extends JpaRepository<ArticleEntity, Integer>{
 	
-	public Optional<ArticleEntity> findById(Integer id);
+	Optional<ArticleEntity> findById(Integer id);
 
 }
