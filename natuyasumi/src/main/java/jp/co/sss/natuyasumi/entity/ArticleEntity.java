@@ -3,6 +3,8 @@ package jp.co.sss.natuyasumi.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
@@ -33,11 +35,16 @@ public class ArticleEntity {
 	 @Column
 	 private Integer level;
 	 
-	 @Column
-	 private Integer genreId;
+//	 @Column
+//	 private Integer genreId;
 	 
 	 @Column
 	 private String review;
+	 
+	 @ManyToOne
+	 @JoinColumn(name = "genreId", referencedColumnName = "genreId")
+	 
+	 private Genre genre;
 
 	public Integer getId() {
 		return id;
@@ -103,13 +110,13 @@ public class ArticleEntity {
 		this.level = level;
 	}
 
-	public Integer getGenreId() {
-		return genreId;
-	}
-
-	public void setGenreId(Integer genreId) {
-		this.genreId = genreId;
-	}
+//	public Integer getGenreId() {
+//		return genreId;
+//	}
+//
+//	public void setGenreId(Integer genreId) {
+//		this.genreId = genreId;
+//	}
 
 	public String getReview() {
 		return review;
@@ -117,6 +124,14 @@ public class ArticleEntity {
 
 	public void setReview(String review) {
 		this.review = review;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
 	}
 	 
 	

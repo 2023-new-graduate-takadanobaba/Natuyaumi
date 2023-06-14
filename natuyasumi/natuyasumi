@@ -84,3 +84,17 @@ insert into natuyasumi.Genre values(18,'2-5人で楽しめる');
 insert into natuyasumi.Genre values(19,'1人で楽しめる');
 insert into natuyasumi.Genre values(20,'大人数可');
 insert into natuyasumi.Genre values(21,'予約可');
+
+create table natuyasumi.Article(
+id int(50) not null auto_increment,
+title varchar(60),
+name varchar(60),
+address varchar(100),
+has_parking boolean,
+month int(4),
+image_url varchar(21000),
+level int(10),
+genre_id int(50) not null references natuyasumi.genre(genre_id),
+review TEXT,
+primary key(id)
+);
