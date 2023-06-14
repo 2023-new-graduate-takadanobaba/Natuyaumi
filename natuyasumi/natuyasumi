@@ -56,3 +56,31 @@ insert into natuyasumi.Article values(3,'エクスプレスパスを買うべき
 
 alter 
 
+create table natuyasumi.Genre(
+genre_id int(50) not null auto_increment,
+genre_name varchar(50),
+primary key(genre_id)
+);
+
+insert into natuyasumi.Genre values(1,'ドライブ');
+select * from natuyasumi.genre;
+insert into natuyasumi.Genre values(2,'歴史、遺産');
+insert into natuyasumi.Genre values(3,'自然、公園');
+insert into natuyasumi.Genre values(4,'動物園、水族館');
+insert into natuyasumi.Genre values(5,'観光名所');
+insert into natuyasumi.Genre values(6,'アクティビティ、体験');
+insert into natuyasumi.Genre values(7,'レジャー施設');
+insert into natuyasumi.Genre values(8,'アミューズメント、テーマパーク');
+insert into natuyasumi.Genre values(9,'アート、文化');
+insert into natuyasumi.Genre values(10,'ショッピング');
+insert into natuyasumi.Genre values(11,'レストラン、カフェ');
+insert into natuyasumi.Genre values(12,'居酒屋');
+insert into natuyasumi.Genre values(13,'リラックス、温泉');
+insert into natuyasumi.Genre values(14,'映像');
+insert into natuyasumi.Genre values(15,'ゲーム');
+insert into natuyasumi.Genre values(16,'車が便利');
+insert into natuyasumi.Genre values(17,'公共交通機関で行ける');
+insert into natuyasumi.Genre values(18,'2-5人で楽しめる');
+insert into natuyasumi.Genre values(19,'1人で楽しめる');
+insert into natuyasumi.Genre values(20,'大人数可');
+insert into natuyasumi.Genre values(21,'予約可');
