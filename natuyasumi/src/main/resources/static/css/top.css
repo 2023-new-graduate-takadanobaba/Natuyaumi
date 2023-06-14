@@ -46,6 +46,11 @@ header h1{
     left: 8%;
 }
 
+.indent {
+	margin-left: 1em; 
+	text-indent: -1em;"
+}
+
 .img {
 	width: 90%;
 }
