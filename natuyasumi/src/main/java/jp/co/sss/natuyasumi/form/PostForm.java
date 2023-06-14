@@ -26,7 +26,7 @@ public class PostForm {
 		 private Integer level;
 		 
 
-//		 private Integer genreId;
+		 private Integer genreId;
 		 
 		
 		 private String review;
@@ -95,13 +95,13 @@ public class PostForm {
 			this.level = level;
 		}
 
-//		public Integer getGenreId() {
-//			return genreId;
-//		}
-	//
-//		public void setGenreId(Integer genreId) {
-//			this.genreId = genreId;
-//		}
+		public Integer getGenreId() {
+			return genreId;
+		}
+	
+		public void setGenreId(Integer genreId) {
+			this.genreId = genreId;
+		}
 
 		public String getReview() {
 			return review;
