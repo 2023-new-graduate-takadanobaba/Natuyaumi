@@ -3,7 +3,7 @@ package jp.co.sss.natuyasumi.form;
 public class PostForm {
 	
 	
-//		private Integer id;
+		private Integer id;
 	
 		 private String title;
 		 
@@ -26,18 +26,18 @@ public class PostForm {
 		 private Integer level;
 		 
 
-		 private Integer genreId;
+		 private String genreId;
 		 
 		
 		 private String review;
 		 
-//		public Integer getId() {
-//			return id;
-//		}
-//
-//		public void setId(Integer id) {
-//			this.id = id;
-//		}
+		public Integer getId() {
+			return id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
 
 		public String getTitle() {
 			return title;
@@ -95,11 +95,11 @@ public class PostForm {
 			this.level = level;
 		}
 
-		public Integer getGenreId() {
+		public String getGenreId() {
 			return genreId;
 		}
 	
-		public void setGenreId(Integer genreId) {
+		public void setGenreId(String genreId) {
 			this.genreId = genreId;
 		}
 

@@ -86,7 +86,7 @@ insert into natuyasumi.Genre values(20,'大人数可');
 insert into natuyasumi.Genre values(21,'予約可');
 
 create table natuyasumi.Article(
-id int(50) not null auto_increment,
+id int(50) not null auto_increment ,
 title varchar(60),
 name varchar(60),
 address varchar(100),
@@ -95,6 +95,33 @@ month int(4),
 image_url varchar(21000),
 level int(10),
 genre_id int(50) not null references natuyasumi.genre(genre_id),
+review TEXT,
+primary key(id)
+);
+
+use natuyasumi;
+create sequence seq_article nocache;
+create
+
+create table natuyasumi.Article(
+id int(50) not null auto_increment ,
+title varchar(60),
+name varchar(60),
+address varchar(100),
+has_parking boolean,
+month int(4),
+image_url varchar(21000),
+level int(10),
+genre_id int(50) not null references natuyasumi.genre(genre_id),
+genre_id_01 int(50) references natuyasumi.genre(genre_id),
+genre_id_02 int(50) references natuyasumi.genre(genre_id),
+genre_id_03 int(50) references natuyasumi.genre(genre_id),
+genre_id_04 int(50) references natuyasumi.genre(genre_id),
+genre_id_05 int(50) references natuyasumi.genre(genre_id),
+genre_id_06 int(50) references natuyasumi.genre(genre_id),
+genre_id_07 int(50) references natuyasumi.genre(genre_id),
+genre_id_08 int(50) references natuyasumi.genre(genre_id),
+genre_id_09 int(50) references natuyasumi.genre(genre_id),
 review TEXT,
 primary key(id)
 );
