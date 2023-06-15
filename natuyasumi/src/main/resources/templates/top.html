@@ -2,133 +2,147 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<link rel="stylesheet" type="text/css" href="css/top.css">
-	<meta charset="UTF-8">
-	<title>今日どこへいく？</title>
+<link rel="stylesheet" type="text/css" href="css/top.css">
+<meta charset="UTF-8">
+<title>今日どこへいく？</title>
 </head>
 
+
 <body>
-	<div class="textalign">
-		<header class="header">
-			<img class = "img-header" src="https://d1d37e9z843vy6.cloudfront.net/jp/images/3980978/8647f2c7da12adbe101a42764d34dd7440c947cb.jpeg"
-			alt = "sea">
-			<h1>今日、どこへ行く？</h1>
-			
+	<header class="header">
+		<img class="img-header"
+			src="https://d1d37e9z843vy6.cloudfront.net/jp/images/3980978/8647f2c7da12adbe101a42764d34dd7440c947cb.jpeg"
+			alt="sea">
+		<h1>今日、どこへ行く？</h1>
 
-			<div class="search">
-				<form action="@{/doSearchGenre}" , method="get">
-					<input type="text" ,name="doSearch" />
-					<input type="submit" , value="検索" />
-				</form>
-				<div class="post">
-					<a th:href="@{/post}">投稿はこちらから！</a>
-				</div>
+
+		<div class="search">
+			<form action="@{/doSearchGenre}" , method="get">
+				<input type="text" ,name="doSearch" /> <input type="submit"
+					, value="検索" />
+			</form>
+			<div class="post">
+				<a th:href="@{/post}">投稿はこちらから！</a>
 			</div>
+		</div>
 
-		</header>
+	</header>
 
 
+	<div class="textalign">
 
 		<div class="wrapper">
 			<div id="aside">
-			<a th:href="@{/doSearchGenre}">北海道</a>
-			<div class="indent">東北地方
-			<br/><a th:href="@{/doSearchGenre}">青森県</a>
-			<br/><a th:href="@{/doSearchGenre}">岩手県</a>
-			<br/><a th:href="@{/doSearchGenre}">宮城県</a>
-			<br/><a th:href="@{/doSearchGenre}">秋田県</a>
-			<br/><a th:href="@{/doSearchGenre}">山形県</a>
-			<br/><a th:href="@{/doSearchGenre}">福島県</a>
+				<a th:href="@{/doSearchGenre}">北海道</a>
+				<div class="indent">
+					東北地方 <br />
+					<a th:href="@{/doSearchGenre}">青森県</a> <br />
+					<a th:href="@{/doSearchGenre}">岩手県</a> <br />
+					<a th:href="@{/doSearchGenre}">宮城県</a> <br />
+					<a th:href="@{/doSearchGenre}">秋田県</a> <br />
+					<a th:href="@{/doSearchGenre}">山形県</a> <br />
+					<a th:href="@{/doSearchGenre}">福島県</a>
+				</div>
+				<div class="indent">
+					関東地方 <br />
+					<a th:href="@{/doSearchGenre}">東京都</a> <br />
+					<a th:href="@{/doSearchGenre}">茨城県</a> <br />
+					<a th:href="@{/doSearchGenre}">栃木県</a> <br />
+					<a th:href="@{/doSearchGenre}">群馬県</a> <br />
+					<a th:href="@{/doSearchGenre}">埼玉県</a> <br />
+					<a th:href="@{/doSearchGenre}">千葉県</a> <br />
+					<a th:href="@{/doSearchGenre}">神奈川県</a>
+				</div>
+				<div class="indent">
+					中部地方 <br />
+					<a th:href="@{/doSearchGenre}">新潟県</a> <br />
+					<a th:href="@{/doSearchGenre}">富山県</a> <br />
+					<a th:href="@{/doSearchGenre}">石川県</a> <br />
+					<a th:href="@{/doSearchGenre}">福井県</a> <br />
+					<a th:href="@{/doSearchGenre}">山梨県</a> <br />
+					<a th:href="@{/doSearchGenre}">長野県</a> <br />
+					<a th:href="@{/doSearchGenre}">岐阜県</a> <br />
+					<a th:href="@{/doSearchGenre}">静岡県</a> <br />
+					<a th:href="@{/doSearchGenre}">愛知県</a>
+				</div>
+				<div class="indent">
+					近畿地方 <br />
+					<a th:href="@{/doSearchGenre}">大阪府</a> <br />
+					<a th:href="@{/doSearchGenre}">京都府</a> <br />
+					<a th:href="@{/doSearchGenre}">三重県</a> <br />
+					<a th:href="@{/doSearchGenre}">滋賀県</a> <br />
+					<a th:href="@{/doSearchGenre}">兵庫県</a> <br />
+					<a th:href="@{/doSearchGenre}">和歌山県</a> <br />
+					<a th:href="@{/doSearchGenre}">奈良県</a>
+				</div>
+				<div class="indent">
+					中国・四国地方 <br />
+					<a th:href="@{/doSearchGenre}">鳥取県</a> <br />
+					<a th:href="@{/doSearchGenre}">島根県</a> <br />
+					<a th:href="@{/doSearchGenre}">岡山県</a> <br />
+					<a th:href="@{/doSearchGenre}">広島県</a> <br />
+					<a th:href="@{/doSearchGenre}">山口県</a> <br />
+					<a th:href="@{/doSearchGenre}">徳島県</a> <br />
+					<a th:href="@{/doSearchGenre}">香川県</a> <br />
+					<a th:href="@{/doSearchGenre}">愛媛県</a> <br />
+					<a th:href="@{/doSearchGenre}">高知県</a>
+				</div>
+				<div class="indent">
+					九州地方 <br />
+					<a th:href="@{/doSearchGenre}">福岡県</a> <br />
+					<a th:href="@{/doSearchGenre}">佐賀県</a> <br />
+					<a th:href="@{/doSearchGenre}">長崎県</a> <br />
+					<a th:href="@{/doSearchGenre}">熊本県</a> <br />
+					<a th:href="@{/doSearchGenre}">大分県</a> <br />
+					<a th:href="@{/doSearchGenre}">宮﨑県</a> <br />
+					<a th:href="@{/doSearchGenre}">鹿児島県</a> <br />
+					<a th:href="@{/doSearchGenre}">沖縄県</a>
+				</div>
+				<div class="indent">
+					アウトドア <br />
+					<a th:href="@{/doSearchGenre}">ドライブ</a> <br />
+					<a th:href="@{/doSearchGenre}">歴史・遺産</a> <br />
+					<a th:href="@{/doSearchGenre}">動物園、水族館</a> <br />
+					<a th:href="@{/doSearchGenre}">観光名所</a> <br />
+					<a th:href="@{/doSearchGenre}">アクティビティ・体験</a> <br />
+					<a th:href="@{/doSearchGenre}">レジャー施設</a> <br />
+					<a th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
+				</div>
+				<div class="indent">
+					インドア <br />
+					<a th:href="@{/doSearchGenre}">アート、文化</a> <br />
+					<a th:href="@{/doSearchGenre}">ショッピング</a> <br />
+					<a th:href="@{/doSearchGenre}">レストラン・カフェ</a> <br />
+					<a th:href="@{/doSearchGenre}">居酒屋</a> <br />
+					<a th:href="@{/doSearchGenre}">リラックス・温泉</a> <br />
+					<a th:href="@{/doSearchGenre}">映像</a> <br />
+					<a th:href="@{/doSearchGenre}">ゲーム</a> <br />
+					<a th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
+				</div>
+				<div class="indent">
+					インドア <br />
+					<a th:href="@{/doSearchGenre}">車が便利</a> <br />
+					<a th:href="@{/doSearchGenre}">公共交通機関で行ける</a> <br />
+					<a th:href="@{/doSearchGenre}">2-5人で楽しめる</a> <br />
+					<a th:href="@{/doSearchGenre}">1人で楽しめる</a> <br />
+					<a th:href="@{/doSearchGenre}">大人数可</a> <br />
+					<a th:href="@{/doSearchGenre}">予約可</a>
+				</div>
+
 			</div>
-			<div class="indent">関東地方
-			<br/><a th:href="@{/doSearchGenre}">東京都</a>
-			<br/><a th:href="@{/doSearchGenre}">茨城県</a>
-			<br/><a th:href="@{/doSearchGenre}">栃木県</a>
-			<br/><a th:href="@{/doSearchGenre}">群馬県</a>
-			<br/><a th:href="@{/doSearchGenre}">埼玉県</a>
-			<br/><a th:href="@{/doSearchGenre}">千葉県</a>
-			<br/><a th:href="@{/doSearchGenre}">神奈川県</a>
-			</div>
-			<div class="indent">中部地方
-			<br/><a th:href="@{/doSearchGenre}">新潟県</a>
-			<br/><a th:href="@{/doSearchGenre}">富山県</a>
-			<br/><a th:href="@{/doSearchGenre}">石川県</a>
-			<br/><a th:href="@{/doSearchGenre}">福井県</a>
-			<br/><a th:href="@{/doSearchGenre}">山梨県</a>
-			<br/><a th:href="@{/doSearchGenre}">長野県</a>
-			<br/><a th:href="@{/doSearchGenre}">岐阜県</a>
-			<br/><a th:href="@{/doSearchGenre}">静岡県</a>
-			<br/><a th:href="@{/doSearchGenre}">愛知県</a>
-			</div>
-			<div class="indent">近畿地方
-			<br/><a th:href="@{/doSearchGenre}">大阪府</a>
-			<br/><a th:href="@{/doSearchGenre}">京都府</a>
-			<br/><a th:href="@{/doSearchGenre}">三重県</a>
-			<br/><a th:href="@{/doSearchGenre}">滋賀県</a>
-			<br/><a th:href="@{/doSearchGenre}">兵庫県</a>
-			<br/><a th:href="@{/doSearchGenre}">和歌山県</a>
-			<br/><a th:href="@{/doSearchGenre}">奈良県</a>
-			</div>
-			<div class="indent">中国・四国地方
-			<br/><a th:href="@{/doSearchGenre}">鳥取県</a>
-			<br/><a th:href="@{/doSearchGenre}">島根県</a>
-			<br/><a th:href="@{/doSearchGenre}">岡山県</a>
-			<br/><a th:href="@{/doSearchGenre}">広島県</a>
-			<br/><a th:href="@{/doSearchGenre}">山口県</a>
-			<br/><a th:href="@{/doSearchGenre}">徳島県</a>
-			<br/><a th:href="@{/doSearchGenre}">香川県</a>
-			<br/><a th:href="@{/doSearchGenre}">愛媛県</a>
-			<br/><a th:href="@{/doSearchGenre}">高知県</a>
-			</div>
-			<div class="indent">九州地方
-			<br/><a th:href="@{/doSearchGenre}">福岡県</a>
-			<br/><a th:href="@{/doSearchGenre}">佐賀県</a>
-			<br/><a th:href="@{/doSearchGenre}">長崎県</a>
-			<br/><a th:href="@{/doSearchGenre}">熊本県</a>
-			<br/><a th:href="@{/doSearchGenre}">大分県</a>
-			<br/><a th:href="@{/doSearchGenre}">宮﨑県</a>
-			<br/><a th:href="@{/doSearchGenre}">鹿児島県</a>
-			<br/><a th:href="@{/doSearchGenre}">沖縄県</a>
-			</div>
-			<div class="indent">アウトドア
-			<br/><a th:href="@{/doSearchGenre}">ドライブ</a>
-			<br/><a th:href="@{/doSearchGenre}">歴史・遺産</a>
-			<br/><a th:href="@{/doSearchGenre}">動物園、水族館</a>
-			<br/><a th:href="@{/doSearchGenre}">観光名所</a>
-			<br/><a th:href="@{/doSearchGenre}">アクティビティ・体験</a>
-			<br/><a th:href="@{/doSearchGenre}">レジャー施設</a>
-			<br/><a th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
-			</div>
-			<div class="indent">インドア
-			<br/><a th:href="@{/doSearchGenre}">アート、文化</a>
-			<br/><a th:href="@{/doSearchGenre}">ショッピング</a>
-			<br/><a th:href="@{/doSearchGenre}">レストラン・カフェ</a>
-			<br/><a th:href="@{/doSearchGenre}">居酒屋</a>
-			<br/><a th:href="@{/doSearchGenre}">リラックス・温泉</a>
-			<br/><a th:href="@{/doSearchGenre}">映像</a>
-			<br/><a th:href="@{/doSearchGenre}">ゲーム</a>
-			<br/><a th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
-			</div>
-			<div class="indent">インドア
-			<br/><a th:href="@{/doSearchGenre}">車が便利</a>
-			<br/><a th:href="@{/doSearchGenre}">公共交通機関で行ける</a>
-			<br/><a th:href="@{/doSearchGenre}">2-5人で楽しめる</a>
-			<br/><a th:href="@{/doSearchGenre}">1人で楽しめる</a>
-			<br/><a th:href="@{/doSearchGenre}">大人数可</a>
-			<br/><a th:href="@{/doSearchGenre}">予約可</a>
-			</div>
-			
-			</div><!-- #aside -->
+			<!-- #aside -->
 			<div class="image">
-				<div class = "textin">
-				<img class="img" src="https://www.shutoko.jp/ss/shutokodeikou/blog/1105.jpg" alt="ドライブ" ></img>
-				<p>ドライブ</p>
+				<div class="textin">
+					<img class="img"
+						src="https://www.shutoko.jp/ss/shutokodeikou/blog/1105.jpg"
+						alt="ドライブ"></img>
+					<p>ドライブ</p>
 				</div>
 				<div class="img-wrapper">
 					<img class="img-sub"
 						src="https://th.bing.com/th/id/R.03e81101c9fac8d440f56522125d053d?rik=FEmVCVkIJ5Orwg&riu=http%3a%2f%2fpic31.nipic.com%2f20130806%2f11947767_124722338178_2.jpg&ehk=m1%2bKj9NA21Mue8zrt8jWqEoqV0Njxg%2f7djlUtKhMMYM%3d&risl=&pid=ImgRaw&r=0"
-						alt="登山"></img>
-					<img class="img-sub" src="https://gamebar-tokyo.com/wpgame/wp-content/uploads/2016/11/boardgames.jpg"
+						alt="登山"></img> <img class="img-sub"
+						src="https://gamebar-tokyo.com/wpgame/wp-content/uploads/2016/11/boardgames.jpg"
 						alt="ボードゲーム"></img>
 				</div>
 			</div>
