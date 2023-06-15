@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
 /* ラッパー */
-body{
+body {
 	background-color: #C2DDDE;
-	color:#28495D;
+	color: #28495D;
 }
+
 .wrapper {
 	max-width: 40%;
 	margin: 0 auto;
@@ -15,9 +16,18 @@ body{
 }
 
 .yokonarabi {
+	width: 100%;
 	display: flex;
+	justify-content: space-between;
 }
 
+.yokonarabinakami {
+	width: 50%;
+}
+
+.yokonarabinakami2 {
+	width: 40%;
+}
 
 /* フォーム要素 */
 .form-group0 {
@@ -44,11 +54,10 @@ body{
 	margin-bottom: 20px;
 }
 
-.form-group0 label{
+.form-group0 label {
 	display: block;
 	font-weight: bold;
-	font-size:22px;
-	
+	font-size: 22px;
 }
 
 .form-group label {
@@ -75,19 +84,23 @@ body{
 	font-weight: bold;
 }
 
+.checkbox-group{
+	margin-top:15px;
+}
+
 .checkbox-group label {
 	font-weight: normal;
 }
 
 .form-group0 input, .form-group0 textarea {
-	width: 45%;
+	width: 100%;
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 }
 
 .form-group input, .form-group textarea {
-	width: 50%;
+	width: 90%;
 	padding: 8px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -112,82 +125,144 @@ body{
 }
 
 .form-group5 input, .form-group5 textarea {
-	margin-top:5px;
+	margin-top: 5px;
 	width: 80%;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 }
 
-.number-list{
-	margin-top:10px;
+.visit {
+	overflow: hidden;
+	width: 40%;
+	margin-top: 5px;
+	padding-left: 20px;
+}
+
+.visit option {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.fvisit option::-ms-expand {
+	display: none;
+}
+
+.visit {
+	position: relative;
+	border-radius: 2px;
+	border: 2px solid;
+	border-color: #28495D; border-radius : 50px;
+	background: #ffffff;
+	border-radius: 50px;
+}
+
+.number-list {
+	margin-top: 10px;
 }
 
 .input-range[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #32739B;
-  height: 2px;
-  border-radius: 6px;
-
-  &:focus,
-  &:active {
-    outline: none;
-  }
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    position: relative;
-    width: 20px;
-    height: 20px;
-    display: block;
-    border: 2px solid #28495D;
-    background-color: #fff;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-  }
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #32739B;
+	height: 2px;
+	border-radius: 6px;
+	&:
+	focus
+	,
+	&
+	:
+	active
+	{
+	
+    
+	outline
+	:
+	 
+	none;
 }
-  
+
+&
+::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	display: block;
+	border: 2px solid #28495D;
+	background-color: #fff;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+
+}
 .checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .checkbox-group label {
-  width: 33.33%;
-  box-sizing: border-box;
+	width: 33.33%;
+	box-sizing: border-box;
 }
 
 .photo-upload-box {
-  display: inline-block;
-  padding: 180px 50px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  cursor: pointer;
-  background-color: #D3E6E6;
+	display: inline-block;
+	padding: 180px 50px;
+	margin-top: 60px; border : 1px solid #ccc;
+	border-radius: 3px;
+	cursor: pointer;
+	background-color: #D3E6E6;
+	border: 1px solid #ccc;
 }
 
 .photo-upload-box:hover {
-  background-color: #f5f5f5;
+	background-color: #f5f5f5;
 }
 
 #upload-text {
-  display: block;
-  text-align: center;
-  font-weight: bold;
+	text-align: center;
+	font-weight: bold;
+	color: #B3D5D5;
 }
 
+.submit {
+	text-align: center;
+}
 
 .submit-btn {
-	background-color: #4caf50;
-	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 100px;
+	margin: 0 auto;
+	padding:10px;
+	border-radius: 100vw;
 	border: none;
-	padding: 10px 20px;
-	border-radius: 3px;
-	cursor: pointer;
+	color: #fff;
+	background: #28495D;
+}
+.submit-btn:hover {
+/*     background-position: right center; */
+/* 	background-size: 200% auto; */
+	-webkit-animation: pulse 2s infinite;
+	animation: shad 1.5s infinite;
+	color: #fff;
 }
 
-.submit-btn:hover {
-	background-color: #45a049;
+@keyframes shad {
+	0% {box-shadow: 0 0 0 0 #28495D;}
+	70% {box-shadow: 0 0 0 10px rgb(39 172 217 / 0%);}
+	100% {box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);}
 }
+
