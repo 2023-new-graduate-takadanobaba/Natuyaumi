@@ -56,6 +56,12 @@ public class ArticleController {
 		return "article";
 	}
 	
+	@RequestMapping(path = "/delete/{id}")
+	public String deletePost(@PathVariable Integer id) {
+		repository.deleteById(id);
+		return "genre";
+	}
+	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
 	public String createPost(PostForm form, Model model) {
 //		System.out.println(form.getGenreId());
