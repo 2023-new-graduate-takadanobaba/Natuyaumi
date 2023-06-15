@@ -14,6 +14,11 @@ body{
 	border-radius: 5px;
 }
 
+.yokonarabi {
+	display: flex;
+}
+
+
 /* フォーム要素 */
 .form-group0 {
 	margin-bottom: 20px;

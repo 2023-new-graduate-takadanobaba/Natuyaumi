@@ -7,63 +7,71 @@
 </head>
 <body>
 	<div class="wrapper">
-		<form method="post" th:action="@{/createPost}" >
-			<div class="form-group0">
-				<label for="post-title">投稿タイトル:</label> <input type="text"
-					id="post-title" name="title" required>
-			</div>
-			<div class="form-group">
-				<label for="facility">施設名:</label> <input type="text" id="facility"
-					name="name" required>
-			</div>
-			<div class="form-group">
-				<label for="address">施設住所:</label> <input type="text" id="address"
-					name="address" required>
-			</div>
-			<div class="form-group2">
-				<label>駐車場の有無:</label>
-				<div class="radio-group">
-					<label for="car-spot-ok"> <input type="radio"
-						id="car-spot-ok" name="hasParking" value="true" required>
-						〇
-					</label> <label for="car-spot-ng"> <input type="radio"
-						id="car-spot-ng" name="hasParking" value="false" required>
-						×
-					</label>
+		<form method="post" th:action="@{/createPost}">
+			<div class="yokonarabi">
+				<div class="yokonarabinakami">
+
+					<div class="form-group0">
+						<label for="post-title">投稿タイトル:</label> <input type="text"
+							id="post-title" name="title" required>
+					</div>
+					<div class="form-group">
+						<label for="facility">施設名:</label> <input type="text"
+							id="facility" name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="address">施設住所:</label> <input type="text" id="address"
+							name="address" required>
+					</div>
+					<div class="form-group2">
+						<label>駐車場の有無:</label>
+						<div class="radio-group">
+							<label for="car-spot-ok"> <input type="radio"
+								id="car-spot-ok" name="hasParking" value="true" required>
+								〇
+							</label> <label for="car-spot-ng"> <input type="radio"
+								id="car-spot-ng" name="hasParking" value="false" required>
+								×
+							</label>
+						</div>
+					</div>
+					<div class="form-group2">
+						<label for="visit-month">行った時期:</label> <select id="visit-month"
+							name="month">
+							<option value="1">1月</option>
+							<option value="2">2月</option>
+							<option value="3">3月</option>
+							<option value="4">4月</option>
+							<option value="5">5月</option>
+							<option value="6">6月</option>
+							<option value="7">7月</option>
+							<option value="8">8月</option>
+							<option value="9">9月</option>
+							<option value="10">10月</option>
+							<option value="11">11月</option>
+							<option value="12">12月</option>
+						</select>
+					</div>
+					<div class="form-group0">
+						<label for="post-title">クリックして写真を選ぶ:</label> <input type="text"
+							name="imageUrl">
+					</div>
+				</div>
+
+				<div class="yokonarabi2">
+					<div class="photo-upload">
+						<div class="photo-upload">
+							<label for="photo-input" class="photo-upload-box"> <span
+								id="upload-text">クリックして写真を選ぶ</span> <input type="file"
+								id="photo-input" accept="image/*" style="display: none;"
+								name="imageUrl">
+							</label>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="form-group2">
-				<label for="visit-month">行った時期:</label> <select id="visit-month"
-					name="month">
-					<option value="1">1月</option>
-					<option value="2">2月</option>
-					<option value="3">3月</option>
-					<option value="4">4月</option>
-					<option value="5">5月</option>
-					<option value="6">6月</option>
-					<option value="7">7月</option>
-					<option value="8">8月</option>
-					<option value="9">9月</option>
-					<option value="10">10月</option>
-					<option value="11">11月</option>
-					<option value="12">12月</option>
-				</select>
-			</div>
-			<div class="photo-upload">
-				<!--  <div class="photo-upload">
-					<label for="photo-input" class="photo-upload-box"> <span
-						id="upload-text">クリックして写真を選ぶ</span> <input type="file"
-						id="photo-input" accept="image/*" style="display: none;"
-						name="imageUrl">
-					</label>
-				</div>-->
-				
-				<div class="form-group0">
-				<label for="post-title">クリックして写真を選ぶ:</label> <input type="text"
-					 name="imageUrl">
-			</div>
 
-			</div>
+
 			<div class="form-group4">
 				<label for="hidden-gem">穴場度(1-5):</label>
 				<div class="number-list">1
