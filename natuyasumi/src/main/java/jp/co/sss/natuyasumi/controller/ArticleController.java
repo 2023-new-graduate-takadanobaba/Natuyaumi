@@ -67,15 +67,35 @@ public class ArticleController {
 //		System.out.println(form.getGenreId());
 		// 1,2,3
 		// String[] [1,2,3]
-		
+//		int max = 10;   //おぞね書いた
 		String[] alt = form.getGenreId().split(",");   //PostFormクラスのgenreIdを呼び出して、それをString型配列altに格納
 		
 		ArticleEntity article = new ArticleEntity();   //ArticleEntityのオブジェクト生成
 		
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
 //		String型配列altをIntegerに変換してGenreテーブルのIdを探してsetGenreでarticleに格納している
+//		if(article.getGenre1() != null) {
 		
-
+//		article.setGenre1(genreRepository.getReferenceById(Integer.parseInt(alt[1])));
+//		}
+//		if(article.getGenre2() != null) {
+		
+//		article.setGenre2(genreRepository.getReferenceById(Integer.parseInt(alt[2])));
+//		}
+		
+//		ここから小曽根
+//		for(int i = 0; i  < max; i++) {
+//			if(i<max) {
+//				alt[i] = 
+//			}
+//		}
+//		article.setGenre3(genreRepository.getReferenceById(Integer.parseInt(alt[3])));
+//		article.setGenre4(genreRepository.getReferenceById(Integer.parseInt(alt[4])));
+//		article.setGenre5(genreRepository.getReferenceById(Integer.parseInt(alt[5])));
+//		article.setGenre6(genreRepository.getReferenceById(Integer.parseInt(alt[6])));
+//		article.setGenre7(genreRepository.getReferenceById(Integer.parseInt(alt[7])));
+//		article.setGenre8(genreRepository.getReferenceById(Integer.parseInt(alt[8])));
+//		article.setGenre9(genreRepository.getReferenceById(Integer.parseInt(alt[9])));
 		article.setTitle(form.getTitle());
 		article.setName(form.getName());
 		article.setAddress(form.getAddress());
