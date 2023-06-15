@@ -219,7 +219,7 @@ body {
 .photo-upload-box {
 	display: inline-block;
 	padding: 180px 50px;
-	margin-top: 60px; border : 1px solid #ccc;
+	margin-top: 20px; border : 1px solid #ccc;
 	border-radius: 3px;
 	cursor: pointer;
 	background-color: #D3E6E6;
