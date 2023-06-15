@@ -10,12 +10,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
-@Entity
+@Entity    //Formクラスと対応している
 @Table(name = "article")
 
 public class ArticleEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)     //MySQLの連番のつけ方。これをつけないとエラー
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_article_gen")
 //	@SequenceGenerator(name = "seq_article_gen", sequenceName = "seq_article", allocationSize = 1)
 	private Integer id;
@@ -40,11 +40,14 @@ public class ArticleEntity {
 	 @Column
 	 private Integer level;
 	 
-//	 @Column
+//	 @Column   //GenreIdは外部参照で引っ張ってきているからいらない
 //	 private Integer genreId;
 	 
 	 @Column
 	 private String review;
+	 
+//	 MySQLのname=Articleテーブル、ReferencedColumnName=Genreテーブルと対応させる
+//	 テーブルが二つあるからそれを対応させている
 	 
 	 @ManyToOne
 	 @JoinColumn(name = "genre_id", referencedColumnName = "genreId")

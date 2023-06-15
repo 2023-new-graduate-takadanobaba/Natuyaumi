@@ -61,12 +61,15 @@ public class ArticleController {
 //		System.out.println(form.getGenreId());
 		// 1,2,3
 		// String[] [1,2,3]
-		String[] alt = form.getGenreId().split(",");
 		
-		ArticleEntity article = new ArticleEntity();
+		String[] alt = form.getGenreId().split(",");   //PostFormクラスのgenreIdを呼び出して、それをString型配列altに格納
+		
+		ArticleEntity article = new ArticleEntity();   //ArticleEntityのオブジェクト生成
 		
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
+//		String型配列altをIntegerに変換してGenreテーブルのIdを探してsetGenreでarticleに格納している
 		
+
 		article.setTitle(form.getTitle());
 		article.setName(form.getName());
 		article.setAddress(form.getAddress());
@@ -76,10 +79,10 @@ public class ArticleController {
 		article.setLevel(form.getLevel());
 		article.setReview(form.getReview());
 //		BeanUtils.copyProperties(form,article);
-		repository.save(article);
+		repository.save(article);    //articleの内容をDBに格納
 //		PostForm postBean = new PostForm();
 //		BeanUtils.copyProperties(article, postBean);
-		model.addAttribute("articles", article);
+		model.addAttribute("articles", article);    //articleの内容を"articles"に格納
 		return "genre";
 	}
 }
