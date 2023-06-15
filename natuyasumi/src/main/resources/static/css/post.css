@@ -126,7 +126,7 @@ body {
 
 .form-group5 input, .form-group5 textarea {
 	margin-top: 5px;
-	width: 80%;
+	width: 90%;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 }
@@ -245,7 +245,7 @@ body {
 	vertical-align: middle;
 	text-decoration: none;
 	width: 100px;
-	margin: 0 auto;
+	margin-top:15px;
 	padding:10px;
 	border-radius: 100vw;
 	border: none;
