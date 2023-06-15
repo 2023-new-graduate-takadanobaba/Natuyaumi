@@ -66,6 +66,7 @@ public class ArticleController {
 		ArticleEntity article = new ArticleEntity();
 		
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
+		
 		article.setTitle(form.getTitle());
 		article.setName(form.getName());
 		article.setAddress(form.getAddress());
@@ -74,6 +75,7 @@ public class ArticleController {
 		article.setImageUrl(form.getImageUrl());
 		article.setLevel(form.getLevel());
 		article.setReview(form.getReview());
+//		BeanUtils.copyProperties(form,article);
 		repository.save(article);
 //		PostForm postBean = new PostForm();
 //		BeanUtils.copyProperties(article, postBean);
