@@ -15,7 +15,9 @@
 			<p th:text="${article.address}"></p>
 			<p th:text="${article.level}"></p>
 			<p th:text="${article.genre.genreName}"></p>   <!--外部参照しているgenreNameを表示-->
- 			<p th:text="${article.genre1?.genreName}"></p>
+			<th:block th:if="${article.genre1 != null}">
+ 			<p th:text="${article.genre1.genreName}"></p>
+ 			</th:block>
 			<img th:src="${article.imageUrl}"/>
 		</div>
 	</div>
