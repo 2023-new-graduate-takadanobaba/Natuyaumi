@@ -91,6 +91,53 @@ public class ArticleController {
 			article.setGenre1(genreReference1);
 		}
 		
+		if(alt.length > 2) {
+			int i2 = Integer.parseInt(alt[2]);
+			Genre genreReference2 = genreRepository.getReferenceById(i2);
+			article.setGenre2(genreReference2);
+		}
+		
+		if(alt.length > 3) {
+			int i3 = Integer.parseInt(alt[3]);
+			Genre genreReference3 = genreRepository.getReferenceById(i3);
+			article.setGenre3(genreReference3);
+		}
+		
+		if(alt.length > 4) {
+			int i4 = Integer.parseInt(alt[4]);
+			Genre genreReference4 = genreRepository.getReferenceById(i4);
+			article.setGenre4(genreReference4);
+		}
+		
+		if(alt.length > 5) {
+			int i5 = Integer.parseInt(alt[5]);
+			Genre genreReference5 = genreRepository.getReferenceById(i5);
+			article.setGenre5(genreReference5);
+		}
+		
+		if(alt.length > 6) {
+			int i6 = Integer.parseInt(alt[6]);
+			Genre genreReference6 = genreRepository.getReferenceById(i6);
+			article.setGenre6(genreReference6);
+		}
+		
+		if(alt.length > 7) {
+			int i7 = Integer.parseInt(alt[7]);
+			Genre genreReference7 = genreRepository.getReferenceById(i7);
+			article.setGenre7(genreReference7);
+		}
+		
+		if(alt.length > 8) {
+			int i8 = Integer.parseInt(alt[8]);
+			Genre genreReference8 = genreRepository.getReferenceById(i8);
+			article.setGenre8(genreReference8);
+		}
+		
+		if(alt.length > 9) {
+			int i9 = Integer.parseInt(alt[9]);
+			Genre genreReference9 = genreRepository.getReferenceById(i9);
+			article.setGenre9(genreReference9);
+		}
 		
 		
 //		int altValue = Integer.parseInt(alt[1]);
