@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import jp.co.sss.natuyasumi.entity.ArticleEntity;
+import jp.co.sss.natuyasumi.entity.Genre;
 import jp.co.sss.natuyasumi.form.PostForm;
 import jp.co.sss.natuyasumi.repository.ArticleRepository;
 import jp.co.sss.natuyasumi.repository.GenreRepository;
@@ -87,11 +88,19 @@ public class ArticleController {
 //		GenreReference genreReference = genreRepository.getReferenceById(i);
 //		article.setGenre(genreReference);
 		
+		int altValue = Integer.parseInt(alt[1]);
+		if(alt [1] !=  null) {
+		Genre genreReference = genreRepository.getReferenceById(altValue);
+		article.setGenre1(genreReference);
+		}
+		
 
 //		String型配列altをIntegerに変換してGenreテーブルのIdを探してsetGenreでarticleに格納している
-//		if(article.getGenre1() != null) {
-		article.setGenre1(genreRepository.getReferenceById(Integer.parseInt(alt[1])));
-//		}
+		
+		Genre genre1 = genreRepository.getReferenceById(Integer.parseInt(alt[1]));
+		if(genre1 != null) {
+		article.setGenre1(genre1);
+		}
 //		if(article.getGenre2() != null) {
 		
 //		article.setGenre2(genreRepository.getReferenceById(Integer.parseInt(alt[2])));
