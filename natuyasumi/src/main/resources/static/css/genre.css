@@ -17,6 +17,7 @@ body {
 
 .article{
 /* 	background-color: #C2DDDE; */
+	display: flex;
 	padding: 20px;
 	background-color: #B3D5D5;
 	width: 100%;
@@ -26,7 +27,9 @@ body {
 }
 
 .genre-img {
-	width: 100%;
+	width: 30%;
 	height: 250px;
 	object-fit: cover;
+	margin-right: 30px;
 }
+
