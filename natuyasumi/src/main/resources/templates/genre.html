@@ -7,7 +7,9 @@
 <body>
 	
 	<div>
-		<div>アウトドア一覧</div>
+		<div>アウトドア一覧
+			<a th:href = "@{/returnTop}">戻る</a>
+		</div>
 	
 		<div th:each="article: ${articles}">
 			<a th:href = "@{/doDisplayAirticle/{id}(id=${article.id})}" th:text="${article.name}"></a>
@@ -44,6 +46,8 @@
  			</th:block>
 			<img th:src="${article.imageUrl}"/>
 		</div>
+		
+		
 	</div>
 	
 </body>
