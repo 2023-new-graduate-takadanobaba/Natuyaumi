@@ -37,6 +37,11 @@ public class ArticleController {
 //		return "post";
 //	}
 	
+	@RequestMapping(path = "/returnTop")
+	public String returnTop() {
+		return "top";
+	}
+	
 	
 	@RequestMapping(path = "/doSearchGenre", method = RequestMethod.GET)
 	public String genreList(Model model) {
