@@ -3,6 +3,9 @@
 
 <head>
 <link rel="stylesheet" type="text/css" href="css/top.css">
+
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script th:src="@{Js/top.js}" type="text/javascript"></script>
 <meta charset="UTF-8">
 <title>今日どこへいく？</title>
 </head>
@@ -13,16 +16,92 @@
 		<img class="img-header"
 			src="https://d1d37e9z843vy6.cloudfront.net/jp/images/3980978/8647f2c7da12adbe101a42764d34dd7440c947cb.jpeg"
 			alt="sea">
-		<h1>今日、どこへ行く？</h1>
+		<h1>今日はどこに行こう？</h1>
+
+
+<ul class="nav">
+  <li class="has-sub">
+    <a href="">野菜</a>
+
+    <ul class="sub">
+      <li>
+        <a href="">にんじん</a>
+      </li>
+      <li>
+        <a href="">だいこん</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="has-sub">
+    <a href="">果物</a>
+
+    <ul class="sub">
+      <li>
+        <a href="">いちご</a>
+      </li>
+      <li>
+        <a href="">りんご</a>
+      </li>
+      <li>
+        <a href="">ぶどう</a>
+      </li>
+    </ul>
+  </li>
+  <li class="has-sub">
+    <a href="">動物</a>
+
+    <ul class="sub">
+      <li>
+        <a href="">いぬ</a>
+      </li>
+      <li>
+        <a href="">ねこ</a>
+      </li>
+      <li>
+        <a href="">ねずみ</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		<div class="search">
-			<form action="@{/doSearchGenre}" , method="get">
-				<input type="text" ,name="doSearch" /> <input type="submit"
-					, value="検索" />
+			<form action="@{/doSearchGenre}" method="get">
+				<input class="searchform" type="text" name="doSearch" placeholder="キーワードを入力"/> 
+				<input type="submit" value="検索" class="search-button" />
 			</form>
+		
 			<div class="post">
-				<a th:href="@{/post}">投稿はこちらから！</a>
+				<a class=postbutton th:href="@{/post}">投稿する</a>
+			</div>
+			<div class="post">
+				<a class=postbutton th:href="@{/post}">行きたい</a>
 			</div>
 		</div>
 
@@ -41,7 +120,7 @@
 					<a th:href="@{/doSearchGenre}">宮城県</a> <br />
 					<a th:href="@{/doSearchGenre}">秋田県</a> <br />
 					<a th:href="@{/doSearchGenre}">山形県</a> <br />
-					<a th:href="@{/doSearchGenre}">福島県</a>
+					<a th:href="@{/doSearchGenre}">福島県</a> 
 				</div>
 				<div class="indent">
 					関東地方 <br />
@@ -52,6 +131,7 @@
 					<a th:href="@{/doSearchGenre}">埼玉県</a> <br />
 					<a th:href="@{/doSearchGenre}">千葉県</a> <br />
 					<a th:href="@{/doSearchGenre}">神奈川県</a>
+					
 				</div>
 				<div class="indent">
 					中部地方 <br />
@@ -149,6 +229,7 @@
 
 		</div>
 	</div>
+
 </body>
 
 </html>
