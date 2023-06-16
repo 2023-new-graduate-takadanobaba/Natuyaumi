@@ -77,34 +77,30 @@ public class ArticleController {
 		
 		ArticleEntity article = new ArticleEntity();   //ArticleEntityのオブジェクト生成
 		
-		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
+//		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
+		//一行で書く場合はこうやって書く。
+//		String型配列altをIntegerに変換してGenreテーブルのIdを探してsetGenreでarticleに格納している
 		
+		int i = Integer.parseInt(alt[0]);
+		Genre genreReference = genreRepository.getReferenceById(i);
+		article.setGenre(genreReference);
 		
-//		int i = Integer.parseInt(alt[0]);
-//		i = genreRepository.getReferenceById(i);
-//		article.setGenre = form.getId(alt[i]);
-		
-//		int i = Integer.parseInt(alt[0]);
-//		GenreReference genreReference = genreRepository.getReferenceById(i);
-//		article.setGenre(genreReference);
-		
-		int altValue = Integer.parseInt(alt[1]);
-		if(alt [1] !=  null) {
-		Genre genreReference = genreRepository.getReferenceById(altValue);
-		article.setGenre1(genreReference);
+		if(alt.length > 1) {
+			int i1 = Integer.parseInt(alt[1]);
+			Genre genreReference1 = genreRepository.getReferenceById(i1);
+			article.setGenre1(genreReference1);
 		}
+		
+		
+		
+//		int altValue = Integer.parseInt(alt[1]);
+//		if(alt [1] !=  null) {
+//		Genre genreReference = genreRepository.getReferenceById(altValue);
+//		article.setGenre1(genreReference);
+//		} //これは間違いでalt[1]にそもそも値が入らないことでエラーになる。
 		
 
 //		String型配列altをIntegerに変換してGenreテーブルのIdを探してsetGenreでarticleに格納している
-		
-		Genre genre1 = genreRepository.getReferenceById(Integer.parseInt(alt[1]));
-		if(genre1 != null) {
-		article.setGenre1(genre1);
-		}
-//		if(article.getGenre2() != null) {
-		
-//		article.setGenre2(genreRepository.getReferenceById(Integer.parseInt(alt[2])));
-//		}
 		
 //		article.setGenre3(genreRepository.getReferenceById(Integer.parseInt(alt[3])));
 //		article.setGenre4(genreRepository.getReferenceById(Integer.parseInt(alt[4])));
