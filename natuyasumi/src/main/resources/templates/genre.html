@@ -1,54 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" href="css/genre.css">
 <meta charset="UTF-8">
 <title>Genreページ</title>
 </head>
 <body>
-	
-	<div>
-		<div>アウトドア一覧
-			<a th:href = "@{/returnTop}">戻る</a>
-		</div>
+
+	<div class="wrapper">
+
+		<a th:href="@{/returnTop}">戻る</a>
+
 	
 		<div th:each="article: ${articles}">
-			<a th:href = "@{/doDisplayAirticle/{id}(id=${article.id})}" th:text="${article.name}"></a>
+		<div class="article">
+			<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}"
+				th:text="${article.name}"></a>
 			<p th:text="${article.title}"></p>
 			<p th:text="${article.address}"></p>
 			<p th:text="${article.level}"></p>
-			<p th:text="${article.genre.genreName}"></p>   <!--外部参照しているgenreNameを表示-->
-			<th:block th:if="${article.genre1 != null}">
- 			<p th:text="${article.genre1.genreName}"></p>
- 			</th:block>
- 			<th:block th:if="${article.genre2 != null}">
- 			<p th:text="${article.genre2.genreName}"></p>
- 			</th:block>
- 			<th:block th:if="${article.genre3 != null}">
- 			<p th:text="${article.genre3.genreName}"></p>
- 			</th:block>
- 			<th:block th:if="${article.genre4 != null}">
- 			<p th:text="${article.genre4.genreName}"></p>
- 			</th:block>
- 			<th:block th:if="${article.genre5 != null}">
- 			<p th:text="${article.genre5.genreName}"></p>
- 			</th:block>
- 			<th:block th:if="${article.genre6 != null}">
- 			<p th:text="${article.genre6.genreName}"></p>
- 			</th:block>
- 			<th:block th:if="${article.genre7 != null}">
- 			<p th:text="${article.genre7.genreName}"></p>
- 			</th:block>
- 			<th:block th:if="${article.genre8 != null}">
- 			<p th:text="${article.genre8.genreName}"></p>
- 			</th:block>
- 			<th:block th:if="${article.genre9 != null}">
- 			<p th:text="${article.genre9.genreName}"></p>
- 			</th:block>
-			<img th:src="${article.imageUrl}"/>
+			
+
+			<img class="genre-img"   th:src="${article.imageUrl}" />
 		</div>
-		
-		
+		</div>
+
+
 	</div>
-	
+
 </body>
 </html>
