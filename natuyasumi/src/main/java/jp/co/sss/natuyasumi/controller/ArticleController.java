@@ -78,6 +78,17 @@ public class ArticleController {
 		ArticleEntity article = new ArticleEntity();   //ArticleEntityのオブジェクト生成
 		
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
+		
+		
+//		int i = Integer.parseInt(alt[0]);
+//		i = genreRepository.getReferenceById(i);
+//		article.setGenre = form.getId(alt[i]);
+		
+//		int i = Integer.parseInt(alt[0]);
+//		GenreReference genreReference = genreRepository.getReferenceById(i);
+//		article.setGenre(genreReference);
+		
+
 //		String型配列altをIntegerに変換してGenreテーブルのIdを探してsetGenreでarticleに格納している
 //		if(article.getGenre1() != null) {
 		
