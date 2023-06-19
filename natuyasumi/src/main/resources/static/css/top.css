@@ -109,13 +109,18 @@ header h1 {
 	width: 90%;
 }
 
+.img-sub1 {
+	width: 44%;
+	margin-right:15px;
+}
+
 .img-sub {
 	width: 44%;
 }
 
 .image {
 	width: 75%;
-	text-align: center;
+	text-align: right;
 }
 
 .wrapper {
@@ -124,15 +129,17 @@ header h1 {
 
 .img-wrapper {
 	display: flex;
-	justify-content: space-around;
-	padding: 15px;
+/* 	justify-content: space-around; */
+	justify-content: right;
+	margin-top:15px;
 }
 
 #aside {
 	width: 25%;
 	height: 800px;
 	background-color: #e0ffff;
-	/*float: left;*/
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 ul{
@@ -148,16 +155,21 @@ a{
 }
 .nav {
   display: flex;
-  width: 310px;
+  width: 50%;
+  margin:0 auto;
+  margin-top:4px;
+  margin-bottom:16px;
 }
 
 .nav > li {
   position: relative;
-  width: 100px;
-  border-right: 1px solid #0071b9;
+  width: 133.5px;
+  border-right: 1px solid #004993;
+/*   border-right: 1px solid #0071b9; */
 }
 .nav > li:first-child{
-  border-left: 1px solid #0071b9;
+/*   border-left: 1px solid #0071b9; */
+  border-left: 1px solid #004993;
 }
 
 .nav a {
@@ -171,7 +183,8 @@ a{
 .nav a {
   padding: 0.5em 0;
   font-size: 16px;
-  color: #0071b9;
+/*   color: #0071b9; */
+  color: #004993;
   text-align: center;
 }
 .sub {
@@ -190,7 +203,7 @@ display:none;
   font-size: 16px;
   color: #fff;
   line-height: 1.75;
-  background-color: #0071b9;
+  background: rgba(0,113,185,0.6);
 }
 .sub > li > a:hover {
   background-color: #004b83;
