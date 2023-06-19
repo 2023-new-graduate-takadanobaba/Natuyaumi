@@ -18,10 +18,10 @@
 		
 		<div class="article-text">
 			<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}"
-				th:text="${article.name}"></a>
-			<p th:text="${article.title}"></p>
-			<p th:text="${article.address}"></p>
-			<p th:text="${article.level}"></p>
+				th:text="${article.name}"></a><br/>
+			<p>所在地：<span th:text="${article.address}"></span></p>
+			<p>穴場度：<span th:text="${article.level}"></span></p>
+			<p class ="genre-title"th:text="${article.title}"></p>
 		</div>
 
 			

@@ -33,3 +33,15 @@ body {
 	margin-right: 30px;
 }
 
+.genre-title {
+/* 	display: flex; */
+	padding: 10px;
+	background-color: #C2DDDE;
+	width: 430px;
+	height: 60px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+
