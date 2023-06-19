@@ -23,12 +23,12 @@
 
 
 		<ul class="nav">
-			<li class="has-sub"><a href="">北海道</a>
+			<li class="has-sub"><a class="has-sub-title" href="">北海道</a>
 				<ul class="sub">
 					<li><a th:href="@{/doSearchGenre}">北海道</a></li>
 				</ul></li>
 
-			<li class="has-sub"><a href="">東北</a>
+			<li class="has-sub"><a class="has-sub-title" href="">東北</a>
 
 				<ul class="sub">
 
@@ -41,7 +41,7 @@
 
 				</ul></li>
 
-			<li class="has-sub"><a href="">関東</a>
+			<li class="has-sub"><a class="has-sub-title" href="">関東</a>
 
 				<ul class="sub">
 					<li><a href="">東京都</a></li>
@@ -54,7 +54,7 @@
 				</ul></li>
 
 
-			<li class="has-sub"><a href="">中部</a>
+			<li class="has-sub"><a class="has-sub-title" href="">中部</a>
 
 				<ul class="sub">
 					<li><a href="">新潟県</a></li>
@@ -69,7 +69,7 @@
 				</ul></li>
 
 
-			<li class="has-sub"><a href="">近畿</a>
+			<li class="has-sub"><a class="has-sub-title" href="">近畿</a>
 
 				<ul class="sub">
 					<li><a href="">大阪府</a></li>
@@ -80,7 +80,7 @@
 					<li><a href="">和歌山県</a></li>
 					<li><a href="">奈良県</a></li>
 				</ul></li>
-			<li class="has-sub"><a href="">中国・四国</a>
+			<li class="has-sub"><a class="has-sub-title" href="">中国・四国</a>
 
 				<ul class="sub">
 					<li><a href="">鳥取県</a></li>
@@ -93,7 +93,7 @@
 					<li><a href="">愛媛県</a></li>
 					<li><a href="">高知県</a></li>
 				</ul></li>
-			<li class="has-sub"><a href="">九州</a>
+			<li class="has-sub"><a class="has-sub-title" href="">九州</a>
 
 				<ul class="sub">
 					<li><a href="">福岡県</a></li>
@@ -114,7 +114,7 @@
 					class="search-button" />
 			</form>
 
-			<div class="post">
+			<div class="post1">
 				<a class=postbutton th:href="@{/post}">投稿する</a>
 			</div>
 			<div class="post">
@@ -134,53 +134,25 @@
 					<p class="indent-title">アウトドア</p>
 					<div class="indent-sub">
 					<p>
-						<a th:href="@{/doSearchGenre}">ドライブ</a>
+						<a th:href="@{/doSearchGenre}">▹ドライブ</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">歴史・遺産</a>
+						<a th:href="@{/doSearchGenre}">▹歴史・遺産</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">動物園、水族館</a>
+						<a th:href="@{/doSearchGenre}">▹動物園、水族館</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">観光名所</a>
+						<a th:href="@{/doSearchGenre}">▹観光名所</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">アクティビティ・体験</a>
+						<a th:href="@{/doSearchGenre}">▹アクティビティ・体験</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">レジャー施設</a>
+						<a th:href="@{/doSearchGenre}">▹レジャー施設</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
-					</p>
-					</div>
-				</div>
-				<div class="indent">
-					<p class="indent-title">インドア</p>
-					<div class="indent-sub">
-					<p>
-						<a th:href="@{/doSearchGenre}">アート、文化</a>
-					<p>
-						<a th:href="@{/doSearchGenre}">ショッピング</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre}">レストラン・カフェ</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre}">居酒屋</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre}">リラックス・温泉</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre}">映像</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre}">ゲーム</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
+						<a th:href="@{/doSearchGenre}">▹アミューズメント・テーマパーク</a>
 					</p>
 					</div>
 				</div>
@@ -188,22 +160,50 @@
 					<p class="indent-title">インドア</p>
 					<div class="indent-sub">
 					<p>
-						<a th:href="@{/doSearchGenre}">車が便利</a>
+						<a th:href="@{/doSearchGenre}">▹アート、文化</a>
+					<p>
+						<a th:href="@{/doSearchGenre}">▹ショッピング</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">公共交通機関で行ける</a>
+						<a th:href="@{/doSearchGenre}">▹レストラン・カフェ</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">2-5人で楽しめる</a>
+						<a th:href="@{/doSearchGenre}">▹居酒屋</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">1人で楽しめる</a>
+						<a th:href="@{/doSearchGenre}">▹リラックス・温泉</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">大人数可</a>
+						<a th:href="@{/doSearchGenre}">▹映像</a>
 					</p>
 					<p>
-						<a th:href="@{/doSearchGenre}">予約可</a>
+						<a th:href="@{/doSearchGenre}">▹ゲーム</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">▹アミューズメント・テーマパーク</a>
+					</p>
+					</div>
+				</div>
+				<div class="indent">
+					<p class="indent-title">インドア</p>
+					<div class="indent-sub">
+					<p>
+						<a th:href="@{/doSearchGenre}">▹車が便利</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">▹公共交通機関で行ける</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">▹2-5人で楽しめる</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">▹1人で楽しめる</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">▹大人数可</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">▹予約可</a>
 					</p>
 					</div>
 				</div>
@@ -215,7 +215,7 @@
 					<img class="img"
 						src="https://www.shutoko.jp/ss/shutokodeikou/blog/1105.jpg"
 						alt="ドライブ"></img>
-					<p>ドライブ</p>
+					<p>この夏おすすめのドライブスポット</p>
 				</div>
 				<div class="img-wrapper">
 					<img class="img-sub1"
