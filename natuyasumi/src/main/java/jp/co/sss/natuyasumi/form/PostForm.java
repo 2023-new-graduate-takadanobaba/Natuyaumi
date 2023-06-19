@@ -20,6 +20,8 @@ public class PostForm {
 		 private Integer month;
 		 
 		
+//		 private byte[] imageData;
+		 
 		 private String imageUrl;
 		 
 	
@@ -78,7 +80,7 @@ public class PostForm {
 		public void setMonth(Integer month) {
 			this.month = month;
 		}
-
+		
 		public String getImageUrl() {
 			return imageUrl;
 		}

@@ -37,6 +37,10 @@ public class ArticleEntity {
 	 @Column
 	 private String imageUrl;
 	 
+//	 @Lob
+//	  @Column(name = "image_data", nullable = false)
+//	  private byte[] imageData;
+	 
 	 @Column
 	 private Integer level;
 	 
@@ -139,6 +143,7 @@ public class ArticleEntity {
 	public Integer getLevel() {
 		return level;
 	}
+
 
 	public void setLevel(Integer level) {
 		this.level = level;
