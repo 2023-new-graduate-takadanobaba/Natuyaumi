@@ -4,6 +4,7 @@ public class PostForm {
 	
 	
 		private Integer id;
+		
 	
 		 private String title;
 		 
