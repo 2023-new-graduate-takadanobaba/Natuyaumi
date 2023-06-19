@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <link rel="stylesheet" href="css/genre.css">
@@ -20,7 +21,15 @@
 			<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}"
 				th:text="${article.name}"></a><br/>
 			<p>所在地：<span th:text="${article.address}"></span></p>
-			<p>穴場度：<span th:text="${article.level}"></span></p>
+			<div>穴場度：
+					<span th:switch="${article.level}">
+						<span th:case ="1">★</span>
+						<span th:case ="2">★★</span>
+						<span th:case ="3">★★★</span>
+						<span th:case ="4">★★★★</span>
+						<span th:case ="5">★★★★★</span>
+		 			</span>
+		 	</div>
 			<p class ="genre-title"th:text="${article.title}"></p>
 		</div>
 
