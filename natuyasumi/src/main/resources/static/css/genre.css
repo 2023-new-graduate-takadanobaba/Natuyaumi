@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 body {
-	background-color: #C2DDDE;
+/* 	background-color: #C2DDDE; */
+	background-color: #d9eaea;
 	color: #28495D;
 }
 
@@ -10,7 +11,7 @@ body {
 	margin: 0 auto;
 	padding: 20px;
 /* 	background-color: #B3D5D5; */
-	background-color: #C2DDDE;
+	
 /* 	border: 1px solid #ccc; */
 /* 	border-radius: 5px; */
 }
@@ -19,10 +20,11 @@ body {
 /* 	background-color: #C2DDDE; */
 	display: flex;
 	padding: 20px;
-	background-color: #B3D5D5;
+/* 	background-color: #b3d5d5; */
+/* background-color: #b7d5db; */
+	background:rgba(255,255,255,0.5);
 	width: 100%;
 	margin: 20px  auto;
-	border: 1px solid #ccc;
 	border-radius: 5px;
 }
 
@@ -36,7 +38,7 @@ body {
 .genre-title {
 /* 	display: flex; */
 	padding: 10px;
-	background-color: #C2DDDE;
+	background-color: #d9eaea;
 	width: 430px;
 	height: 60px;
 	margin: 0 auto;
