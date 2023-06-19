@@ -189,8 +189,7 @@ public class ArticleController {
 //		article.setImageData(form.getImageData());
 		article.setLevel(form.getLevel());
 		article.setReview(form.getReview());
-
-		//		BeanUtils.copyProperties(form,article);
+//		BeanUtils.copyProperties(form,article);
 		repository.save(article);    //articleの内容をDBに格納
 //		PostForm postBean = new PostForm();
 //		BeanUtils.copyProperties(article, postBean);
