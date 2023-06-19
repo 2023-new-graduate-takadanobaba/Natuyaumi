@@ -138,6 +138,7 @@ header h1 {
 .indent-sub{
 	margin-bottom:30px;
 	padding-left:5px;
+	text-underline-offset:0.2ex;
 }
 
 .indent-sub a:visited{
