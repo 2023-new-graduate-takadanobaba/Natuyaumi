@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<form method="post" th:action="@{/createPost}">
+		<form method="post" th:action="@{/createPost}" enctype="multipart/form-data">
 			<div class="yokonarabi">
 				<div class="yokonarabinakami">
 
@@ -62,8 +62,10 @@
 				<div class="yokonarabinakami2">
 					<div class="photo-upload">
 						<label for="photo-input" class="photo-upload-box"> <span
-							id="upload-text">クリックして写真を選ぶ</span> <input type="text" name="imageUrl"> 
+							id="upload-text">クリックして写真を選ぶ</span> <input type="text" name="imageUrl" > 
 						</label>
+						
+						
 					</div>
 <!-- 					<div class="photo-upload"> -->
 <!-- 						<label for="photo-input" class="photo-upload-box"> <span -->
@@ -156,6 +158,11 @@
 			</div>
 
 		</form>
+		
+<!-- 		<form action="upload" method="post" enctype="multipart/form-data"> -->
+<!--   			<input type="file" name="image" accept="image/*"> -->
+<!--   			<input type="submit" value="Upload"> -->
+<!-- 		</form> -->
 	</div>
 </body>
 </html>

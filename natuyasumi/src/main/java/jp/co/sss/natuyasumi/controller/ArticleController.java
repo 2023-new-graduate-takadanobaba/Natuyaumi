@@ -22,6 +22,8 @@ public class ArticleController {
 	@Autowired
 	GenreRepository genreRepository;
 	
+	
+	
 	@RequestMapping(path = "/top")
 	public String top() {
 		return "top";	
@@ -70,12 +72,34 @@ public class ArticleController {
 	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
 	public String createPost(PostForm form, Model model) {
+
+						//		 HttpServletRequest request,
+//		 MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+//	     MultipartFile image = multipartRequest.getFile("imageUrl");
+//	     
+//	     if (image != null && !image.isEmpty()) {
+//	                String filePath = "genre"; // 画像を保存するパス
+//	                try {
+//						image.transferTo(new File(filePath));
+						
+//						
+						ArticleEntity article = new ArticleEntity();
+//						article.setImageUrl(filePath);
+////						repository.save(article); 
+						
+//						List<ArticleEntity> articles = ImageService.getAllImages();
+//						
+						
+						
+					
+
 //		System.out.println(form.getGenreId());
 		// 1,2,3
 		// String[] [1,2,3]
 		String[] alt = form.getGenreId().split(",");   //PostFormクラスのgenreIdを呼び出して、それをString型配列altに格納
 		
-		ArticleEntity article = new ArticleEntity();   //ArticleEntityのオブジェクト生成
+//		ArticleEntity article = new ArticleEntity();//ArticleEntityのオブジェクト生成
+		
 		
 //		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
 		//一行で書く場合はこうやって書く。
@@ -162,6 +186,7 @@ public class ArticleController {
 		article.setHasParking(form.getHasParking());
 		article.setMonth(form.getMonth());
 		article.setImageUrl(form.getImageUrl());
+//		article.setImageData(form.getImageData());
 		article.setLevel(form.getLevel());
 		article.setReview(form.getReview());
 //		BeanUtils.copyProperties(form,article);
@@ -170,5 +195,12 @@ public class ArticleController {
 //		BeanUtils.copyProperties(article, postBean);
 		model.addAttribute("articles", article);    //articleの内容を"articles"に格納
 		return "genre";
+		
+//	                } catch (IllegalStateException | IOException e) {
+//						// TODO 自動生成された catch ブロック
+//						e.printStackTrace();
+//					}
+//	     }
+//		return "genre";
 	}
 }
