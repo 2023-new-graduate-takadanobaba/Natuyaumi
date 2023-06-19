@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" href="css/article.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>詳細</title>
 </head>
 <body>
-	<div>詳細</div>
+	<div class="wrapper">詳細
 	
 		<!-- <div th:each="article: ${articles}">-->
 			<p th:text="${article.name}"></p>
@@ -20,7 +21,7 @@
 		<!--   </div> -->
 		
 		<a th:href = "@{/returnTop}">戻る</a>
-	
+	</div>
 </body>
 
 </body>

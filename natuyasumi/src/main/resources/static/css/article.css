@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body {
+	background-color: #C2DDDE;
+	color: #28495D;
+}
+
+.wrapper {
+	max-width: 40%;
+	margin: 0 auto;
+	padding: 20px;
+/* 	background-color: #B3D5D5; */
+	background-color: #C2DDDE;
+/* 	border: 1px solid #ccc; */
+/* 	border-radius: 5px; */
+}
