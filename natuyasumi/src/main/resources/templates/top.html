@@ -18,6 +18,7 @@
 		<img class="img-header"
 			src="https://d1d37e9z843vy6.cloudfront.net/jp/images/3980978/8647f2c7da12adbe101a42764d34dd7440c947cb.jpeg"
 			alt="sea">
+		<div class="overlay"></div>
 		<h1>今日はどこに行こう？</h1>
 
 
@@ -106,31 +107,6 @@
 				</ul></li>
 		</ul>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		<div class="search">
 			<form action="@{/doSearchGenre}" method="get">
 				<input class="searchform" type="text" name="doSearch"
@@ -154,31 +130,82 @@
 		<div class="wrapper">
 			<div id="aside">
 				<div class="indent">
-					アウトドア <br /> <a th:href="@{/doSearchGenre}">ドライブ</a> <br /> <a
-						th:href="@{/doSearchGenre}">歴史・遺産</a> <br /> <a
-						th:href="@{/doSearchGenre}">動物園、水族館</a> <br /> <a
-						th:href="@{/doSearchGenre}">観光名所</a> <br /> <a
-						th:href="@{/doSearchGenre}">アクティビティ・体験</a> <br /> <a
-						th:href="@{/doSearchGenre}">レジャー施設</a> <br /> <a
-						th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
+	
+					<p class="indent-title">アウトドア</p>
+					<div class="indent-sub">
+					<p>
+						<a th:href="@{/doSearchGenre}">ドライブ</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">歴史・遺産</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">動物園、水族館</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">観光名所</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">アクティビティ・体験</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">レジャー施設</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
+					</p>
+					</div>
 				</div>
 				<div class="indent">
-					インドア <br /> <a th:href="@{/doSearchGenre}">アート、文化</a> <br /> <a
-						th:href="@{/doSearchGenre}">ショッピング</a> <br /> <a
-						th:href="@{/doSearchGenre}">レストラン・カフェ</a> <br /> <a
-						th:href="@{/doSearchGenre}">居酒屋</a> <br /> <a
-						th:href="@{/doSearchGenre}">リラックス・温泉</a> <br /> <a
-						th:href="@{/doSearchGenre}">映像</a> <br /> <a
-						th:href="@{/doSearchGenre}">ゲーム</a> <br /> <a
-						th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
+					<p class="indent-title">インドア</p>
+					<div class="indent-sub">
+					<p>
+						<a th:href="@{/doSearchGenre}">アート、文化</a>
+					<p>
+						<a th:href="@{/doSearchGenre}">ショッピング</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">レストラン・カフェ</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">居酒屋</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">リラックス・温泉</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">映像</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">ゲーム</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">アミューズメント・テーマパーク</a>
+					</p>
+					</div>
 				</div>
 				<div class="indent">
-					インドア <br /> <a th:href="@{/doSearchGenre}">車が便利</a> <br /> <a
-						th:href="@{/doSearchGenre}">公共交通機関で行ける</a> <br /> <a
-						th:href="@{/doSearchGenre}">2-5人で楽しめる</a> <br /> <a
-						th:href="@{/doSearchGenre}">1人で楽しめる</a> <br /> <a
-						th:href="@{/doSearchGenre}">大人数可</a> <br /> <a
-						th:href="@{/doSearchGenre}">予約可</a>
+					<p class="indent-title">インドア</p>
+					<div class="indent-sub">
+					<p>
+						<a th:href="@{/doSearchGenre}">車が便利</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">公共交通機関で行ける</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">2-5人で楽しめる</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">1人で楽しめる</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">大人数可</a>
+					</p>
+					<p>
+						<a th:href="@{/doSearchGenre}">予約可</a>
+					</p>
+					</div>
 				</div>
 
 			</div>

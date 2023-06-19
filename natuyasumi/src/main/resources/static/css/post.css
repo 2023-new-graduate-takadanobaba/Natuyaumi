@@ -2,7 +2,7 @@
 
 /* ラッパー */
 body {
-	background-color: #C2DDDE;
+	background-color: #d9eaea;
 	color: #28495D;
 }
 
@@ -10,7 +10,7 @@ body {
 	max-width: 40%;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #B3D5D5;
+	background:rgba(255,255,255,0.5);
 	border: 1px solid #ccc;
 	border-radius: 5px;
 }
@@ -222,12 +222,12 @@ body {
 	margin-top: 20px; border : 1px solid #ccc;
 	border-radius: 3px;
 	cursor: pointer;
-	background-color: #D3E6E6;
+	background-color: #f5f5f5;
 	border: 1px solid #ccc;
 }
 
 .photo-upload-box:hover {
-	background-color: #f5f5f5;
+	background-color: #D3E6E6;
 }
 
 #upload-text {
