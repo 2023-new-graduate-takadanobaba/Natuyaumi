@@ -1,19 +1,35 @@
 package jp.co.sss.natuyasumi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import jp.co.sss.natuyasumi.entity.ArticleEntity;
+import jp.co.sss.natuyasumi.form.PostForm;
+import jp.co.sss.natuyasumi.repository.ArticleRepository;
+import jp.co.sss.natuyasumi.repository.GenreRepository;
 
 @Controller
 
 public class ArticleController {
 	// にゃー
+	@Autowired
+	ArticleRepository repository;
+
+	@Autowired
+	GenreRepository genreRepository;
+	
 	@RequestMapping(path = "/top")
 	 public String top() {
 	 return "top";
 	}
 	
-	@RequestMapping(path = "/doSearchGenre")
-	 public String doSearchGenre() {
+	@RequestMapping(path = "/doSearchGenre", method = RequestMethod.GET)
+	 public String doSearchGenre(Model model) {
+		model.addAttribute("articles", repository.findAll());
 	 return "genre";
 	}
 	
@@ -27,9 +43,68 @@ public class ArticleController {
 	 return "post";
 	}
 	
-	@RequestMapping(path = "/doDisplayAirticle")
-	 public String doDisplayAirticle() {
+	@RequestMapping(path = "/doDisplayAirticle/{id}")
+	 public String doDisplayAirticle(@PathVariable Integer id, Model model) {
+		model.addAttribute("article", repository.findById(id).get());
 	 return "article";
+	}
+	
+	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
+	 public String doCreatePost(PostForm form, Model model) {
+		ArticleEntity article = new ArticleEntity();
+		String[] alt = form.getGenreId().split(",");
+		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
+		if(alt.length > 1) {
+			article.setGenre1(genreRepository.getReferenceById(Integer.parseInt(alt[1])));
+		}
+		
+		if(alt.length > 2) {
+			article.setGenre2(genreRepository.getReferenceById(Integer.parseInt(alt[2])));
+		}
+		
+		if(alt.length > 3) {
+			article.setGenre3(genreRepository.getReferenceById(Integer.parseInt(alt[3])));
+		}
+		
+		if(alt.length > 4) {
+			article.setGenre4(genreRepository.getReferenceById(Integer.parseInt(alt[4])));
+		}
+		
+		if(alt.length > 5) {
+			article.setGenre5(genreRepository.getReferenceById(Integer.parseInt(alt[5])));
+		}
+		
+		if(alt.length > 6) {
+			article.setGenre6(genreRepository.getReferenceById(Integer.parseInt(alt[6])));
+		}
+		
+		if(alt.length > 7) {
+			article.setGenre7(genreRepository.getReferenceById(Integer.parseInt(alt[7])));
+		}
+		
+		if(alt.length > 8) {
+			article.setGenre8(genreRepository.getReferenceById(Integer.parseInt(alt[8])));
+		}
+		
+		if(alt.length > 9) {
+			article.setGenre9(genreRepository.getReferenceById(Integer.parseInt(alt[9])));
+		}
+		
+		article.setTitle(form.getTitle());
+		article.setName(form.getName());
+		article.setAddress(form.getAddress());
+		article.setHasParking(form.getHasParking());
+		article.setMonth(form.getMonth());
+		article.setImageUrl(form.getImageUrl());
+		article.setLevel(form.getLevel());
+		article.setReview(form.getReview());
+		
+		
+		repository.save(article);
+		model.addAttribute("articles", article);
+
+		
+	 return "genre";
 	}
 	
 }
