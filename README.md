@@ -7,3 +7,6 @@ hostname=azure-mysql-natyuyatyumi-server.mysql.database.azure.com
 username=crfchclwah
 password={your-password}
 ssl-mode=require
+
+
+resourceグループ、サーバー名natyuyasyumi-dev
