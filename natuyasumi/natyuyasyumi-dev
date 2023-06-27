@@ -1,0 +1,76 @@
+create table `natyuyasyumi-dev`.`Genre`(
+genre_id int(50) not null auto_increment,
+genre_name varchar(50),
+primary key(genre_id)
+);
+
+create table `natyuyasyumi-dev`.`Article`(
+id int(50) not null auto_increment ,
+title varchar(60),
+name varchar(60),
+address varchar(100),
+has_parking boolean,
+month int(4),
+image_url varchar(21000),
+level int(10),
+genre_id int(50) not null references natuyasumi.genre(genre_id),
+genre_id_01 int(50) references natuyasumi.genre(genre_id),
+genre_id_02 int(50) references natuyasumi.genre(genre_id),
+genre_id_03 int(50) references natuyasumi.genre(genre_id),
+genre_id_04 int(50) references natuyasumi.genre(genre_id),
+genre_id_05 int(50) references natuyasumi.genre(genre_id),
+genre_id_06 int(50) references natuyasumi.genre(genre_id),
+genre_id_07 int(50) references natuyasumi.genre(genre_id),
+genre_id_08 int(50) references natuyasumi.genre(genre_id),
+genre_id_09 int(50) references natuyasumi.genre(genre_id),
+review TEXT,
+primary key(id)
+);
+
+select * from `natyuyasyumi-dev`.`Article`;
+select * from `natyuyasyumi-dev`.`Genre`;
+
+
+use `natyuyasyumi-dev`;
+insert into Genre values(1,'ドライブ');
+insert into Genre values(2,'歴史、遺産');
+insert into Genre values(3,'自然、公園');
+insert into Genre values(4,'動物園、水族館');
+insert into Genre values(5,'観光名所');
+insert into Genre values(6,'アクティビティ、体験');
+insert into Genre values(7,'レジャー施設');
+insert into Genre values(8,'アミューズメント、テーマパーク');
+insert into Genre values(9,'アート、文化');
+insert into Genre values(10,'ショッピング');
+insert into Genre values(11,'レストラン、カフェ');
+insert into Genre values(12,'居酒屋');
+insert into Genre values(13,'リラックス、温泉');
+insert into Genre values(14,'映像');
+insert into Genre values(15,'ゲーム');
+insert into Genre values(16,'車が便利');
+insert into Genre values(17,'公共交通機関で行ける');
+insert into Genre values(18,'2-5人で楽しめる');
+insert into Genre values(19,'1人で楽しめる');
+insert into Genre values(20,'大人数可');
+insert into Genre values(21,'予約可');
+
+insert into `natyuyasyumi-dev`.`Article` values(1,'東京ディズニーランド行ってきた、フォーー','ディズニーランド','千葉県浦安市',true,4,'https://image.itmedia.co.jp/nl/articles/2011/06/nk_tdrgoto_01_w590.jpg',1,1,null,null,null,null,null,null,null,null,null,'夢の国に穴場という概念はないですね！幸せです！！');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -258,6 +258,7 @@ body {
 	-webkit-animation: pulse 2s infinite;
 	animation: shad 1.5s infinite;
 	color: #fff;
+	cursor: pointer;
 }
 
 @keyframes shad {
