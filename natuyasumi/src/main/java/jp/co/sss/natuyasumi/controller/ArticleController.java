@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class ArticleController {
 	// にゃー
-	@RequestMapping(path = "/")
+	@RequestMapping(path = "/top")
 	 public String top() {
 	 return "top";
 	}
