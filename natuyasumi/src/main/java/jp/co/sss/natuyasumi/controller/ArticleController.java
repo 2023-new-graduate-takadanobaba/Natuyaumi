@@ -107,4 +107,10 @@ public class ArticleController {
 	 return "genre";
 	}
 	
+	@RequestMapping(path = "/delete/{id}")
+	 public String doDelete(@PathVariable Integer id, Model model) {
+		repository.deleteById(id);
+	 return "top";
+	}
+	
 }
