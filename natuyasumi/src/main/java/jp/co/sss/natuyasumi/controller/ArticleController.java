@@ -129,7 +129,7 @@ public class ArticleController implements WebMvcConfigurer{
 	@RequestMapping(path = "/delete/{id}")
 	 public String doDelete(@PathVariable Integer id, Model model) {
 		repository.deleteById(id);
-	 return "redirect:/natuyasumi/doSearchGenre";
+	 return "genre";
 	}
 	
 	@RequestMapping(path = "/doSearchGenre/{genreId}")
@@ -138,6 +138,12 @@ public class ArticleController implements WebMvcConfigurer{
 		genre.setGenreId(genreId);
 		List<ArticleEntity> drive = repository.findByGenre(genre);
 		model.addAttribute("articles", drive);
+	 return "genre";
+	}
+	
+	@RequestMapping(path = "/doSearchAddress/{address}")
+	 public String doSearchAddress(@PathVariable String address, Model model) {
+		model.addAttribute("articles", repository.findByAddressContaining(address));
 	 return "genre";
 	}
 	
