@@ -126,7 +126,7 @@ public class ArticleController implements WebMvcConfigurer{
 	@RequestMapping(path = "/delete/{id}")
 	 public String doDelete(@PathVariable Integer id, Model model) {
 		repository.deleteById(id);
-	 return "redirect:/natuyasumi/top";
+	 return "redirect:/natuyasumi/doSearchGenre";
 	}
 	
 }
