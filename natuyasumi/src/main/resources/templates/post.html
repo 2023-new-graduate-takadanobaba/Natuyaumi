@@ -7,14 +7,15 @@
 </head>
 <body>
 	<div class="wrapper">
-		<form method="post" th:action="@{/createPost}" enctype="multipart/form-data">
+		<form method="post" th:action="@{/createPost}" th:object="${PostForm}" enctype="multipart/form-data">
 			<div class="yokonarabi">
 				<div class="yokonarabinakami">
 
 					<div class="form-group0">
 						<label for="post-title">投稿タイトル:</label> <input type="text"
-							id="post-title" name="title" required>
+							id="post-title" name = "title">
 					</div>
+<!-- 					<span th:errors="*{title}"></span> -->
 					<div class="form-group">
 						<label for="facility">施設名:</label> <input type="text"
 							id="facility" name="name" required>
@@ -132,7 +133,7 @@
 					</label> <label for="genre-car-convenient"> <input type="checkbox"
 						id="genre-car-convenient" name="genreId" value="16"> 車が便利
 					</label> <label for="genre-public-transport"> <input
-						type="checkbox" id="genre-public-transport" name="genre"
+						type="checkbox" id="genre-public-transport" name="genreId"
 						value="17"> 公共交通機関で行ける
 					</label> <label for="genre-group-enjoyable"> <input type="checkbox"
 						id="genre-group-enjoyable" name="genreId" value="18">
