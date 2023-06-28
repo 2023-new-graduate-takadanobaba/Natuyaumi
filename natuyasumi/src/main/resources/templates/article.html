@@ -91,82 +91,83 @@ button {
 		<!-- 			</div> -->
 		
 
+    <a href="" id="deleteButton">削除</a>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p>本当に削除しますか？</p>
+        <a th:href="@{/delete/{id}(id=${article.id})}"><button id="confirmButton">はい</button></a>
+        <button id="cancelButton">やっぱりやめる</button>
+      </div>
+    </div>
 
-
-		<a href="" id="deleteButton">削除</a>
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <p>本当に削除しますか？</p>
-    <a th:href="@{/delete/{id}(id=${article.id})}" ><button id="confirmButton">はい</button></a>
-    <button id="cancelButton">やっぱりやめる</button>
+    <p id="mo">削除されました。</p>
+    <a id="modoru" th:href="@{/returnTop}">戻る</a>
   </div>
-</div>
 
-<p id="mo">削除されました。</p>
-<a id="modoru" th:href="@{/returnTop}">戻る</a>
+  <script>
+    // ボタンとモーダル要素の参照を取得
+    const deleteButton = document.getElementById('deleteButton');
+    const modal = document.getElementById('modal');
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    const mo = document.getElementById('mo'); // mo要素の参照を追加
 
-</div>
+    // 削除ボタンがクリックされたときの処理
+    deleteButton.addEventListener('click', function() {
+    	 event.preventDefault(); 
+      // モーダルを表示する
+      modal.style.display = 'block';
+    });
 
-<script>
-  // ボタンとモーダル要素の参照を取得
-  const deleteButton = document.getElementById('deleteButton');
-  const modal = document.getElementById('modal');
-  const confirmButton = document.getElementById('confirmButton');
-  const cancelButton = document.getElementById('cancelButton');
+    //URLからパスパラメータを抽出するための正規表現パターン
+    var pattern = /\/delete\/(\d+)/;
+    //現在のURLを取得
+    var currentUrl = window.location.href;
 
-  // 削除ボタンがクリックされたときの処理
-  deleteButton.addEventListener('click', function() {
-    event.preventDefault();
-    // モーダルを表示する
-    modal.style.display = 'block';
-  });
-  
-  var currentUrl = window.location.href;
+    // 正規表現パターンを使用してパスパラメータを抽出
+    var matches = currentUrl.match(pattern);
 
-	//URLからパスパラメータを抽出するための正規表現パターン
-	var pattern = /\/delete\/(\d+)/;
+    // マッチ結果が存在するかを確認
+    if (matches && matches.length > 1) {
+      // パスパラメータの値を取得
+      var articleIdFromURL = matches[1];
 
-	//正規表現パターンを使用してパスパラメータを抽出
-	var matches = currentUrl.match(pattern);
+      // はいボタンがクリックされたときの処理
+      confirmButton.addEventListener('click', function(event) {
+        event.preventDefault(); // デフォルトのイベントをキャンセルする
 
-	//パスパラメータの値を取得
-	var articleIdFromURL = matches[1];
+        // Ajaxリクエストを送信する
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/delete/' + articleIdFromURL, true);
+        xhr.onreadystatechange = function(event) {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              // 削除が成功した場合の処理
+              window.location.href = '/natuyasumi/top';
+            } else {
+              // 削除が失敗した場合の処理
+              console.error('削除エラー');
+            }
+          }
+        };
+        xhr.send();
 
-  // はいボタンがクリックされたときの処理
-  confirmButton.addEventListener('click', function() {
-    event.preventDefault();
-    // Ajaxリクエストを送信する
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/delete/' + articleIdFromURL, true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          // 削除が成功した場合の処理
-          window.location.href = '/natuyasumi/top';
-        } else {
-          // 削除が失敗した場合の処理
-          console.error('削除エラー');
-        }
-      }
-    };
-    xhr.send();
-  
-    // モーダルを閉じる
-    modal.style.display = 'none';
-    m/o.style.display = 'block';
-  });
+        // モーダルを閉じる
+        modal.style.display = 'none';
+        // 削除されましたと表示
+        mo.style.display = 'block';
+      });
 
-  // やっぱりやめるボタンがクリックされたときにも戻る処理をキャンセルする場合
-  cancelButton.addEventListener('click', function() {
-    // モーダルを閉じる
-    modal.style.display = 'none';
-    // 削除処理をキャンセルする
-    console.log('削除がキャンセルされました');
-  });
-</script>
-
-
-</body>
-
+      // やっぱりやめるボタンがクリックされたときにも戻る処理をキャンセルする場合
+      cancelButton.addEventListener('click', function() {
+        // モーダルを閉じる
+        modal.style.display = 'none';
+        // 削除処理をキャンセルする
+        console.log('削除がキャンセルされました');
+      });
+    }
+  </script>
 </body>
 </html>
+
+
