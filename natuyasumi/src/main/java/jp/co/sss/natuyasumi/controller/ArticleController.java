@@ -64,7 +64,10 @@ public class ArticleController implements WebMvcConfigurer{
 		if(result.hasErrors()) {
 			model.addAttribute("postForm", result);
 			return "Post";
+
+
 		}
+		
 		ArticleEntity article = new ArticleEntity();
 		String[] alt = form.getGenreId().split(",");
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
@@ -123,7 +126,7 @@ public class ArticleController implements WebMvcConfigurer{
 	@RequestMapping(path = "/delete/{id}")
 	 public String doDelete(@PathVariable Integer id, Model model) {
 		repository.deleteById(id);
-	 return "top";
+	 return "redirect:/natuyasumi/top";
 	}
 	
 }
