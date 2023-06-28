@@ -9,7 +9,6 @@ public class PostForm {
 		
 		
 	     @NotBlank(message = "文字を何かしら入力してください")
-	     
 		 private String title;
 		 
 
