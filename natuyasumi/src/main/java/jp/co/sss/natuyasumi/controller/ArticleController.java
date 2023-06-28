@@ -3,15 +3,20 @@ package jp.co.sss.natuyasumi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import jakarta.validation.Valid;
 import jp.co.sss.natuyasumi.entity.ArticleEntity;
 import jp.co.sss.natuyasumi.form.PostForm;
 import jp.co.sss.natuyasumi.repository.ArticleRepository;
 import jp.co.sss.natuyasumi.repository.GenreRepository;
 
+@Validated
 @Controller
 
 public class ArticleController {
@@ -38,8 +43,8 @@ public class ArticleController {
 	 return "top";
 	}
 	
-	@RequestMapping(path = "/post")
-	 public String Post() {
+	@RequestMapping(path = "/post",method = RequestMethod. GET)
+	 public String Post(@ModelAttribute PostForm form) {
 	 return "post";
 	}
 	
@@ -49,8 +54,14 @@ public class ArticleController {
 	 return "article";
 	}
 	
+	
+	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
-	 public String doCreatePost(PostForm form, Model model) {
+	 public String doCreatePost(Model model,@ModelAttribute @Valid PostForm form, 
+			 BindingResult result) {
+		if(result.hasErrors()) {
+			return "Post";
+		}
 		ArticleEntity article = new ArticleEntity();
 		String[] alt = form.getGenreId().split(",");
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
@@ -103,8 +114,7 @@ public class ArticleController {
 		repository.save(article);
 		model.addAttribute("articles", article);
 
-		
-	 return "genre";
+		return "genre";
 	}
 	
 	@RequestMapping(path = "/delete/{id}")
