@@ -5,48 +5,138 @@
 <!-- <link href="@{/css/genre2-{id}.css(id=${id})}" rel="stylesheet"> -->
 <!-- <link rel="stylesheet" href="css/genre2.css"> -->
 <meta charset="UTF-8">
+
 <title>詳細</title>
-<style> 
- body {
+<style>
+body {
 	background-color: #d9eaea;
 	color: #28495D;
 }
+
 .wrapper {
 	max-width: 40%;
 	margin: 0 auto;
 	padding: 20px;
-	background:rgba(255,255,255,0.5);
+	background: rgba(255, 255, 255, 0.5);
 	border-radius: 5px;
-} 
- </style>
+}
+
+.modal {
+  display: none;  
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+}
+
+
+</style>
 <body>
-	<div class="wrapper">詳細
-	
+	<div class="wrapper">
+		詳細
+
 		<!-- <div th:each="article: ${articles}">-->
-			<h1 th:text="${article.name}"></h1>
-			<div>穴場度：
-					<span th:switch="${article.level}">
-						<span th:case ="1">★</span>
-						<span th:case ="2">★★</span>
-						<span th:case ="3">★★★</span>
-						<span th:case ="4">★★★★</span>
-						<span th:case ="5">★★★★★</span>
-		 			</span>
-		 	</div>
-			<img th:src="${article.imageUrl}"/>
-			<h2 th:text="${article.title}"></h2>
-			<h4 th:text="${article.review}"></h4>
-			<p>所在地:<span th:text="${article.address}"></span></p>
-			<div th:switch="${article.hasParking}">
-				<p th:case ="true"> 駐車場あり</p>
- 				<p th:case ="false"> 駐車場なし</p>
+		<h1 th:text="${article.name}"></h1>
+		<div>
+			穴場度： <span th:switch="${article.level}"> <span th:case="1">★</span>
+				<span th:case="2">★★</span> <span th:case="3">★★★</span> <span
+				th:case="4">★★★★</span> <span th:case="5">★★★★★</span>
+			</span>
+		</div>
+		<img th:src="${article.imageUrl}" />
+		<h2 th:text="${article.title}"></h2>
+		<h4 th:text="${article.review}"></h4>
+		<p>
+			所在地:<span th:text="${article.address}"></span>
+		</p>
+		<div th:switch="${article.hasParking}">
+			<p th:case="true">駐車場あり</p>
+			<p th:case="false">駐車場なし</p>
+		</div>
+
+		<p>
+			行った月：<span th:text="${article.month}"></span>月
+		</p>
+<!-- 		<a id="deleteButton" th:href="@{/delete/{id}(id=${article.id})}">削除</a> -->
+<!-- 		<div id="modal" class="modal"> -->
+<!-- 			<div class="modal-content"> -->
+<!-- 				<p>本当に削除しますか？</p> -->
+<!-- 				<button id="confirmButton">はい</button> -->
+<!-- 				<button id="cancelButton">やっぱりやめる</button> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+
+		
+		
+		<a id="deleteButton" >削除</a>
+		<div id="modal" class="modal">
+			<div class="modal-content">
+				<p>本当に削除しますか？</p>
+				<button id="confirmButton">はい</button>
+				<button id="cancelButton">やっぱりやめる</button>
 			</div>
-			
-			<p>行った月：<span th:text="${article.month}"></span>月</p>
-			<a th:href = "@{/delete/{id}(id=${article.id})}" >削除</a>
-			
-		<a th:href = "@{/returnTop}">戻る</a>
+		</div>
+
+	<a id="modoru" >戻る</a>
+<!-- 		<a id="modoru" th:href="@{/returnTop}">戻る</a> -->
+		
+		
+		
 	</div>
+	
+	<script>
+	// ボタンとモーダル要素の参照を取得
+	const modoru = document.getElementById('modoru');
+	const modal = document.getElementById('modal');
+	const confirmButton = document.getElementById('confirmButton');
+	const cancelButton = document.getElementById('cancelButton');
+
+	// 戻るボタンがクリックされたときの処理
+	modoru.addEventListener('click', function() {
+		event.preventDefault(); 
+	  // モーダルを表示する
+	  modal.style.display = 'block';
+	});
+
+	// はいボタンがクリックされたときの処理
+	confirmButton.addEventListener('click', function() {
+	 
+	  modal.style.display = 'none';
+	  // トップページに遷移
+	  window.location.href = 'http://localhost:7777/natuyasumi/top';
+	});
+
+	// やっぱりやめるボタンがクリックされたときにも戻る処理をキャンセルする場合
+	cancelButton.addEventListener('click', function() {
+	  // モーダルを閉じる
+	  modal.style.display = 'none';
+	  // 削除処理をキャンセルする
+	  console.log('削除がキャンセルされました');
+	});
+	
+	
+	</script>
+	
+	
+	
+	
 </body>
 
 </body>
