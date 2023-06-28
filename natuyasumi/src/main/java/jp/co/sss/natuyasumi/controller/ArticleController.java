@@ -144,13 +144,13 @@ public class ArticleController implements WebMvcConfigurer{
 	@RequestMapping(path = "/doSearchAddress/{address}")
 	 public String doSearchAddress(@PathVariable String address, Model model) {
 		//ここに表示できる投稿がない場合、if文を入れたい
-		model.addAttribute("articles", repository.findByAddress(address));
-		if ("articles" == null) {
-			return "noAdderss";
-		}else {
-			return "genre";
-		}
-//		return "genre";
+		model.addAttribute("articles", repository.findByAddressContaining(address));
+//		if ("articles" == null) {
+//			return "noAdderss";
+//		}else {
+//			return "genre";
+//		}
+		return "genre";
 	 
 	}
 	

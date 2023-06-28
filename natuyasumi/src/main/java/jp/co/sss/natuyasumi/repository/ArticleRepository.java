@@ -12,6 +12,6 @@ public interface ArticleRepository extends JpaRepository<ArticleEntity, Integer>
 	
 	Optional<ArticleEntity> findById(Integer id);
 	List<ArticleEntity> findByGenre(Genre genre);
-	List<ArticleEntity> findByAddress(String address);
+	List<ArticleEntity> findByAddressContaining(String address);
 
 }
