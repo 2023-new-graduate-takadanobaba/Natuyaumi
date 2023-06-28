@@ -60,8 +60,17 @@ public class ArticleController {
 	 public String doCreatePost(Model model,@ModelAttribute @Valid PostForm form, 
 			 BindingResult result) {
 		if(result.hasErrors()) {
-			return "Post";
+			return "post";
 		}
+		//小曽根追記
+//		if (form.getTitle() == null) {
+//			 //入力したユーザ ID をスコープ変数「userId」に代入し、
+//			 //その変数をセッションに登録
+//			model.addAttribute("userId", form.getTitle());
+//			 return "redirect:/";
+//			} else {
+//			return "model/top";
+//			
 		ArticleEntity article = new ArticleEntity();
 		String[] alt = form.getGenreId().split(",");
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
@@ -120,7 +129,7 @@ public class ArticleController {
 	@RequestMapping(path = "/delete/{id}")
 	 public String doDelete(@PathVariable Integer id, Model model) {
 		repository.deleteById(id);
-	 return "top";
+	 return "redirect:/natuyasumi/top";
 	}
 	
 }
