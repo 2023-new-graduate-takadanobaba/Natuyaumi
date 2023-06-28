@@ -158,14 +158,29 @@ button {
         mo.style.display = 'block';
       });
 
-      // やっぱりやめるボタンがクリックされたときにも戻る処理をキャンセルする場合
+   // やっぱりやめるボタンがクリックされたときの処理
       cancelButton.addEventListener('click', function() {
         // モーダルを閉じる
         modal.style.display = 'none';
-        // 削除処理をキャンセルする
-        console.log('削除がキャンセルされました');
+        // 削除処理をキャンセルするためのAjaxリクエストを送信する
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/cancelDelete/' + articleIdFromURL, true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              // キャンセルが成功した場合の処理
+              console.log('削除がキャンセルされました');
+            } else {
+              // キャンセルが失敗した場合の処理
+              console.error('キャンセルエラー');
+            }
+          }
+        };
+        xhr.send();
       });
     }
+   
+  
   </script>
 </body>
 </html>
