@@ -22,37 +22,39 @@ body {
 }
 
 .modal {
-  display: none;  
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 300px;
-  text-align: center;
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 300px;
+	text-align: center;
+}
+
+img{
+	width:90%;
+	margin:10px;
+	border-radius: 5px;
+}
+
+#mo{
+display: none;
 }
 
 button {
-  margin-top: 10px;
+	margin-top: 10px;
 }
-
-#modoru{
-	border: 1px solid #888;
-  width: 50px;
-  text-align: center;
-  cursor:pointer;
-}
-
 </style>
 <body>
 	<div class="wrapper">
@@ -80,67 +82,90 @@ button {
 		<p>
 			行った月：<span th:text="${article.month}"></span>月
 		</p>
-<!-- 		<a id="deleteButton" th:href="@{/delete/{id}(id=${article.id})}">削除</a> -->
-<!-- 		<div id="modal" class="modal"> -->
-<!-- 			<div class="modal-content"> -->
-<!-- 				<p>本当に削除しますか？</p> -->
-<!-- 				<button id="confirmButton">はい</button> -->
-<!-- 				<button id="cancelButton">やっぱりやめる</button> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-
+		<!-- 		<a id="deleteButton" th:href="@{/delete/{id}(id=${article.id})}">削除</a> -->
+		<!-- 		<div id="modal" class="modal"> -->
+		<!-- 			<div class="modal-content"> -->
+		<!-- 				<p>本当に削除しますか？</p> -->
+		<!-- 				<button id="confirmButton">はい</button> -->
+		<!-- 				<button id="cancelButton">やっぱりやめる</button> -->
+		<!-- 			</div> -->
 		
-		
-		<a id="deleteButton" >削除</a>
-		<div id="modal" class="modal">
-			<div class="modal-content">
-				<p>本当に削除しますか？</p>
-				<button id="confirmButton">はい</button>
-				<button id="cancelButton">やっぱりやめる</button>
-			</div>
-		</div>
 
-	<a id="modoru" >戻る</a>
-<!-- 		<a id="modoru" th:href="@{/returnTop}">戻る</a> -->
-	
-	</div>
-	
-	<script>
-	// ボタンとモーダル要素の参照を取得
-	const modoru = document.getElementById('modoru');
-	const modal = document.getElementById('modal');
-	const confirmButton = document.getElementById('confirmButton');
-	const cancelButton = document.getElementById('cancelButton');
 
-	// 戻るボタンがクリックされたときの処理
-	modoru.addEventListener('click', function() {
-		event.preventDefault(); 
-	  // モーダルを表示する
-	  modal.style.display = 'block';
-	});
 
-	// はいボタンがクリックされたときの処理
-	confirmButton.addEventListener('click', function() {
-	 
-	  modal.style.display = 'none';
-	  // トップページに遷移
-	  window.location.href = 'http://localhost:7777/natuyasumi/top';
-	});
+		<a href="" id="deleteButton">削除</a>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <p>本当に削除しますか？</p>
+    <a th:href="@{/delete/{id}(id=${article.id})}" ><button id="confirmButton">はい</button></a>
+    <button id="cancelButton">やっぱりやめる</button>
+  </div>
+</div>
 
-	// やっぱりやめるボタンがクリックされたときにも戻る処理をキャンセルする場合
-	cancelButton.addEventListener('click', function() {
-	  // モーダルを閉じる
-	  modal.style.display = 'none';
-	  // 削除処理をキャンセルする
-	  console.log('削除がキャンセルされました');
-	});
-	
-	
-	</script>
-	
-	
-	
-	
+<p id="mo">削除されました。</p>
+<a id="modoru" th:href="@{/returnTop}">戻る</a>
+
+</div>
+
+<script>
+  // ボタンとモーダル要素の参照を取得
+  const deleteButton = document.getElementById('deleteButton');
+  const modal = document.getElementById('modal');
+  const confirmButton = document.getElementById('confirmButton');
+  const cancelButton = document.getElementById('cancelButton');
+
+  // 削除ボタンがクリックされたときの処理
+  deleteButton.addEventListener('click', function() {
+    event.preventDefault();
+    // モーダルを表示する
+    modal.style.display = 'block';
+  });
+  
+  var currentUrl = window.location.href;
+
+	//URLからパスパラメータを抽出するための正規表現パターン
+	var pattern = /\/delete\/(\d+)/;
+
+	//正規表現パターンを使用してパスパラメータを抽出
+	var matches = currentUrl.match(pattern);
+
+	//パスパラメータの値を取得
+	var articleIdFromURL = matches[1];
+
+  // はいボタンがクリックされたときの処理
+  confirmButton.addEventListener('click', function() {
+    event.preventDefault();
+    // Ajaxリクエストを送信する
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/delete/' + articleIdFromURL, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // 削除が成功した場合の処理
+          window.location.href = '/natuyasumi/top';
+        } else {
+          // 削除が失敗した場合の処理
+          console.error('削除エラー');
+        }
+      }
+    };
+    xhr.send();
+  
+    // モーダルを閉じる
+    modal.style.display = 'none';
+    m/o.style.display = 'block';
+  });
+
+  // やっぱりやめるボタンがクリックされたときにも戻る処理をキャンセルする場合
+  cancelButton.addEventListener('click', function() {
+    // モーダルを閉じる
+    modal.style.display = 'none';
+    // 削除処理をキャンセルする
+    console.log('削除がキャンセルされました');
+  });
+</script>
+
+
 </body>
 
 </body>
