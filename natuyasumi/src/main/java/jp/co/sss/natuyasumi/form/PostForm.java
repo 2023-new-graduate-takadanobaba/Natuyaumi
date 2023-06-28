@@ -1,6 +1,6 @@
 package jp.co.sss.natuyasumi.form;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class PostForm {
 	
@@ -8,7 +8,7 @@ public class PostForm {
 		private Integer id;
 		
 		
-	     @NotBlank(message = "文字を何かしら入力してください")
+	     @Size(min=0, max=30)
 		 private String title;
 		 
 

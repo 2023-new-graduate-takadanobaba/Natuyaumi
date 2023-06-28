@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import jakarta.validation.Valid;
 import jp.co.sss.natuyasumi.entity.ArticleEntity;
@@ -19,7 +20,8 @@ import jp.co.sss.natuyasumi.repository.GenreRepository;
 @Validated
 @Controller
 
-public class ArticleController {
+public class ArticleController implements WebMvcConfigurer{
+	
 	// にゃー
 	@Autowired
 	ArticleRepository repository;
@@ -60,6 +62,7 @@ public class ArticleController {
 	 public String doCreatePost(Model model,@ModelAttribute @Valid PostForm form, 
 			 BindingResult result) {
 		if(result.hasErrors()) {
+			model.addAttribute("postForm", result);
 			return "Post";
 		}
 		ArticleEntity article = new ArticleEntity();

@@ -7,15 +7,17 @@
 </head>
 <body>
 	<div class="wrapper">
-		<form method="post" th:action="@{/createPost}" enctype="multipart/form-data">
+		<form method="post" action ="#" th:action="@{/createPost}" th:object= "${postForm}" enctype="multipart/form-data">
 			<div class="yokonarabi">
 				<div class="yokonarabinakami">
 
 					<div class="form-group0">
 						<label for="post-title">投稿タイトル:</label> <input type="text"
-							id="post-title" name = "title">
+							id="post-title" th:field="*{title}">
+<!-- 							<div class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div> -->
 					</div>
-<!-- 					<span class="errors" th:errors="*{title}"></span> -->
+					
+					
 					<div class="form-group">
 						<label for="facility">施設名:</label> <input type="text"
 							id="facility" name="name" required>
