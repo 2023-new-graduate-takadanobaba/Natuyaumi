@@ -1,5 +1,7 @@
 package jp.co.sss.natuyasumi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import jakarta.validation.Valid;
 import jp.co.sss.natuyasumi.entity.ArticleEntity;
+import jp.co.sss.natuyasumi.entity.Genre;
 import jp.co.sss.natuyasumi.form.PostForm;
 import jp.co.sss.natuyasumi.repository.ArticleRepository;
 import jp.co.sss.natuyasumi.repository.GenreRepository;
@@ -128,5 +131,15 @@ public class ArticleController implements WebMvcConfigurer{
 		repository.deleteById(id);
 	 return "redirect:/natuyasumi/doSearchGenre";
 	}
+	
+	@RequestMapping(path = "/doSearchGenre/{genreId}")
+	 public String doSearchGenre(@PathVariable Integer genreId, Model model) {
+		Genre genre = new Genre();
+		genre.setGenreId(genreId);
+		List<ArticleEntity> drive = repository.findByGenre(genre);
+		model.addAttribute("articles", drive);
+	 return "genre";
+	}
+	
 	
 }

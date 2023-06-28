@@ -6,4 +6,5 @@ import jp.co.sss.natuyasumi.entity.Genre;
 
 public interface GenreRepository extends JpaRepository<Genre, Integer>{
 
+	
 }
