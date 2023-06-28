@@ -57,7 +57,7 @@ public class ArticleController {
 	
 	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
-	 public String doCreatePost(Model model,@ModelAttribute("form") @Valid PostForm form, 
+	 public String doCreatePost(Model model,@ModelAttribute @Valid PostForm form, 
 			 BindingResult result) {
 		if(result.hasErrors()) {
 			return "Post";
