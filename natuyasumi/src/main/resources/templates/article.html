@@ -56,7 +56,7 @@
 
     <p id="mo">削除されました。</p>
     <input value="戻る" onclick="history.back();" type="button" id="modoru">
-    <a  th:href="@{/returnTop}">戻る</a>
+    <a  th:href="@{/returnTop}" id="modoru2">戻る</a>
   </div>
 
   <script>
@@ -67,6 +67,8 @@
     const cancelButton = document.getElementById('cancelButton');
     const mo = document.getElementById('mo'); // mo要素の参照を追加
     const dehine = document.getElementById('dehine');
+    const modoru = document.getElementById('modoru');
+    const modoru2 = document.getElementById('modoru2');
     
 
     // 削除ボタンがクリックされたときの処理
@@ -102,7 +104,10 @@
               // 削除が成功した場合の処理
               // 削除されましたと表示
               dehine.style.display = 'none';
+              modoru.style.display = 'none';
         	  mo.style.display = 'block';
+        	  modoru2.style.display = 'block';
+
               //window.location.href = '/natuyasumi/top'; 
             } else {
               // 削除が失敗した場合の処理
