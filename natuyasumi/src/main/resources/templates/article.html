@@ -2,12 +2,13 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<!-- <link href="@{/css/genre2-{id}.css(id=${id})}" rel="stylesheet"> -->
+<link th:href="@{/css/genre2.css}" rel="stylesheet">
 <!-- <link rel="stylesheet" href="css/genre2.css"> -->
 <meta charset="UTF-8">
 
 <title>詳細</title>
-<style>
+</head>
+<!-- <style>
 body {
 	background-color: #d9eaea;
 	color: #28495D;
@@ -55,9 +56,10 @@ display: none;
 button {
 	margin-top: 10px;
 }
-</style>
+</style> -->
 <body>
-	<div class="wrapper">
+	<div class="wrapper" >
+	<div id="dehine">
 		詳細
 
 		<!-- <div th:each="article: ${articles}">-->
@@ -99,6 +101,7 @@ button {
         <button id="cancelButton">やっぱりやめる</button>
       </div>
     </div>
+    </div>
 
     <p id="mo">削除されました。</p>
     <a id="modoru" th:href="@{/returnTop}">戻る</a>
@@ -111,6 +114,8 @@ button {
     const confirmButton = document.getElementById('confirmButton');
     const cancelButton = document.getElementById('cancelButton');
     const mo = document.getElementById('mo'); // mo要素の参照を追加
+    const dehine = document.getElementById('dehine');
+    
 
     // 削除ボタンがクリックされたときの処理
     deleteButton.addEventListener('click', function() {
@@ -120,7 +125,7 @@ button {
     });
 
     //URLからパスパラメータを抽出するための正規表現パターン
-    var pattern = /\/delete\/(\d+)/;
+    var pattern = /\/doDisplayAirticle\/(\d+)/;
     //現在のURLを取得
     var currentUrl = window.location.href;
 
@@ -138,12 +143,15 @@ button {
 
         // Ajaxリクエストを送信する
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/delete/' + articleIdFromURL, true);
+        xhr.open('POST', '/natuyasumi/delete/' + articleIdFromURL, true);
         xhr.onreadystatechange = function(event) {
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
               // 削除が成功した場合の処理
-              window.location.href = '/natuyasumi/top';
+              // 削除されましたと表示
+              dehine.style.display = 'none';
+        	  mo.style.display = 'block';
+              //window.location.href = '/natuyasumi/top'; 
             } else {
               // 削除が失敗した場合の処理
               console.error('削除エラー');
@@ -154,29 +162,14 @@ button {
 
         // モーダルを閉じる
         modal.style.display = 'none';
-        // 削除されましたと表示
-        mo.style.display = 'block';
+        
       });
 
    // やっぱりやめるボタンがクリックされたときの処理
       cancelButton.addEventListener('click', function() {
         // モーダルを閉じる
         modal.style.display = 'none';
-        // 削除処理をキャンセルするためのAjaxリクエストを送信する
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/cancelDelete/' + articleIdFromURL, true);
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              // キャンセルが成功した場合の処理
-              console.log('削除がキャンセルされました');
-            } else {
-              // キャンセルが失敗した場合の処理
-              console.error('キャンセルエラー');
-            }
-          }
-        };
-        xhr.send();
+       
       });
     }
    
