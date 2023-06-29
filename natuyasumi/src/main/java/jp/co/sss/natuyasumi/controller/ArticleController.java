@@ -66,7 +66,6 @@ public class ArticleController implements WebMvcConfigurer{
 	 public String doCreatePost(Model model, @Valid PostForm form, 
 			 BindingResult result) {
 		if(result.hasErrors()) {
-//			model.addAttribute("postForm", result);
 			return "Post";
 
 
