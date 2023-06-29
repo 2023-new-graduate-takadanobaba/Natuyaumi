@@ -135,6 +135,8 @@ public class ArticleController implements WebMvcConfigurer{
 	 return "genre";
 	}
 	
+	
+	
 	@RequestMapping(path = "/doSearchGenre/{genreId}")
 	 public String doSearchGenre(@PathVariable Integer genreId, Model model) {
 		Genre genre = new Genre();

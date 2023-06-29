@@ -2,57 +2,11 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" href="css/genre.css">
+<link rel="stylesheet" th:href="@{/css/genre.css}">
 
 <meta charset="UTF-8">
 <title>Genre</title>
-<style>
-body {
-	/* 	background-color: #C2DDDE; */
-	background-color: #d9eaea;
-	color: #28495D;
-}
 
-.wrapper {
-	max-width: 40%;
-	margin: 0 auto;
-	padding: 20px;
-	/* 	background-color: #B3D5D5; */
-
-	/* 	border: 1px solid #ccc; */
-	/* 	border-radius: 5px; */
-}
-
-.article {
-	/* 	background-color: #C2DDDE; */
-	display: flex;
-	padding: 20px;
-	/* 	background-color: #b3d5d5; */
-	/* background-color: #b7d5db; */
-	background: rgba(255, 255, 255, 0.5);
-	width: 100%;
-	margin: 20px auto;
-	border-radius: 5px;
-}
-
-.genre-img {
-	width: 30%;
-	height: 250px;
-	object-fit: cover;
-	margin-right: 30px;
-}
-
-.genre-title {
-	/* 	display: flex; */
-	padding: 10px;
-	background-color: #d9eaea;
-	width: 430px;
-	height: 60px;
-	margin: 0 auto;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-}
-</style>
 </head>
 <body>
 
