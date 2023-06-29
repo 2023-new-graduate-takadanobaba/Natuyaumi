@@ -156,8 +156,8 @@ public class ArticleController implements WebMvcConfigurer{
 	}
 	
 	@RequestMapping(value = "/doSearchKeyWord",method = RequestMethod.POST)
-	public String doSearchKeyWord(@RequestParam String title,Model model) {	
-		model.addAttribute("articles", repository.findByTitleContaining(title));
+	public String doSearchKeyWord(@RequestParam String name,Model model) {	
+		model.addAttribute("articles", repository.findByNameContaining(name));
 		return "genre";
 		
 	}
