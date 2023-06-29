@@ -62,10 +62,10 @@ public class ArticleController implements WebMvcConfigurer{
 	
 	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
-	 public String doCreatePost(Model model,@ModelAttribute @Valid PostForm form, 
+	 public String doCreatePost(Model model, @Valid PostForm form, 
 			 BindingResult result) {
 		if(result.hasErrors()) {
-			model.addAttribute("postForm", result);
+//			model.addAttribute("postForm", result);
 			return "Post";
 
 
