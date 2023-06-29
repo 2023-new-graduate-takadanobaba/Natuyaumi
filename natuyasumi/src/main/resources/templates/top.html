@@ -23,7 +23,7 @@
 
 
 		<ul class="nav">
-			<li class="has-sub"><a class="has-sub-title" href="">北海道</a>
+			<li class="has-sub"><a class="has-sub-title" th:href="@{/doSearchAddress/北海道}">北海道</a>
 				<ul class="sub">
 					<li><a th:href="@{/doSearchAddress/北海道}">北海道</a></li>
 					<li><a th:href="@{/doSearchGenre}">全件検索</a></li>
@@ -109,8 +109,8 @@
 		</ul>
 
 		<div class="search">
-			<form action="@{/doSearchGenre}" method="get">
-				<input class="searchform" type="text" name="doSearch"
+			<form action="@{/doSearchKeyWord/title}" method="get">
+				<input class="searchform" type="text" name="title"
 					placeholder="キーワードを入力" /> <input type="submit" value="検索"
 					class="search-button" />
 			</form>

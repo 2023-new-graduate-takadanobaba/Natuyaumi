@@ -62,18 +62,21 @@ public class ArticleController implements WebMvcConfigurer{
 	
 	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
-	 public String doCreatePost(Model model,@ModelAttribute @Valid PostForm form, 
+	 public String doCreatePost(Model model, @Valid PostForm form, 
 			 BindingResult result) {
 		if(result.hasErrors()) {
-			model.addAttribute("postForm", result);
+//			model.addAttribute("postForm", result);
 			return "Post";
 
 
 		}
 		
 		ArticleEntity article = new ArticleEntity();
+		
 		String[] alt = form.getGenreId().split(",");
+		
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
+		
 		if(alt.length > 1) {
 			article.setGenre1(genreRepository.getReferenceById(Integer.parseInt(alt[1])));
 		}
@@ -147,14 +150,22 @@ public class ArticleController implements WebMvcConfigurer{
 	 public String doSearchAddress(@PathVariable String address, Model model) {
 		//ここに表示できる投稿がない場合、if文を入れたい
 		model.addAttribute("articles", repository.findByAddressContaining(address));
-//		if ("articles" == null) {
-//			return "noAdderss";
-//		}else {
-//			return "genre";
-//		}
 		return "genre";
 	 
 	}
+	
+	@RequestMapping(path = "/doSearchKeyWord/{title}")
+	public String doSearchKeyWord(@PathVariable String title,Model model) {
+		model.addAttribute("articles", repository.findByTitleContaining(title));
+		
+//		public String search(@RequestParam("keyword") String keyword, Model model) {
+//		List<ArticleEntity> search = repository.findByTitleContaining(keyword);
+//        model.addAttribute("article", search);
+		return "genre";
+		
+	}
+
+	
 	
 	
 }
