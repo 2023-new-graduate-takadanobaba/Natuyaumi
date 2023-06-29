@@ -73,7 +73,11 @@ public class ArticleController implements WebMvcConfigurer{
 		
 		ArticleEntity article = new ArticleEntity();
 		String[] alt = form.getGenreId().split(",");
+		if(alt.length == 0) {
+			
+		}else {
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
+		}
 		if(alt.length > 1) {
 			article.setGenre1(genreRepository.getReferenceById(Integer.parseInt(alt[1])));
 		}

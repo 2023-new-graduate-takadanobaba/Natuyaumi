@@ -14,7 +14,7 @@
 					<div class="form-group0">
 						<label for="post-title">投稿タイトル:</label> <input type="text"
 							id="post-title" th:field="*{title}">
-							<div class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+<!-- 							<div class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div> -->
 					</div>
 					
 					
@@ -162,10 +162,6 @@
 
 		</form>
 		
-<!-- 		<form action="upload" method="post" enctype="multipart/form-data"> -->
-<!--   			<input type="file" name="image" accept="image/*"> -->
-<!--   			<input type="submit" value="Upload"> -->
-<!-- 		</form> -->
 	</div>
 </body>
 </html>
