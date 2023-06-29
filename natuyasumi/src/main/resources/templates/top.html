@@ -109,7 +109,7 @@
 		</ul>
 
 		<div class="search">
-			<form action="@{/doSearchKeyWord/title}" method="get">
+			<form th:action="@{/doSearchKeyWord/{title}}" method="post">
 				<input class="searchform" type="text" name="title"
 					placeholder="キーワードを入力" /> <input type="submit" value="検索"
 					class="search-button" />

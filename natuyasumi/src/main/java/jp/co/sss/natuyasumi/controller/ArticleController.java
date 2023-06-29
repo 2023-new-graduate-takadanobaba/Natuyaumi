@@ -152,10 +152,11 @@ public class ArticleController implements WebMvcConfigurer{
 	 
 	}
 	
-	@RequestMapping(path = "/doSearchKeyWord/{title}")
-	public String doSearchKeyWord(@PathVariable String title,Model model) {
+	@RequestMapping(path = "/doSearchKeyWord/{title}",method = RequestMethod. POST)
+	public String doSearchKeyWord(@PathVariable("title")String title,Model model) {
+//		
 		model.addAttribute("articles", repository.findByTitleContaining(title));
-		
+//		
 //		public String search(@RequestParam("keyword") String keyword, Model model) {
 //		List<ArticleEntity> search = repository.findByTitleContaining(keyword);
 //        model.addAttribute("article", search);
