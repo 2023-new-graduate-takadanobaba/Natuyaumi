@@ -109,11 +109,12 @@
 		</ul>
 
 		<div class="search">
-			<form th:action="@{/doSearchKeyWord/{title}}" method="post">
+			<form th:action="@{/doSearchKeyWord}" method="post">
 				<input class="searchform" type="text" name="title"
 					placeholder="キーワードを入力" /> <input type="submit" value="検索"
 					class="search-button" />
 			</form>
+			
 
 			<div class="post1">
 				<a class=postbutton th:href="@{/post}">投稿する</a>
@@ -124,6 +125,7 @@
 		</div>
 
 	</header>
+	
 
 
 	<div class="textalign">

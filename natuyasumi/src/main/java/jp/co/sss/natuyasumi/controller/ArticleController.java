@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import jakarta.validation.Valid;
@@ -154,14 +155,9 @@ public class ArticleController implements WebMvcConfigurer{
 	 
 	}
 	
-	@RequestMapping(path = "/doSearchKeyWord/{title}",method = RequestMethod. POST)
-	public String doSearchKeyWord(@PathVariable("title")String title,Model model) {
-//		
+	@RequestMapping(value = "/doSearchKeyWord",method = RequestMethod.POST)
+	public String doSearchKeyWord(@RequestParam String title,Model model) {	
 		model.addAttribute("articles", repository.findByTitleContaining(title));
-//		
-//		public String search(@RequestParam("keyword") String keyword, Model model) {
-//		List<ArticleEntity> search = repository.findByTitleContaining(keyword);
-//        model.addAttribute("article", search);
 		return "genre";
 		
 	}
