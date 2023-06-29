@@ -72,12 +72,11 @@ public class ArticleController implements WebMvcConfigurer{
 		}
 		
 		ArticleEntity article = new ArticleEntity();
+		
 		String[] alt = form.getGenreId().split(",");
-		if(alt.length == 0) {
-			
-		}else {
+		
 		article.setGenre(genreRepository.getReferenceById(Integer.parseInt(alt[0])));
-		}
+		
 		if(alt.length > 1) {
 			article.setGenre1(genreRepository.getReferenceById(Integer.parseInt(alt[1])));
 		}
@@ -152,6 +151,19 @@ public class ArticleController implements WebMvcConfigurer{
 		return "genre";
 	 
 	}
+	
+	@RequestMapping(path = "/doSearchKeyWord/{title}")
+	public String doSearchKeyWord(@PathVariable String title,Model model) {
+		model.addAttribute("articles", repository.findByTitleContaining(title));
+		
+//		public String search(@RequestParam("keyword") String keyword, Model model) {
+//		List<ArticleEntity> search = repository.findByTitleContaining(keyword);
+//        model.addAttribute("article", search);
+		return "genre";
+		
+	}
+
+	
 	
 	
 }

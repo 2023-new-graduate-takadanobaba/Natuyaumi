@@ -1,14 +1,12 @@
 package jp.co.sss.natuyasumi.form;
 
-import jakarta.validation.constraints.Size;
-
 public class PostForm {
 	
 	
 		private Integer id;
 		
 		
-	     @Size(min=0, max=30)
+//	     @Size(min=0, max=30)
 		 private String title;
 		 
 
