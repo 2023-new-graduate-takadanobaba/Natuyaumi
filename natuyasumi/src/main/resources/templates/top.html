@@ -21,6 +21,24 @@
 		<div class="overlay"></div>
 		<h1>今日はどこに行こう？</h1>
 
+		<div class="search">
+			<form th:action="@{/doSearchKeyWord}" method="post">
+				<input class="searchform" type="text" name="name"
+					placeholder="キーワードを入力" /> <input type="submit" value="検索"
+					class="search-button" />
+			</form>
+			
+
+			<div class="post1">
+				<a class=postbutton th:href="@{/post}">投稿する</a>
+			</div>
+			<div class="post">
+				<a class=postbutton th:href="@{/post}">行きたい</a>
+			</div>
+		</div>
+
+	</header>
+	
 
 		<ul class="nav">
 			<li class="has-sub"><a class="has-sub-title" th:href="@{/doSearchAddress/北海道}">北海道</a>
@@ -107,32 +125,14 @@
 				</ul></li>
 		</ul>
 
-		<div class="search">
-			<form th:action="@{/doSearchKeyWord}" method="post">
-				<input class="searchform" type="text" name="name"
-					placeholder="キーワードを入力" /> <input type="submit" value="検索"
-					class="search-button" />
-			</form>
-			
-
-			<div class="post1">
-				<a class=postbutton th:href="@{/post}">投稿する</a>
-			</div>
-			<div class="post">
-				<a class=postbutton th:href="@{/post}">行きたい</a>
-			</div>
-		</div>
-
-	</header>
-	
-
-
 	<div class="textalign">
 
 		<div class="wrapper">
 			<div id="aside">
 				<div class="indent">
+				<p>
 					<a th:href="@{/doSearchGenre}"class="indent-title">すべての投稿を表示する</a>
+					</p>
 					<p class="indent-title">アウトドア</p>
 					<div class="indent-sub">
 					<p>

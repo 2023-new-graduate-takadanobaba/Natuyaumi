@@ -22,7 +22,7 @@
 </header>
 	<div class="wrapper">
 	
-		<a th:href="@{/returnTop}">戻る</a>
+<!-- 		<a th:href="@{/returnTop}">戻る</a> -->
 
 	
 		<div th:each="article: ${articles}">
@@ -109,24 +109,74 @@ function load_effect() {
   });
 }
 
+// $(function() {
+// 	   // スクロールしたときに実行
+// 	   $(window).scroll(function () {
+// 	      // 目的のスクロール量を設定(px)
+// 	      var TargetPos = 350;
+// 	      // 現在のスクロール位置を取得
+// 	      var ScrollPos = $(window).scrollTop();
+// 	      // 現在位置が目的のスクロール量に達しているかどうかを判断
+// 	      if( ScrollPos >= TargetPos) {
+// 	         // 達していれば表示
+// 	         $("#topbutton").fadeIn();
+// 	      }
+// 	      else {
+// 	         // 達していなければ非表示
+// 	         $("#topbutton").fadeOut();
+// 	      }
+// 	   });
+// 	});
+	
+// $(function() {
+// 	  // 矢印を動かす
+// 	  setInterval(function() {
+
+// 	    $("#top").animate({
+// 	      bottom: "-=55px"}, 1000);
+// 	    $("#top").animate({
+// 	      bottom: "+=55px"}, 1000);
+
+// 	  },1000);
+// 	});	
 $(function() {
-	   // スクロールしたときに実行
-	   $(window).scroll(function () {
-	      // 目的のスクロール量を設定(px)
-	      var TargetPos = 350;
-	      // 現在のスクロール位置を取得
-	      var ScrollPos = $(window).scrollTop();
-	      // 現在位置が目的のスクロール量に達しているかどうかを判断
-	      if( ScrollPos >= TargetPos) {
-	         // 達していれば表示
-	         $("#topbutton").fadeIn();
-	      }
-	      else {
-	         // 達していなければ非表示
-	         $("#topbutton").fadeOut();
-	      }
-	   });
-	});
+  var isButtonVisible = false; // ボタンの表示状態を管理するフラグ
+
+  // スクロールしたときに実行
+  $(window).scroll(function() {
+    // 目的のスクロール量を設定(px)
+    var TargetPos = 350;
+    // 現在のスクロール位置を取得
+    var ScrollPos = $(window).scrollTop();
+
+    if (ScrollPos >= TargetPos && !isButtonVisible) {
+      // 達していれば表示
+      isButtonVisible = true;
+      $("#topbutton").fadeIn();
+      animateButton();
+    } else if (ScrollPos < TargetPos && isButtonVisible) {
+      // 達していなければ非表示
+      isButtonVisible = false;
+      $("#topbutton").fadeOut();
+    }
+  });
+
+  // ボタンをふわふわさせる関数
+  function animateButton() {
+    $("#topbutton").animate({
+      bottom: "-=10px" // ボタンを上に移動
+    }, 700).animate({
+      bottom: "+=10px" // ボタンを下に移動
+    }, 700, function() {
+      // アニメーションが完了した後に再帰的に呼び出し
+      if (isButtonVisible) {
+        animateButton();
+      }
+    });
+  }
+});
+
+	
   </script>
   
 

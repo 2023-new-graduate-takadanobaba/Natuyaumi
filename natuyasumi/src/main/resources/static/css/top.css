@@ -17,7 +17,7 @@ body {
 header h1 {
 	position: absolute;
 	color: white;
-	top: 30%;
+	top: 28%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -25,7 +25,7 @@ header h1 {
 .img-header {
 	position: relative;
 	width: 100%;
-	height: 270px;
+	height: 220px;
 	object-fit: cover;
 	object-position: 25% 67%;
 }
@@ -35,7 +35,7 @@ header h1 {
 	top: 0%;
 	left: 0%;
 	width: 100%;
-	height: 270px;
+	height: 220px;
 	background: rgba(235,113,68,0.18);
 }
 
@@ -47,7 +47,7 @@ header h1 {
 	position: absolute;
 	top: 55%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -40%);
 	padding: 20px;
 	color: #fff;
 }
@@ -109,13 +109,14 @@ header h1 {
 
 .textalign {
 	/*	text-align: center; */
-	width: 50%;
+	width: 55%;
 	margin: 0 auto;
 }
 
 /* 親要素 */
 .textin {
 	position: relative;	
+	margin-top: 5px;
 }
 
 .textin p {
@@ -129,7 +130,7 @@ header h1 {
 
 .indent {
 	margin-top: 0;
-	line-height:8px;
+	line-height:0.8;
 }
 
 .indent-title{
@@ -167,7 +168,7 @@ header h1 {
 }
 
 .image {
-	width: 70%;
+	width: 67%;
 	text-align: right;
 }
 
@@ -183,11 +184,13 @@ header h1 {
 
 #aside {
 	width: 30%;
-	height: 660px;
+	height: 800px;
 	background:rgba(255,255,255,0.5);
 	border: dashed 2px #7a9cad;
 	border-radius: 5px;
 	padding:10px;
+	padding-left:20px;
+	margin-right:3%;
 }
 
 
@@ -204,7 +207,7 @@ a{
 }
 .nav {
   display: flex;
-  width: 50%;
+  width: 55%;
   margin:0 auto;
   margin-top:4px;
   margin-bottom:16px;
@@ -212,7 +215,7 @@ a{
 
 .nav > li {
   position: relative;
-  width: 133.5px;
+  width: 147px;
   border-right: 1px solid #004993;
 
 }
