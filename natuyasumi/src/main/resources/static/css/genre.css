@@ -6,21 +6,6 @@ body {
 	color: #28495D;
 }
 
-
-
-.article{
-	opacity: 0;
-	transform: translateY(100px) /*スクロールアップする距離*/;
-	transition: all 2s /*処理にかかる時間*/;
-}
-
-.article.done {
-	opacity: 1;
-	transform: translate(0, 0);
-}
-
-
-
 header { 
 	position: relative;
 	width: 100%;
@@ -63,27 +48,48 @@ header > h1 > a {
 }
 
 
+
+.article{
+	width: 50%; 
+	display: flex;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.5);
+	margin: 20px auto;
+	border-radius: 5px;
+	opacity: 0;
+	transform: translateY(100px) /*スクロールアップする距離*/;
+	transition: all 2s /*処理にかかる時間*/;
+}
+
+.article.done {
+	width: 50%;
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+.article-katamari{
+	position: relative;
+	display:flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.article-level{
+	margin-right:30px;
+}
+
+
+.article-name{
+	font-weight:bold;
+	font-size:20px;
+}
+
+
 .wrapper {
-	max-width: 60%; 
+	max-width: 100%; 
 	margin:auto; 
 	padding: 20px;
 	padding-top:110px;
-	/* 	background-color: #B3D5D5; */
-
-	/* 	border: 1px solid #ccc; */
-	/* 	border-radius: 5px; */
-}
-
-.article {
-	/* 	background-color: #C2DDDE; */
-	display: flex;
-	padding: 20px;
-	/* 	background-color: #b3d5d5; */
-	/* background-color: #b7d5db; */
-	background: rgba(255, 255, 255, 0.5);
-	width: 100%;
-	margin: 20px auto;
-	border-radius: 5px;
 }
 
 .genre-img {
@@ -92,6 +98,11 @@ header > h1 > a {
 	object-fit: cover;
 	margin-right: 30px;
 }
+
+.article-text{
+	width: 60%;
+}
+
 
 .genre-title {
 	/* 	display: flex; */
