@@ -12,6 +12,39 @@ body {
 	border-radius: 5px;
 }
 
+.article-name {
+	font-weight:bold;
+	font-size:30px;
+	margin-left:20px;
+	line-height:0;
+}
+
+.katamari{
+	display:flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.katamari2{
+	display:flex;
+}
+
+.imageUrl{
+	width:60%;
+}
+
+.nakami{
+	width:35%;
+}
+
+.review{
+	padding: 10px;
+	background-color: #d9eaea;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
 .modal {
 	display: none;
 	position: fixed;
@@ -35,7 +68,6 @@ body {
 
 img{
 	width:90%;
-	margin:10px;
 	border-radius: 5px;
 }
 
@@ -46,6 +78,25 @@ display: none;
 button {
 	margin-top: 10px;
 }
+
+
+#modoru{
+	display: block;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    padding:5px 10px;
+	border-radius: 100vw;
+	border: none;
+	color: #fff;
+	background:  rgba(0,73,147,0.7);
+	cursor:pointer;
+}
+
+#modoru:hover{
+	background: #000453;
+}
+
 
 #modoru2 {
 	display: none;
