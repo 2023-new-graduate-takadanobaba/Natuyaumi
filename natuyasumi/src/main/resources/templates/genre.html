@@ -6,14 +6,21 @@
 
 <meta charset="UTF-8">
 <title>Genre</title>
-
+<script src="https://code.jquery.com/jquery-3.7.0.js"
+	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+	crossorigin="anonymous"></script>
+<script th:src="@{Js/genre.js}" type="text/javascript"></script>
 </head>
 <body>
-
+	<header class="header">
+		<img class="img-header"
+			src="https://d1d37e9z843vy6.cloudfront.net/jp/images/3980978/8647f2c7da12adbe101a42764d34dd7440c947cb.jpeg"
+			alt="sea">
+		<div class="overlay"></div>
+		<h1><a th:href="@{/returnTop}">今日はどこに行こう？</a></h1>
+</header>
 	<div class="wrapper">
 	
-	
-
 		<a th:href="@{/returnTop}">戻る</a>
 
 	
@@ -45,6 +52,30 @@
 
 
 	</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      load_effect();
+      $(window).scroll(function (){
+          scroll_effect();
+      });
+    });
+
+    //ふわっとロード
+    function load_effect(){
+      var tt = $(window).scrollTop();
+      var hh = $(window).height();
+      $('.article').each(function(){
+          var yy = $(this).offset().top;
+          if (tt > yy - hh){
+              $(this).addClass('done');
+          }
+      });
+    }
+
+
+  </script>
 
 </body>
 </html>

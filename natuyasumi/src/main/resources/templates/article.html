@@ -73,7 +73,7 @@
 
     // 削除ボタンがクリックされたときの処理
     deleteButton.addEventListener('click', function() {
-    	 event.preventDefault(); 
+    	event.preventDefault(); 
       // モーダルを表示する
       modal.style.display = 'block';
     });
@@ -83,7 +83,7 @@
     //現在のURLを取得
     var currentUrl = window.location.href;
 
-    // 正規表現パターンを使用してパスパラメータを抽出
+    // 正規表現パターンを使用してパスパラメータを抽出,結果はmatchesという配列に格納
     var matches = currentUrl.match(pattern);
 
     // マッチ結果が存在するかを確認
