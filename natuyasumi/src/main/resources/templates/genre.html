@@ -47,6 +47,85 @@
 
 
 	</div>
+<<<<<<< HEAD
+	<div  id="topbutton"><a href="#top">^</a><br>
+	<a href="#top">^</a><br>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+//     $(function(){
+//       load_effect();
+//       $(window).scroll(function (){
+//           scroll_effect();
+//       });
+//     });
+
+//     //ふわっとロード
+//     function load_effect(){
+//       var tt = $(window).scrollTop();
+//       var hh = $(window).height();
+//       var delay = 0; // アニメーションの遅延時間
+//       $('.article').each(function(index) {
+//         var $this = $(this);
+//         var yy = $this.offset().top;
+//         if (tt > yy - hh) {
+//           setTimeout(function() {
+//             $this.addClass('done');
+//           }, delay);
+//           delay += 300; // 200ミリ秒ごとに次の要素を表示させる（適宜調整可能）
+//         }
+//       });
+//     }
+
+$(function() {
+  load_effect();
+  $(window).scroll(function() {
+    load_effect(); // スクロール時にも load_effect() を呼び出す
+  });
+});
+
+// ふわっとロード
+function load_effect() {
+  var tt = $(window).scrollTop();
+  var hh = $(window).height();
+  var delay = 0; // アニメーションの遅延時間
+  $('.article').each(function(index) {
+    var $this = $(this);
+    var yy = $this.offset().top;
+    if (tt + hh > yy) { // スクロール位置とウィンドウの高さを考慮して判定する
+      if (!$this.hasClass('done')) { // すでに表示済みの要素はスキップする
+        setTimeout(function() {
+          $this.addClass('done');
+        }, delay);
+        delay += 100; // 200ミリ秒ごとに次の要素を表示させる（適宜調整可能）
+      }
+    }
+  });
+}
+
+$(function() {
+	   // スクロールしたときに実行
+	   $(window).scroll(function () {
+	      // 目的のスクロール量を設定(px)
+	      var TargetPos = 350;
+	      // 現在のスクロール位置を取得
+	      var ScrollPos = $(window).scrollTop();
+	      // 現在位置が目的のスクロール量に達しているかどうかを判断
+	      if( ScrollPos >= TargetPos) {
+	         // 達していれば表示
+	         $("#topbutton").fadeIn();
+	      }
+	      else {
+	         // 達していなければ非表示
+	         $("#topbutton").fadeOut();
+	      }
+	   });
+	});
+  </script>
+  
+=======
+>>>>>>> branch 'main' of https://github.com/2023-new-graduate-takadanobaba/Natuyaumi.git
 
 </body>
 </html>
