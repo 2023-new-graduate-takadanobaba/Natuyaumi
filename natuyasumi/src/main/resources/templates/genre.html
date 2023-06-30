@@ -63,14 +63,32 @@
     });
 
     //ふわっとロード
+//     function load_effect(){
+//       var tt = $(window).scrollTop();
+//       var hh = $(window).height();
+//       var delay = 0; // アニメーションの遅延時間
+//       $('.article').each(function(){
+//           var yy = $(this).offset().top;
+//           if (tt > yy - hh){
+//               $(this).addClass('done');
+//           }
+//       });
+//     }
+    
+    //ふわっとロード
     function load_effect(){
       var tt = $(window).scrollTop();
       var hh = $(window).height();
-      $('.article').each(function(){
-          var yy = $(this).offset().top;
-          if (tt > yy - hh){
-              $(this).addClass('done');
-          }
+      var delay = 0; // アニメーションの遅延時間
+      $('.article').each(function(index) {
+        var $this = $(this);
+        var yy = $this.offset().top;
+        if (tt > yy - hh) {
+          setTimeout(function() {
+            $this.addClass('done');
+          }, delay);
+          delay += 300; // 200ミリ秒ごとに次の要素を表示させる（適宜調整可能）
+        }
       });
     }
 
