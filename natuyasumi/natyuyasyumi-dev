@@ -58,7 +58,15 @@ insert into `natyuyasyumi-dev`.`Article` values(1,'東京ディズニーラン�
 
 insert into `natyuyasyumi-dev`.`Article` values(2,'森の中のアスレチック','フォレストアドベンチャー','神奈川県横浜市旭区上白根町1425-4',true,5,'https://th.bing.com/th/id/R.9db4d27ad343fe1334770089918a4582?rik=h%2bUz2OSy31fKow&riu=http%3a%2f%2fkomuken.com%2fwp%2fwp-content%2fuploads%2f2019%2f06%2f%e3%83%95%e3%82%a9%e3%83%ac%e3%82%b9%e3%83%88%e3%82%a2%e3%83%89%e3%83%99%e3%83%b3%e3%83%81%e3%83%a3%e3%83%bc.jpg&ehk=jmSp9CdEkX%2fEU4KGQandIKmwE9kSvfLlgywltQGRhGs%3d&risl=&pid=ImgRaw&r=0',3,1,null,,null,null,null,null,null,null,null,null,'バランス感覚が大事です！自然を味わいながら日々の疲れを癒せるのでお勧めです！！');
 
+//テストで追加（小曽根）
+create table natuyasumi.User(
+user_id varchar(10),
+user_name varchar(10),
+);
 
+insert into User values(2,'小曽根りな');
+
+select * from natuyasumi.User;
 
 
 
