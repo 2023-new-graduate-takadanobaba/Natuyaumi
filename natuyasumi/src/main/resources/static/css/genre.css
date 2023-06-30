@@ -52,6 +52,7 @@ header > h1 > a {
 .article{
 	width: 50%; 
 	display: flex;
+	justify-content: space-between;
 	padding: 20px;
 	background: rgba(255, 255, 255, 0.5);
 	margin: 20px auto;
@@ -93,7 +94,7 @@ header > h1 > a {
 }
 
 .genre-img {
-	width: 30%;
+	width: 35%;
 	height: 250px;
 	object-fit: cover;
 	margin-right: 30px;
@@ -108,9 +109,8 @@ header > h1 > a {
 	/* 	display: flex; */
 	padding: 10px;
 	background-color: #d9eaea;
-	width: 430px;
+	width: 90%;
 	height: 60px;
-	margin: 0 auto;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 }
