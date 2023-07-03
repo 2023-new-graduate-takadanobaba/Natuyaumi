@@ -33,7 +33,7 @@
 				<a class=postbutton th:href="@{/post}">投稿する</a>
 			</div>
 			<div class="post">
-				<a class=postbutton th:href="@{/post}">行きたい</a>
+				<a class=postbutton2 th:href="@{/post}">行きたい</a>
 			</div>
 		</div>
 
@@ -217,10 +217,10 @@
 			<!-- #aside -->
 			<div class="image">
 				<div class="textin">
-					<img class="img"
+					<a th:href="@{/doSearchGenre/1}"><img class="img"
 						src="https://www.shutoko.jp/ss/shutokodeikou/blog/1105.jpg"
-						alt="ドライブ"></img>
-					<p>この夏おすすめのドライブスポット</p>
+						alt="ドライブ"></img></a>
+					<p><a class="texiin-a" th:href="@{/doSearchGenre/1}">この夏おすすめのドライブスポット</a></p>
 				</div>
 				<div class="img-wrapper">
 					<img class="img-sub1"

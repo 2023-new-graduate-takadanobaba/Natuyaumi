@@ -107,6 +107,25 @@ header h1 {
 	background: #000453;
 }
 
+.postbutton2{
+	display: block;
+    width: 80px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    padding:5px 10px;
+	border-radius: 100vw;
+	border: none;
+	color: #fff;
+	background:  rgba(250,128,114,0.6);
+}
+
+.postbutton2:hover{
+	background: #F08080;
+}
+
+
+
 .textalign {
 	/*	text-align: center; */
 	width: 55%;
@@ -123,9 +142,13 @@ header h1 {
 	font-size:20px;
 	font-weight:bold;
 	position: absolute;
-	color: white;
 	top: 85%;
 	left: 8%;
+}
+
+.texiin-a {
+	text-decoration: none;
+	color: white;
 }
 
 .indent {

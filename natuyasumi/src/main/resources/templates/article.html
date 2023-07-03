@@ -56,8 +56,13 @@
 			</div>
 		</div>
 
-		<p id="mo">削除されました。</p>
+<div class="botan">
 		<input value="戻る" onclick="history.back();" type="button" id="modoru">
+		<input value="お気に入り" onclick="history.back();" type="button" id="okiniiri">
+</div>
+
+		<p id="mo">削除されました。</p>
+		
 		<a th:href="@{/returnTop}" id="modoru2">戻る</a>
 	</div>
 
@@ -71,6 +76,7 @@
 		const dehine = document.getElementById('dehine');
 		const modoru = document.getElementById('modoru');
 		const modoru2 = document.getElementById('modoru2');
+		const okiniiri = document.getElementById('okiniiri');
 
 		// 削除ボタンがクリックされたときの処理
 		deleteButton.addEventListener('click', function() {
@@ -110,6 +116,7 @@
 							modoru.style.display = 'none';
 							mo.style.display = 'block';
 							modoru2.style.display = 'block';
+							okiniiri.style.display = 'none';
 
 							//window.location.href = '/natuyasumi/top'; 
 						} else {
