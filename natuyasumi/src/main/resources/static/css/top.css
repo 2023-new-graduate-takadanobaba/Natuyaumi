@@ -47,16 +47,16 @@ header h1 {
 	top: 0%;
 	left: 5%;
 	height: 420px;
-	background: rgba(255,255,255,0.18);
+	background: rgba(255,255,255,0.1);
 	width: 95%;
 	border-radius: 5px;
 	cursor:pointer	;
-	display:none;
+	opacity: 0;
+    transition: opacity 0.3s;
 }
 
 #overlay2:hover {
-	display:block;
-	z-index:200;
+	opacity: 1;
 }
 
 
