@@ -2,12 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>login</title>
+    <title>マイページ</title>
 </head>
 <body>
-    <h1>マイページ</h1>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="ログアウト" />
-    </form>
+	<a th:href="@{/doLogout}">ログアウト</a>
+    
 </body>
 </html>
