@@ -37,9 +37,6 @@ header h1 {
 	width: 100%;
 	height: 220px;
 	background: rgba(235,113,68,0.18);
-	width: 95%;
-	border-radius: 5px;
-	cursor:pointer	;
 }
 
 #overlay2 {
