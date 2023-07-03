@@ -16,3 +16,5 @@ hostname=natyuyasyumi-dev.mysql.database.azure.com<br>
 username=aaao<br>
 password={your-password}<br>
 ssl-mode=require<br>
+
+セッション登録
