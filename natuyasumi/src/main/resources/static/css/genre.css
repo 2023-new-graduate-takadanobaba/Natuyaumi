@@ -23,6 +23,8 @@ header h1 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size:30px;
+	font-family: 'Yusei Magic', sans-serif;
+	letter-spacing: 4px;
 }
 
 header > h1 > a {

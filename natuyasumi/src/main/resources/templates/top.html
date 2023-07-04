@@ -4,6 +4,10 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/top.css">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
@@ -20,23 +24,25 @@
 			alt="sea">
 		<div class="overlay"></div>
 		<div class ="session">
-		<p>ユーザー登録をすると<br/>投稿機能、お気に入り機能が使用できます</p>
+<!-- 		<p>ユーザー登録をすると<br/>投稿機能、お気に入り機能が使用できます</p> -->
 			<div th:if="${session.sessionName == null}">
-				<form method="post" th:action="@{/sessionUser}">
-					<input type="text" name="userName"> <input type="submit"
-						value="登録">
+				<form class="user_container" method="post" th:action="@{/sessionUser}" autocomplete="off">
+					<input type="text" name="userName" placeholder="何とお呼びしましょう"> 
+ 					<input type="submit" value="登録"> 
 				</form>
 			</div>
-			<div th:if="${session.sessionName != null}">
-				<div>ようこそ
-				<p th:text="${session.sessionName}"></p>さん</div>
-				<a th:href="@{/moveToMyPage}">マイページ</a> <a th:href="@{/doLogout}">ログアウト</a>
+			<div class="welcomemessage" th:if="${session.sessionName != null}">
+				<p>ようこそ</p>
+				<p th:inline="text">[[${session.sessionName}]]さん</p>
+				<p><a class="gomypage-button" th:href="@{/moveToMyPage}">マイページ</a> </p>
+<!-- 				<a th:href="@{/doLogout}">ログアウト</a> -->
 			</div>
+			
 		</div>
 		<h1>今日はどこに行こう？</h1>
-
+		
 		<div class="search">
-			<form th:action="@{/doSearchKeyWord}" method="post">
+			<form class="searchform2" th:action="@{/doSearchKeyWord}" method="post">
 				<input class="searchform" type="text" name="name"
 					placeholder="キーワードを入力" /> <input type="submit" value="検索"
 					class="search-button" />
