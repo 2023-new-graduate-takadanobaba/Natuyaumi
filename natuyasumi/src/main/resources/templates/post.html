@@ -6,6 +6,7 @@
 <title>Post form</title>
 </head>
 <body>
+<div th:if="${session.sessionName != null}">
 	<div class="wrapper">
 		<form method="post" action ="#" th:action="@{/createPost}" th:object= "${postForm}" enctype="multipart/form-data">
 			<div class="yokonarabi">
@@ -162,6 +163,14 @@
 
 		</form>
 		
+		
 	</div>
+	
+</div>
+<div th:if="${session.sessionName == null}">
+<p>投稿するにはトップページでユーザ登録してください</p>
+<a th:href="@{/returnTop}">TOPに戻る</a>
+</div>
+
 </body>
 </html>
