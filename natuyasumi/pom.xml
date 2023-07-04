@@ -75,8 +75,8 @@
 		        <version>2.11.0</version>
 		        <configuration>
 		            <schemaVersion>v2</schemaVersion>
-		            <resourceGroup>natuyasumi-1688445382518-rg</resourceGroup>
-		            <appName>natuyasumi-1688445382518</appName>
+		            <resourceGroup>natuyasumi-production</resourceGroup>
+		            <appName>natuyasumi-production</appName>
 		            <pricingTier>F1</pricingTier>
 		            <region>japaneast</region>
 		            <runtime>
