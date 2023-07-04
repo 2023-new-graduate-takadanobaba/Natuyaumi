@@ -269,8 +269,8 @@ body {
 
 .error-wrapper {
 	padding-top:200px;
-	max-width: 40%;
 	margin: 0 auto;
+	width:20%;
 }
 
 .error-img {
