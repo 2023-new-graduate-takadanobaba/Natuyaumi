@@ -24,21 +24,21 @@
 			alt="sea">
 		<div class="overlay"></div>
 		<div class ="session">
-		<p id="sessionmessage">ユーザー登録をすると<br/>投稿機能、お気に入り機能が使用できます</p>
-			<div th:if="${session.sessionName == null}">
-				<form="user_container" method="post" th:action="@{/sessionUser}" autocomplete="off">
-					<input type="text" name="userName" placeholder="何とお呼びしましょう"> 
- 					<input type="submit" value="登録"> 
-				</form>
-			</div>
-			<div class="welcomemessage" th:if="${session.sessionName != null}">
-				<p>ようこそ</p>
-				<p th:inline="text">[[${session.sessionName}]]さん</p>
-				<p><a class="gomypage-button" th:href="@{/moveToMyPage}">マイページ</a> </p>
-<!-- 				<a th:href="@{/doLogout}">ログアウト</a> -->
-			</div>
-			
-		</div>
+<!--         <p>ユーザー登録をすると<br/>投稿機能、お気に入り機能が使用できます</p> -->
+            <div th:if="${session.sessionName == null}">
+                <form id="user_container" method="post" th:action="@{/sessionUser}" autocomplete="off">
+                    <input type="text" name="userName" placeholder="何とお呼びしましょう"> 
+                     <input type="submit" value="登録"> 
+                </form>
+            </div>
+            <div class="welcomemessage" th:if="${session.sessionName != null}">
+                <p>ようこそ</p>
+                <p th:inline="text">[[${session.sessionName}]]さん</p>
+                <p><a class="gomypage-button" th:href="@{/moveToMyPage}">マイページ</a> </p>
+<!--                 <a th:href="@{/doLogout}">ログアウト</a> -->
+            </div>
+
+        </div>
 		<h1>今日はどこに行こう？</h1>
 		
 		<div class="search">
