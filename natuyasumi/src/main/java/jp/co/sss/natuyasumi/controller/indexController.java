@@ -10,22 +10,22 @@ import jp.co.sss.natuyasumi.form.userForm;
 @Controller
 public class indexController {
 	
-	@GetMapping(value = "/index")
-	 public String top() {
-	 return "index";
-	}
+//	@GetMapping(value = "/index")
+//	 public String top() {
+//	 return "index";
+//	}
 	
 	@PostMapping(value = "/sessionUser")
 	public String sessionUser(userForm form, HttpSession session) {
 		session.setAttribute("sessionName", form.getUserName());
-		return "SessionUserName";
+		return "top";
 		
 	}
 
 	@GetMapping(value = "/doLogout")
 	public String doLogout(HttpSession session) {
 		session.invalidate();
-		return "index";
+		return "top";
 	}
 	
 	@GetMapping(value = "/moveToMyPage")

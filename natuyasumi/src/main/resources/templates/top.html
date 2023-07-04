@@ -36,10 +36,17 @@
 				<a class=postbutton2 th:href="@{/post}">行きたい</a>
 			</div>
 		</div>
-		<form method="post" th:action="@{/sessionUser}">
-			<input type="text" name="userName"> <input type="submit"
-				value="登録">
-		</form>
+		<div th:if="${session.sessionName == null}">
+			<form method="post" th:action="@{/sessionUser}">
+				<input type="text" name="userName"> <input type="submit"
+					value="登録">
+			</form>
+			</div>
+		<div th:if="${session.sessionName != null}">
+			ようこそ
+			<div th:text="${session.sessionName}"></div>さん
+			<a th:href="@{/moveToMyPage}">マイページ</a> <a th:href="@{/doLogout}">ログアウト</a>
+		</div>
 
 	</header>
 	
