@@ -8,7 +8,7 @@ import jp.co.sss.natuyasumi.entity.Genre;
 import jp.co.sss.natuyasumi.repository.GenreRepository;
 
 @Controller
-public class SessionController {
+public class GenreRegistrationController {
 	@Autowired
 	GenreRepository genreRepository;
 	
