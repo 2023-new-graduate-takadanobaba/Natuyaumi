@@ -1,19 +1,20 @@
 package jp.co.sss.natuyasumi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.servlet.http.HttpSession;
 import jp.co.sss.natuyasumi.form.userForm;
+import jp.co.sss.natuyasumi.repository.ArticleRepository;
 
 @Controller
 public class indexController {
 	
-//	@GetMapping(value = "/index")
-//	 public String top() {
-//	 return "index";
-//	}
+@Autowired
+ArticleRepository repository;
 	
 	@PostMapping(value = "/sessionUser")
 	public String sessionUser(userForm form, HttpSession session) {
@@ -29,7 +30,8 @@ public class indexController {
 	}
 	
 	@GetMapping(value = "/moveToMyPage")
-	public String moveToMyPage() {
+	public String moveToMyPage(Model model) {
+		model.addAttribute("articles", repository.findAll());
 		return "mypage";
 	}
 }
