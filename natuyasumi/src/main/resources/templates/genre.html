@@ -18,13 +18,15 @@
 			src="https://d1d37e9z843vy6.cloudfront.net/jp/images/3980978/8647f2c7da12adbe101a42764d34dd7440c947cb.jpeg"
 			alt="sea">
 		<div class="overlay"></div>
-		<h1><a th:href="@{/returnTop}">今日はどこに行こう？</a></h1>
-</header>
+		<h1>
+			<a th:href="@{/returnTop}">今日はどこに行こう？</a>
+		</h1>
+	</header>
 	<div class="wrapper">
-	
-<!-- 		<a th:href="@{/returnTop}">戻る</a> -->
 
-	
+		<!-- 		<a th:href="@{/returnTop}">戻る</a> -->
+
+
 		<div th:each="article: ${articles}">
 			<div class="article">
 				<img class="genre-img" th:src="${article.imageUrl}" />
@@ -56,78 +58,76 @@
 
 
 	</div>
-	<div  id="topbutton"><a href="#top">^</a><br>
-	<a href="#top">^</a><br>
+	<div id="topbutton">
+		<a href="#top">^</a><br> <a href="#top">^</a><br>
 	</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-$(function() {
-  load_effect();
-  $(window).scroll(function() {
-    load_effect(); // スクロール時にも load_effect() を呼び出す
-  });
-});
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function() {
+			load_effect();
+			$(window).scroll(function() {
+				load_effect(); // スクロール時にも load_effect() を呼び出す
+			});
+		});
 
-// ふわっとロード
-function load_effect() {
-  var tt = $(window).scrollTop();
-  var hh = $(window).height();
-  var delay = 0; // アニメーションの遅延時間
-  $('.article').each(function(index) {
-    var $this = $(this);
-    var yy = $this.offset().top;
-    if (tt + hh > yy) { // スクロール位置とウィンドウの高さを考慮して判定する
-      if (!$this.hasClass('done')) { // すでに表示済みの要素はスキップする
-        setTimeout(function() {
-          $this.addClass('done');
-        }, delay);
-        delay += 100; // 200ミリ秒ごとに次の要素を表示させる（適宜調整可能）
-      }
-    }
-  });
-}
+		// ふわっとロード
+		function load_effect() {
+			var tt = $(window).scrollTop();
+			var hh = $(window).height();
+			var delay = 0; // アニメーションの遅延時間
+			$('.article').each(function(index) {
+				var $this = $(this);
+				var yy = $this.offset().top;
+				if (tt + hh > yy) { // スクロール位置とウィンドウの高さを考慮して判定する
+					if (!$this.hasClass('done')) { // すでに表示済みの要素はスキップする
+						setTimeout(function() {
+							$this.addClass('done');
+						}, delay);
+						delay += 100; // 200ミリ秒ごとに次の要素を表示させる（適宜調整可能）
+					}
+				}
+			});
+		}
 
-$(function() {
-  var isButtonVisible = false; // ボタンの表示状態を管理するフラグ
+		$(function() {
+			var isButtonVisible = false; // ボタンの表示状態を管理するフラグ
 
-  // スクロールしたときに実行
-  $(window).scroll(function() {
-    // 目的のスクロール量を設定(px)
-    var TargetPos = 350;
-    // 現在のスクロール位置を取得
-    var ScrollPos = $(window).scrollTop();
+			// スクロールしたときに実行
+			$(window).scroll(function() {
+				// 目的のスクロール量を設定(px)
+				var TargetPos = 350;
+				// 現在のスクロール位置を取得
+				var ScrollPos = $(window).scrollTop();
 
-    if (ScrollPos >= TargetPos && !isButtonVisible) {
-      // 達していれば表示
-      isButtonVisible = true;
-      $("#topbutton").fadeIn();
-      animateButton();
-    } else if (ScrollPos < TargetPos && isButtonVisible) {
-      // 達していなければ非表示
-      isButtonVisible = false;
-      $("#topbutton").fadeOut();
-    }
-  });
+				if (ScrollPos >= TargetPos && !isButtonVisible) {
+					// 達していれば表示
+					isButtonVisible = true;
+					$("#topbutton").fadeIn();
+					animateButton();
+				} else if (ScrollPos < TargetPos && isButtonVisible) {
+					// 達していなければ非表示
+					isButtonVisible = false;
+					$("#topbutton").fadeOut();
+				}
+			});
 
-  // ボタンをふわふわさせる関数
-  function animateButton() {
-    $("#topbutton").animate({
-      bottom: "-=10px" // ボタンを上に移動
-    }, 700).animate({
-      bottom: "+=10px" // ボタンを下に移動
-    }, 700, function() {
-      // アニメーションが完了した後に再帰的に呼び出し
-      if (isButtonVisible) {
-        animateButton();
-      }
-    });
-  }
-});
+			// ボタンをふわふわさせる関数
+			function animateButton() {
+				$("#topbutton").animate({
+					bottom : "-=10px" // ボタンを上に移動
+				}, 700).animate({
+					bottom : "+=10px" // ボタンを下に移動
+				}, 700, function() {
+					// アニメーションが完了した後に再帰的に呼び出し
+					if (isButtonVisible) {
+						animateButton();
+					}
+				});
+			}
+		});
+	</script>
 
-	
-  </script>
-  
 
 </body>
 </html>
