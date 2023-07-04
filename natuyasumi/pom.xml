@@ -77,7 +77,7 @@
 		            <schemaVersion>v2</schemaVersion>
 		            <resourceGroup>natuyasumi-production</resourceGroup>
 		            <appName>natuyasumi-production</appName>
-		            <pricingTier>F1</pricingTier>
+		            <pricingTier>B1</pricingTier>
 		            <region>japaneast</region>
 		            <runtime>
 		                <os>Linux</os>
