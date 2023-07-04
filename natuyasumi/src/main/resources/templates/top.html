@@ -27,8 +27,6 @@
 					placeholder="キーワードを入力" /> <input type="submit" value="検索"
 					class="search-button" />
 			</form>
-
-
 			<div class="post1">
 				<a class=postbutton th:href="@{/post}">投稿する</a>
 			</div>
@@ -44,7 +42,7 @@
 			</div>
 		<div th:if="${session.sessionName != null}">
 			ようこそ
-			<div th:text="${session.sessionName}"></div>さん
+			<div th:text="${session.sessionName}"></div>
 			<a th:href="@{/moveToMyPage}">マイページ</a> <a th:href="@{/doLogout}">ログアウト</a>
 		</div>
 
