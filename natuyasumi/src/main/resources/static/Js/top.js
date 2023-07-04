@@ -1,4 +1,4 @@
-// にゃー
+
 $(function(){
   $(".has-sub").mouseover(function(){
     $(this).children(".sub").stop().slideDown();
@@ -7,3 +7,12 @@ $(function(){
     $(".sub").stop().slideUp();
   });
 });
+
+$(document).ready(function() {
+  $('#user_container').submit(function(event) {
+    event.preventDefault();
+    $('#sessionmessage').hide();
+    this.submit();
+  });
+});
+

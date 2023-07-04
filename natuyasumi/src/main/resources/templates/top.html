@@ -24,9 +24,9 @@
 			alt="sea">
 		<div class="overlay"></div>
 		<div class ="session">
-<!-- 		<p>ユーザー登録をすると<br/>投稿機能、お気に入り機能が使用できます</p> -->
+		<p id="sessionmessage">ユーザー登録をすると<br/>投稿機能、お気に入り機能が使用できます</p>
 			<div th:if="${session.sessionName == null}">
-				<form class="user_container" method="post" th:action="@{/sessionUser}" autocomplete="off">
+				<form="user_container" method="post" th:action="@{/sessionUser}" autocomplete="off">
 					<input type="text" name="userName" placeholder="何とお呼びしましょう"> 
  					<input type="submit" value="登録"> 
 				</form>
