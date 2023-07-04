@@ -27,4 +27,9 @@ public class indexController {
 		session.invalidate();
 		return "index";
 	}
+	
+	@GetMapping(value = "/moveToMyPage")
+	public String moveToMyPage() {
+		return "mypage";
+	}
 }

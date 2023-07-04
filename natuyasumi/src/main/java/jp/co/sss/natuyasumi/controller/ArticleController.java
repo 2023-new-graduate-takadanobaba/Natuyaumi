@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +34,7 @@ public class ArticleController implements WebMvcConfigurer{
 	@Autowired
 	GenreRepository genreRepository;
 	
-	@RequestMapping(path = "/top")
+	@GetMapping(path = "/top")
 	 public String top() {
 	 return "top";
 	}
