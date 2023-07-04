@@ -6,6 +6,7 @@
 </head>
 <body>
 	<div th:text="${session.sessionName}"></div>さんのマイページ
+	<a th:href="@{/returnTop}">topに戻る</a>
 	<a th:href="@{/doLogout}">ログアウト</a>
     
 </body>

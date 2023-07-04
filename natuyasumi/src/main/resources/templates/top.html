@@ -19,6 +19,20 @@
 			src="https://d1d37e9z843vy6.cloudfront.net/jp/images/3980978/8647f2c7da12adbe101a42764d34dd7440c947cb.jpeg"
 			alt="sea">
 		<div class="overlay"></div>
+		<div class ="session">
+		<p>ユーザー登録をすると<br/>投稿機能、お気に入り機能が使用できます</p>
+			<div th:if="${session.sessionName == null}">
+				<form method="post" th:action="@{/sessionUser}">
+					<input type="text" name="userName"> <input type="submit"
+						value="登録">
+				</form>
+			</div>
+			<div th:if="${session.sessionName != null}">
+				<div>ようこそ
+				<p th:text="${session.sessionName}"></p>さん</div>
+				<a th:href="@{/moveToMyPage}">マイページ</a> <a th:href="@{/doLogout}">ログアウト</a>
+			</div>
+		</div>
 		<h1>今日はどこに行こう？</h1>
 
 		<div class="search">
@@ -27,6 +41,8 @@
 					placeholder="キーワードを入力" /> <input type="submit" value="検索"
 					class="search-button" />
 			</form>
+
+
 			<div class="post1">
 				<a class=postbutton th:href="@{/post}">投稿する</a>
 			</div>
@@ -34,191 +50,181 @@
 				<a class=postbutton2 th:href="@{/post}">行きたい</a>
 			</div>
 		</div>
-		<div th:if="${session.sessionName == null}">
-			<form method="post" th:action="@{/sessionUser}">
-				<input type="text" name="userName"> <input type="submit"
-					value="登録">
-			</form>
-			</div>
-		<div th:if="${session.sessionName != null}">
-			ようこそ
-			<div th:text="${session.sessionName}"></div>
-			<a th:href="@{/moveToMyPage}">マイページ</a> <a th:href="@{/doLogout}">ログアウト</a>
-		</div>
 
 	</header>
-	
-
-		<ul class="nav">
-			<li class="has-sub"><a class="has-sub-title" th:href="@{/doSearchAddress/北海道}">北海道</a>
-				<ul class="sub">
-					<li><a th:href="@{/doSearchAddress/北海道}">北海道</a></li>
-				</ul></li>
-
-			<li class="has-sub"><a class="has-sub-title" href="">東北</a>
-
-				<ul class="sub">
-
-					<li><a th:href="@{/doSearchAddress/青森県}">青森県</a></li>
-					<li><a th:href="@{/doSearchAddress/岩手県}">岩手県</a></li>
-					<li><a th:href="@{/doSearchAddress/宮城県}">宮城県</a></li>
-					<li><a th:href="@{/doSearchAddress/福島県}">福島県</a></li>
-					<li><a th:href="@{/doSearchAddress/山形県}">山形県</a></li>
-					<li><a th:href="@{/doSearchAddress/秋田県}">秋田県</a></li>
-
-				</ul></li>
-
-			<li class="has-sub"><a class="has-sub-title" href="">関東</a>
-
-				<ul class="sub">
-					<li><a th:href="@{/doSearchAddress/東京都}">東京都</a></li>
-					<li><a th:href="@{/doSearchAddress/茨城県}">茨城県</a></li>
-					<li><a th:href="@{/doSearchAddress/栃木県}">栃木県</a></li>
-					<li><a th:href="@{/doSearchAddress/群馬県}">群馬県</a></li>
-					<li><a th:href="@{/doSearchAddress/埼玉県}">埼玉県</a></li>
-					<li><a th:href="@{/doSearchAddress/千葉県}">千葉県</a></li>
-					<li><a th:href="@{/doSearchAddress/神奈川県}">神奈川県</a></li>
-				</ul></li>
 
 
-			<li class="has-sub"><a class="has-sub-title" href="">中部</a>
+	<ul class="nav">
+		<li class="has-sub"><a class="has-sub-title"
+			th:href="@{/doSearchAddress/北海道}">北海道</a>
+			<ul class="sub">
+				<li><a th:href="@{/doSearchAddress/北海道}">北海道</a></li>
+			</ul></li>
 
-				<ul class="sub">
-					<li><a th:href="@{/doSearchAddress/新潟県}">新潟県</a></li>
-					<li><a th:href="@{/doSearchAddress/富山県}">富山県</a></li>
-					<li><a th:href="@{/doSearchAddress/石川県}">石川県</a></li>
-					<li><a th:href="@{/doSearchAddress/福井県}">福井県</a></li>
-					<li><a th:href="@{/doSearchAddress/山梨県}">山梨県</a></li>
-					<li><a th:href="@{/doSearchAddress/長野県}">長野県</a></li>
-					<li><a th:href="@{/doSearchAddress/岐阜県}">岐阜県</a></li>
-					<li><a th:href="@{/doSearchAddress/静岡県}">静岡県</a></li>
-					<li><a th:href="@{/doSearchAddress/愛知県}">愛知県</a></li>
-				</ul></li>
+		<li class="has-sub"><a class="has-sub-title" href="">東北</a>
+
+			<ul class="sub">
+
+				<li><a th:href="@{/doSearchAddress/青森県}">青森県</a></li>
+				<li><a th:href="@{/doSearchAddress/岩手県}">岩手県</a></li>
+				<li><a th:href="@{/doSearchAddress/宮城県}">宮城県</a></li>
+				<li><a th:href="@{/doSearchAddress/福島県}">福島県</a></li>
+				<li><a th:href="@{/doSearchAddress/山形県}">山形県</a></li>
+				<li><a th:href="@{/doSearchAddress/秋田県}">秋田県</a></li>
+
+			</ul></li>
+
+		<li class="has-sub"><a class="has-sub-title" href="">関東</a>
+
+			<ul class="sub">
+				<li><a th:href="@{/doSearchAddress/東京都}">東京都</a></li>
+				<li><a th:href="@{/doSearchAddress/茨城県}">茨城県</a></li>
+				<li><a th:href="@{/doSearchAddress/栃木県}">栃木県</a></li>
+				<li><a th:href="@{/doSearchAddress/群馬県}">群馬県</a></li>
+				<li><a th:href="@{/doSearchAddress/埼玉県}">埼玉県</a></li>
+				<li><a th:href="@{/doSearchAddress/千葉県}">千葉県</a></li>
+				<li><a th:href="@{/doSearchAddress/神奈川県}">神奈川県</a></li>
+			</ul></li>
 
 
-			<li class="has-sub"><a class="has-sub-title" href="">近畿</a>
+		<li class="has-sub"><a class="has-sub-title" href="">中部</a>
 
-				<ul class="sub">
-					<li><a th:href="@{/doSearchAddress/大阪府}">大阪府</a></li>
-					<li><a th:href="@{/doSearchAddress/京都府}">京都府</a></li>
-					<li><a th:href="@{/doSearchAddress/三重県}">三重県</a></li>
-					<li><a th:href="@{/doSearchAddress/滋賀県}">滋賀県</a></li>
-					<li><a th:href="@{/doSearchAddress/兵庫県}">兵庫県</a></li>
-					<li><a th:href="@{/doSearchAddress/和歌山県}">和歌山県</a></li>
-					<li><a th:href="@{/doSearchAddress/奈良県}">奈良県</a></li>
-				</ul></li>
-			<li class="has-sub"><a class="has-sub-title" href="">中国・四国</a>
+			<ul class="sub">
+				<li><a th:href="@{/doSearchAddress/新潟県}">新潟県</a></li>
+				<li><a th:href="@{/doSearchAddress/富山県}">富山県</a></li>
+				<li><a th:href="@{/doSearchAddress/石川県}">石川県</a></li>
+				<li><a th:href="@{/doSearchAddress/福井県}">福井県</a></li>
+				<li><a th:href="@{/doSearchAddress/山梨県}">山梨県</a></li>
+				<li><a th:href="@{/doSearchAddress/長野県}">長野県</a></li>
+				<li><a th:href="@{/doSearchAddress/岐阜県}">岐阜県</a></li>
+				<li><a th:href="@{/doSearchAddress/静岡県}">静岡県</a></li>
+				<li><a th:href="@{/doSearchAddress/愛知県}">愛知県</a></li>
+			</ul></li>
 
-				<ul class="sub">
-					<li><a th:href="@{/doSearchAddress/鳥取県}">鳥取県</a></li>
-					<li><a th:href="@{/doSearchAddress/島根県}">島根県</a></li>
-					<li><a th:href="@{/doSearchAddress/岡山県}">岡山県</a></li>
-					<li><a th:href="@{/doSearchAddress/広島県}">広島県</a></li>
-					<li><a th:href="@{/doSearchAddress/山口県}">山口県</a></li>
-					<li><a th:href="@{/doSearchAddress/徳島県}">徳島県</a></li>
-					<li><a th:href="@{/doSearchAddress/香川県}">香川県</a></li>
-					<li><a th:href="@{/doSearchAddress/愛知県}">愛媛県</a></li>
-					<li><a th:href="@{/doSearchAddress/高知県}">高知県</a></li>
-				</ul></li>
-			<li class="has-sub"><a class="has-sub-title" href="">九州</a>
 
-				<ul class="sub">
-					<li><a th:href="@{/doSearchAddress/福岡県}">福岡県</a></li>
-					<li><a th:href="@{/doSearchAddress/佐賀県}">佐賀県</a></li>
-					<li><a th:href="@{/doSearchAddress/長崎県}">長崎県</a></li>
-					<li><a th:href="@{/doSearchAddress/熊本県}">熊本県</a></li>
-					<li><a th:href="@{/doSearchAddress/大分県}">大分県</a></li>
-					<li><a th:href="@{/doSearchAddress/宮崎県}">宮崎県</a></li>
-					<li><a th:href="@{/doSearchAddress/鹿児島県}">鹿児島県</a></li>
-					<li><a th:href="@{/doSearchAddress/沖縄県}">沖縄県</a></li>
-				</ul></li>
-		</ul>
+		<li class="has-sub"><a class="has-sub-title" href="">近畿</a>
+
+			<ul class="sub">
+				<li><a th:href="@{/doSearchAddress/大阪府}">大阪府</a></li>
+				<li><a th:href="@{/doSearchAddress/京都府}">京都府</a></li>
+				<li><a th:href="@{/doSearchAddress/三重県}">三重県</a></li>
+				<li><a th:href="@{/doSearchAddress/滋賀県}">滋賀県</a></li>
+				<li><a th:href="@{/doSearchAddress/兵庫県}">兵庫県</a></li>
+				<li><a th:href="@{/doSearchAddress/和歌山県}">和歌山県</a></li>
+				<li><a th:href="@{/doSearchAddress/奈良県}">奈良県</a></li>
+			</ul></li>
+		<li class="has-sub"><a class="has-sub-title" href="">中国・四国</a>
+
+			<ul class="sub">
+				<li><a th:href="@{/doSearchAddress/鳥取県}">鳥取県</a></li>
+				<li><a th:href="@{/doSearchAddress/島根県}">島根県</a></li>
+				<li><a th:href="@{/doSearchAddress/岡山県}">岡山県</a></li>
+				<li><a th:href="@{/doSearchAddress/広島県}">広島県</a></li>
+				<li><a th:href="@{/doSearchAddress/山口県}">山口県</a></li>
+				<li><a th:href="@{/doSearchAddress/徳島県}">徳島県</a></li>
+				<li><a th:href="@{/doSearchAddress/香川県}">香川県</a></li>
+				<li><a th:href="@{/doSearchAddress/愛知県}">愛媛県</a></li>
+				<li><a th:href="@{/doSearchAddress/高知県}">高知県</a></li>
+			</ul></li>
+		<li class="has-sub"><a class="has-sub-title" href="">九州</a>
+
+			<ul class="sub">
+				<li><a th:href="@{/doSearchAddress/福岡県}">福岡県</a></li>
+				<li><a th:href="@{/doSearchAddress/佐賀県}">佐賀県</a></li>
+				<li><a th:href="@{/doSearchAddress/長崎県}">長崎県</a></li>
+				<li><a th:href="@{/doSearchAddress/熊本県}">熊本県</a></li>
+				<li><a th:href="@{/doSearchAddress/大分県}">大分県</a></li>
+				<li><a th:href="@{/doSearchAddress/宮崎県}">宮崎県</a></li>
+				<li><a th:href="@{/doSearchAddress/鹿児島県}">鹿児島県</a></li>
+				<li><a th:href="@{/doSearchAddress/沖縄県}">沖縄県</a></li>
+			</ul></li>
+	</ul>
 
 	<div class="textalign">
 
 		<div class="wrapper">
 			<div id="aside">
 				<div class="indent">
-				<p>
-					<a th:href="@{/doSearchGenre}"class="indent-title">すべての投稿を表示する</a>
+					<p>
+						<a th:href="@{/doSearchGenre}" class="indent-title">すべての投稿を表示する</a>
 					</p>
 					<p class="indent-title">アウトドア</p>
 					<div class="indent-sub">
-					<p>
-						<a th:href="@{/doSearchGenre/1}">▹ドライブ</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/2}">▹歴史・遺産</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/4}">▹動物園、水族館</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/3}">▹自然、公園</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/5}">▹観光名所</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/6}">▹アクティビティ・体験</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/7}">▹レジャー施設</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/8}">▹アミューズメント・テーマパーク</a>
-					</p>
+						<p>
+							<a th:href="@{/doSearchGenre/1}">▹ドライブ</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/2}">▹歴史・遺産</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/4}">▹動物園、水族館</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/3}">▹自然、公園</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/5}">▹観光名所</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/6}">▹アクティビティ・体験</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/7}">▹レジャー施設</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/8}">▹アミューズメント・テーマパーク</a>
+						</p>
 					</div>
 				</div>
 				<div class="indent">
 					<p class="indent-title">インドア</p>
 					<div class="indent-sub">
-					<p>
-						<a th:href="@{/doSearchGenre/9}">▹アート、文化</a>
-					<p>
-						<a th:href="@{/doSearchGenre/10}">▹ショッピング</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/11}">▹レストラン・カフェ</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/12}">▹居酒屋</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/13}">▹リラックス・温泉</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/14}">▹映像</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/15}">▹ゲーム</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/8}">▹アミューズメント・テーマパーク</a>
-					</p>
+						<p>
+							<a th:href="@{/doSearchGenre/9}">▹アート、文化</a>
+						<p>
+							<a th:href="@{/doSearchGenre/10}">▹ショッピング</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/11}">▹レストラン・カフェ</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/12}">▹居酒屋</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/13}">▹リラックス・温泉</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/14}">▹映像</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/15}">▹ゲーム</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/8}">▹アミューズメント・テーマパーク</a>
+						</p>
 					</div>
 				</div>
 				<div class="indent">
 					<p class="indent-title">その他</p>
 					<div class="indent-sub">
-					<p>
-						<a th:href="@{/doSearchGenre/16}">▹車が便利</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/17}">▹公共交通機関で行ける</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/18}">▹2-5人で楽しめる</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/19}">▹1人で楽しめる</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/20}">▹大人数可</a>
-					</p>
-					<p>
-						<a th:href="@{/doSearchGenre/21}">▹予約可</a>
-					</p>
+						<p>
+							<a th:href="@{/doSearchGenre/16}">▹車が便利</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/17}">▹公共交通機関で行ける</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/18}">▹2-5人で楽しめる</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/19}">▹1人で楽しめる</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/20}">▹大人数可</a>
+						</p>
+						<p>
+							<a th:href="@{/doSearchGenre/21}">▹予約可</a>
+						</p>
 					</div>
 				</div>
 
@@ -229,8 +235,12 @@
 					<a th:href="@{/doSearchGenre/1}"><img class="img"
 						src="https://www.shutoko.jp/ss/shutokodeikou/blog/1105.jpg"
 						alt="ドライブ"></img></a>
-					<a id="overlay2" th:href="@{/doSearchGenre/1}"></a>
-					<p><a class="texiin-a" th:href="@{/doSearchGenre/1}">この夏おすすめのドライブスポット</a></p>
+					<div>
+						<a id="overlay2" th:href="@{/doSearchGenre/1}"></a>
+					</div>
+					<p>
+						<a class="texiin-a" th:href="@{/doSearchGenre/1}">この夏おすすめのドライブスポット</a>
+					</p>
 				</div>
 				<div class="img-wrapper">
 					<img class="img-sub1"
