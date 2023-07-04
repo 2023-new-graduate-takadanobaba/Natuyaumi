@@ -267,3 +267,19 @@ body {
 	100% {box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);}
 }
 
+.error-wrapper {
+	padding-top:200px;
+	max-width: 40%;
+	margin: 0 auto;
+}
+
+.error-img {
+	width:300px;
+}
+
+
+
+
+
+
+
