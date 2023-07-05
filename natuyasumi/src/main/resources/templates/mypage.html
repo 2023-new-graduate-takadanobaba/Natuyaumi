@@ -2,17 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <link th:href="@{/css/mypage.css}" rel="stylesheet">
+
+<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+<link th:href="@{https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap}" rel="stylesheet">
+
+
     <meta charset="UTF-8" />
     <title>マイページ</title>
 </head>
 <body>
-	<div th:text="${session.sessionName}"></div>さんのマイページ
-	<a th:href="@{/returnTop}">topに戻る</a>
-	<a th:href="@{/doLogout}">ログアウト</a>
+
+	<header class="header">
+		<img class="img-header"
+			src="https://d1d37e9z843vy6.cloudfront.net/jp/images/3980978/8647f2c7da12adbe101a42764d34dd7440c947cb.jpeg"
+			alt="sea">
+		<div class="overlay"></div>
+		<div class="h1">
+			<div class="h1-nakami">
+				<a th:href="@{/returnTop}">今日はどこに行こう？</a>
+			</div>
+			<p th:inline="text">[[${session.sessionName}]]さんのマイページ</p>
+			<a class="h1-nakami2" th:href="@{/doLogout}">ログアウト</a>
+		</div>
+	</header>
+
 	<div class ="hasnav">
 	<p>自分の投稿</p>
 	<p>お気に入り</p>
-	<p>削除した投稿</p>
 	</div>
 	<div class="wrapper">
 	<div th:each="article: ${articles}">
@@ -36,7 +53,7 @@
 					<p>(予算：1000～2000円)</p>
 					<!-- 		 	<p th:text="${article.genre.genreName}"> -->
 					<p class="genre-title" th:text="${article.title}"></p>
-						<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}">記事ページ</a>
+						<p class="goarticle"><a  th:href="@{/doDisplayAirticle/{id}(id=${article.id})}">記事ページ</a></p>
 				</div>
 
 

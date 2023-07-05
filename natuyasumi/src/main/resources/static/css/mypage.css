@@ -6,6 +6,75 @@ body {
 	color: #28495D;
 }
 
+header { 
+	position: relative;
+	width: 100%;
+	position: fixed;
+    top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+.h1 {
+	display:flex;
+	position: absolute;
+	color: white;
+	top: 30%;
+	left: 50%;
+	transform: translate(-30%, -30%);
+	align-items: flex-end;
+}
+
+.h1 a {
+	text-decoration:none;
+	color: white;
+}	
+
+.h1 p{
+	margin:0;
+}
+
+.h1-nakami {
+	letter-spacing: 4px;
+	font-size:30px;
+	font-family: 'Yusei Magic', sans-serif;
+	margin-right:15px;
+}
+
+.h1-nakami2{
+	margin-left:15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding:2px;
+}
+
+.h1-nakami2:hover{
+	background-color: rgba(255,255,255,0.3);
+}
+
+.img-header {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+	object-position: 25% 67%;
+}
+
+.overlay {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100px;
+	background: rgba(235,113,68,0.18);
+}
+
+.hasnav {
+	margin-top:200px;
+}
+
+
 .article{
 	width: 50%; 
 	display: flex;
@@ -22,6 +91,10 @@ body {
 	display:flex;
 	justify-content: space-between;
 	align-items: flex-end;
+}
+
+.article-katamari p{
+	margin:0;
 }
 
 .article-level{
@@ -64,7 +137,10 @@ body {
 	border-radius: 5px;
 }
 
-
+.goarticle {
+	margin:0;
+	text-align:end;
+}
 
 
 
