@@ -70,8 +70,10 @@ SessionData sessionData;
 		 
 	 }
 	 @GetMapping(value = "/test")
-		public String Test(Model model) {
+		public String Test(Model model,HttpSession session) {
+		    String sessionId = session.getId();
 			model.addAttribute("articles", repository.findAll());
+			model.addAttribute("articles", sessionId);
 			return "test";
 		}
 	    
