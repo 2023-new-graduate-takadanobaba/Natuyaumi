@@ -2,32 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <link th:href="@{/css/mypage.css}" rel="stylesheet">
-<meta charset="UTF-8" />
-<title>マイページ</title>
+    <meta charset="UTF-8" />
+    <title>マイページ</title>
 </head>
 <body>
-	<div th:text="${session.sessionName}"></div>
-	さんのマイページ
+	<div th:text="${session.sessionName}"></div>さんのマイページ
 	<a th:href="@{/returnTop}">topに戻る</a>
 	<a th:href="@{/doLogout}">ログアウト</a>
-	<div class="hasnav">
-		<p>自分の投稿</p>
-		<p>お気に入り</p>
-		<p>削除した投稿</p>
+	<div class ="hasnav">
+	<p>自分の投稿</p>
+	<p>お気に入り</p>
+	<p>削除した投稿</p>
 	</div>
 	<div class="wrapper">
-		<div th:each="article: ${articles}">
-			<div class="katamari2">
-				<div class="imageUrl">
-					<img th:src="${article.imageUrl}" />
-				</div>
+	<div th:each="article: ${articles}">
+			<div class="article">
+				<img class="genre-img" th:src="${article.imageUrl}" />
 
-				<div class="nakami">
+				<div class="article-text">
 					<div class="article-katamari">
-						<p>
-							<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}"
-								th:text="${article.name}" class="article-name"></a>
-						</p>
+						<p th:text="${article.name}" class="article-name"></p>
+						
 						<p class="article-level">
 							穴場度： <span th:switch="${article.level}"> <span th:case="1">★</span>
 								<span th:case="2">★★</span> <span th:case="3">★★★</span> <span
@@ -41,12 +36,12 @@
 					<p>(予算：1000～2000円)</p>
 					<!-- 		 	<p th:text="${article.genre.genreName}"> -->
 					<p class="genre-title" th:text="${article.title}"></p>
+						<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}">記事ページ</a>
 				</div>
 
 
 			</div>
 		</div>
-	</div>
+    </div>
 </body>
 </html>
-
