@@ -39,7 +39,6 @@ public class ArticleController implements WebMvcConfigurer{
 	 public String top() {
 	 return "top";
 	}
-	
 	@RequestMapping(path = "/doSearchGenre", method = RequestMethod.GET)
 	 public String doSearchGenre(Model model) {
 		model.addAttribute("articles", repository.findAll());
