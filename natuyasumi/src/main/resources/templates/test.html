@@ -2,30 +2,38 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <link th:href="@{/css/mypage.css}" rel="stylesheet">
+
+<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+<link th:href="@{https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap}" rel="stylesheet">
+
+
     <meta charset="UTF-8" />
     <title>マイページ</title>
 </head>
 <body>
-<div th:if="${session.sessionId != null}" id="user-form">
-	<div th:text="${session.sessionName}"></div>さんのマイページ
-	<a th:href="@{/returnTop}">topに戻る</a>
-	<a th:href="@{/doLogout}">ログアウト</a>
-	<div class ="hasnav">
-	<p>自分の投稿</p>
-	<p>お気に入り</p>
-	<p>削除した投稿</p>
-	</div>
-	<div class="wrapper">
-	
-	<div th:each="article: ${articles}">
-	
+
+
+		<div class="h1">
+			<div class="h1-nakami">
+
+			</div>
+			<p th:inline="text">[[${session.sessionName}]]さんのマイページ</p>
+			<a class="h1-nakami2" th:href="@{/doLogout}">ログアウト</a>
+		</div>
+
+<div th:if="${session.sessionName != null}" id="user-form">
+<div th:each="article: ${articles}">
+<div th:if= "${article.sessionId == aaa}">
 			<div class="article">
 				<img class="genre-img" th:src="${article.imageUrl}" />
 
 				<div class="article-text">
 					<div class="article-katamari">
-						<p th:text="${article.name}" class="article-name"></p>
-						
+						<p>
+							<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}"
+								th:text="${article.name}" class="article-name"></a>
+						</p>
 						<p class="article-level">
 							穴場度： <span th:switch="${article.level}"> <span th:case="1">★</span>
 								<span th:case="2">★★</span> <span th:case="3">★★★</span> <span
@@ -37,17 +45,15 @@
 						所在地：<span th:text="${article.address}"></span>
 					</p>
 					<p>(予算：1000～2000円)</p>
-					<p th:text="${article.sessionId}" class="article-name"></p>
 					<!-- 		 	<p th:text="${article.genre.genreName}"> -->
 					<p class="genre-title" th:text="${article.title}"></p>
-						<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}">記事ページ</a>
 				</div>
 
 
 			</div>
 			</div>
 		</div>
-    </div>
 </div>
+
 </body>
 </html>

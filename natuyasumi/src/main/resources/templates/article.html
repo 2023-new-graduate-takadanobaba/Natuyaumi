@@ -33,6 +33,7 @@
 					<p>
 						所在地:<span th:text="${article.address}"></span>
 					</p>
+
 					<div th:switch="${article.hasParking}">
 						<p th:case="true">駐車場あり</p>
 						<p th:case="false">駐車場なし</p>
