@@ -37,22 +37,6 @@ ArticleRepository repository;
 		return "mypage";
 	}
 	
-	@GetMapping(value = "/test")
-	public String Test(Model model,HttpSession session) {
-	    String sessionId = session.getId();
-		model.addAttribute("articles", repository.findAll());
-		model.addAttribute("aaa", sessionId);
-		return "test";
-	}
-	
-	 
-	 @GetMapping(value = "/getSessionId")
-	 String GetSessionId(Model model,HttpSession session) {
-		 String sessionId = session.getId();
-		 model.addAttribute("articles", sessionId);
-		return "index";
-		 
-	 }
 	 
 	    
 	 
