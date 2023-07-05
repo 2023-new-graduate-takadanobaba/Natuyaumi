@@ -71,21 +71,78 @@ header {
 	background: rgba(235,113,68,0.18);
 }
 
-.hasnav {
-	width:400px;
-	margin:0 auto;
-	display:flex;
-	justify-content: space-between;
-	margin-top:120px;
+
+
+
+
+
+.tabs{
+  width:50%;
+  margin:0 auto;
+  position:relative;
+  
+}
+.tab-buttons span{
+  font:400 14px 'open sans',sans-serif;
+  color:#333;
+  background:#eee;
+  cursor:pointer;
+  border-bottom:2px solid #ddd;
+  display:block;
+  width:50%;
+  float:left;
+  text-align:center;
+  height:40px;
+  line-height:40px;
+}
+.tab-content{
+  border-bottom:3px solid #ddd;
+  padding:15px;
+  background:#eee;
+  display:inline-block;
+  font:400 13px 'open sans',sans-serif;
+  color:#333;
+}
+#lamp{
+  width:50%;
+  height:2px;
+  background:#333;
+  display:block;
+  position:absolute;
+  top:40px;
+  transition: all .3s ease-in;
+-o-transition: all .3s ease-in;
+-webkit-transition: all .3s ease-in;
+-moz-transition: all .3s ease-in;
+}
+#lamp.content2{
+  left:50%;
+  transition: all .3s ease-in;
+-o-transition: all .3s ease-in;
+-webkit-transition: all .3s ease-in;
+-moz-transition: all .3s ease-in;
 }
 
-.hasnav a{
-	text-decoration:none;
+#lamp.content1{
+  left:0;
+  transition: all .3s ease-in;
+-o-transition: all .3s ease-in;
+-webkit-transition: all .3s ease-in;
+-moz-transition: all .3s ease-in;
 }
+
+
+
+
+
+
+
+
+
 
 
 .article{
-	width: 50%; 
+	width: 100%; 
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
