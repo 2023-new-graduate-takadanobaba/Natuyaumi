@@ -38,9 +38,19 @@ SessionData sessionData;
 	}
 	
 	@GetMapping(value = "/moveToMyPage")
-	public String moveToMyPage(Model model) {
+	public String moveToMyPage(Model model, HttpSession session) {
+	    String sessionId = session.getId();
 		model.addAttribute("articles", repository.findAll());
+		model.addAttribute("aaa", sessionId);
 		return "mypage";
+	}
+	
+	@GetMapping(value = "/test")
+	public String Test(Model model,HttpSession session) {
+	    String sessionId = session.getId();
+		model.addAttribute("articles", repository.findAll());
+		model.addAttribute("aaa", sessionId);
+		return "test";
 	}
 	
 	 @GetMapping(value="/set")
@@ -69,13 +79,7 @@ SessionData sessionData;
 		return "index";
 		 
 	 }
-	 @GetMapping(value = "/test")
-		public String Test(Model model,HttpSession session) {
-		    String sessionId = session.getId();
-			model.addAttribute("articles", repository.findAll());
-			model.addAttribute("aaa", sessionId);
-			return "test";
-		}
+	 
 	    
 	 
 	 
