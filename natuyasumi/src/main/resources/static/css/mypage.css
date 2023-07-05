@@ -91,11 +91,6 @@ header {
 	background: rgba(235,113,68,0.18);
 }
 
-
-
-
-
-
 .tabs{
   width:50%;
   margin:0 auto;
@@ -117,8 +112,6 @@ header {
 .tab-content{
   padding:15px;
   display:inline-block;
-  font:400 13px 'open sans',sans-serif;
-  color:#333;
 }
 #lamp{
   width:50%;
