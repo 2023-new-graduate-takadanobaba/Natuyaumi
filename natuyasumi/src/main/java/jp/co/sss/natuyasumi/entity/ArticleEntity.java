@@ -35,6 +35,9 @@ public class ArticleEntity {
 	 private Integer month;
 	 
 	 @Column
+	 private Integer budget;
+	 
+	 @Column
 	 private String imageUrl;
 	 
 //	 @Lob
@@ -133,6 +136,14 @@ public class ArticleEntity {
 
 	public void setMonth(Integer month) {
 		this.month = month;
+	}
+
+	public Integer getBudget() {
+		return budget;
+	}
+
+	public void setBudget(Integer budget) {
+		this.budget = budget;
 	}
 
 	public String getImageUrl() {
