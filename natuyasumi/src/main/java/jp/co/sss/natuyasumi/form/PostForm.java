@@ -14,6 +14,8 @@ public class PostForm {
 	private Boolean hasParking;
 
 	private Integer month;
+	
+	private Integer  budget;
 
 	//		 private byte[] imageData;
 
@@ -71,6 +73,14 @@ public class PostForm {
 
 	public void setMonth(Integer month) {
 		this.month = month;
+	}
+
+	public Integer getBudget() {
+		return budget;
+	}
+
+	public void setBudget(Integer budget) {
+		this.budget = budget;
 	}
 
 	public String getImageUrl() {
