@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import jp.co.sss.natuyasumi.entity.ArticleEntity;
 import jp.co.sss.natuyasumi.entity.Genre;
@@ -64,7 +65,7 @@ public class ArticleController implements WebMvcConfigurer{
 	
 	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
-	 public String doCreatePost(Model model, @Valid PostForm form, 
+	 public String doCreatePost(Model model, @Valid PostForm form, HttpSession session,
 			 BindingResult result) {
 		if(result.hasErrors()) {
 			return "Post";
@@ -114,6 +115,8 @@ public class ArticleController implements WebMvcConfigurer{
 			article.setGenre9(genreRepository.getReferenceById(Integer.parseInt(alt[9])));
 		}
 		
+		String sessionId = session.getId();
+		
 		article.setTitle(form.getTitle());
 		article.setName(form.getName());
 		article.setAddress(form.getAddress());
@@ -123,12 +126,16 @@ public class ArticleController implements WebMvcConfigurer{
 		article.setLevel(form.getLevel());
 		article.setReview(form.getReview());
 		
+		article.setSessionId(sessionId);
 		
+
 		repository.save(article);
 		model.addAttribute("articles", article);
 
 		return "genre";
 	}
+	
+
 	
 	@RequestMapping(path = "/delete/{id}")
 	 public String doDelete(@PathVariable Integer id, Model model) {

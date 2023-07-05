@@ -50,6 +50,9 @@ public class ArticleEntity {
 	 @Column
 	 private String review;
 	 
+	 @Column
+	 private String sessionId;
+	 
 //	 MySQLのname=Articleテーブル、ReferencedColumnName=Genreテーブルと対応させる
 //	 テーブルが二つあるからそれを対応させている
 	 
@@ -244,6 +247,16 @@ public class ArticleEntity {
 	public void setGenre9(Genre genre9) {
 		this.genre9 = genre9;
 	}
+
+	public String getSessionId() {
+		return sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+	}
+	
+	
 	 
 	
 
