@@ -73,7 +73,7 @@ SessionData sessionData;
 		public String Test(Model model,HttpSession session) {
 		    String sessionId = session.getId();
 			model.addAttribute("articles", repository.findAll());
-			model.addAttribute("articles", sessionId);
+			model.addAttribute("aaa", sessionId);
 			return "test";
 		}
 	    
