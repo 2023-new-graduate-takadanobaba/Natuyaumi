@@ -56,12 +56,12 @@ public class ArticleController implements WebMvcConfigurer{
 	}
 	
 	@RequestMapping(path = "/doDisplayAirticle/{id}")
-	 public String doDisplayAirticle(@PathVariable Integer id, Model model) {
+	 public String doDisplayAirticle(@PathVariable Integer id, Model model, HttpSession session) {
+		String sessionId = session.getId();
 		model.addAttribute("article", repository.findById(id).get());
+		model.addAttribute("bbb", sessionId);
 	 return "article";
 	}
-	
-	
 	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
 	 public String doCreatePost(Model model, @Valid PostForm form, HttpSession session,
