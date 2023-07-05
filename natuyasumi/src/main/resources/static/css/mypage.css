@@ -116,7 +116,7 @@ header {
 #lamp{
   width:50%;
   height:2px;
-  background:#333;
+  background:#004993;
   display:block;
   position:absolute;
   top:40px;
@@ -135,7 +135,7 @@ header {
 
 
 .article{
-	width: 100%; 
+	width: 845px; 
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
