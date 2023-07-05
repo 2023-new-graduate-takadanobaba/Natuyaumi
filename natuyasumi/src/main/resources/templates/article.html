@@ -42,10 +42,12 @@
 					<p>
 						行った月：<span th:text="${article.month}"></span>月
 					</p>
-					<div  class="review"><p th:text="${article.review}"></p></div>
+					<div class="review">
+						<p th:text="${article.review}"></p>
+					</div>
 				</div>
 			</div>
-	
+
 			<div id="modal" class="modal">
 				<div class="modal-content">
 					<p>本当に削除しますか？</p>
@@ -56,13 +58,14 @@
 			</div>
 		</div>
 
-<div class="botan">
-		<input value="戻る" onclick="history.back();" type="button" id="modoru">
-		<input value="お気に入り" onclick="history.back();" type="button" id="okiniiri">
-</div>
+		<div class="botan">
+			<input value="戻る" onclick="history.back();" type="button" id="modoru">
+			<input value="お気に入り" onclick="history.back();" type="button"
+				id="okiniiri">
+		</div>
 
 		<p id="mo">削除されました。</p>
-		
+
 		<a th:href="@{/returnTop}" id="modoru2">戻る</a>
 	</div>
 
