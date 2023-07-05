@@ -169,8 +169,8 @@
 </div>
 <div class="error-wrapper" th:if="${session.sessionName == null}">
 <img class="error-img" src="https://illustrain.com/img/work/2016/illustrain02-tropical02.png" alt="海の写真" title="空と海">
-<p class="error-message">投稿するにはトップページでユーザ登録をしてください</p>
-<a th:href="@{/returnTop}">TOPに戻る</a>
+<div class="error-message"><p >投稿するにはトップページでユーザ登録をしてください</p></div>
+<div class="error-message"><a th:href="@{/returnTop}">TOPに戻る</a></div>
 </div>
 
 </body>
