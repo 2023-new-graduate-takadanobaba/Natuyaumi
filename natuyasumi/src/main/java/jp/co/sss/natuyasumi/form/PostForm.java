@@ -17,7 +17,7 @@ public class PostForm {
 	
 	private Integer  budget;
 
-	//		 private byte[] imageData;
+	private byte[] imageData;
 
 	private String imageUrl;
 
@@ -89,6 +89,14 @@ public class PostForm {
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	public byte[] getImageData() {
+		return imageData;
+	}
+
+	public void setImageData(byte[] imageData) {
+		this.imageData = imageData;
 	}
 
 	public Integer getLevel() {

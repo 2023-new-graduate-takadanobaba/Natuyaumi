@@ -41,8 +41,8 @@ public class ArticleEntity {
 	 private String imageUrl;
 	 
 //	 @Lob
-//	  @Column(name = "image_data", nullable = false)
-//	  private byte[] imageData;
+	 @Column
+	  private byte[] imageData;
 	 
 	 @Column
 	 private Integer level;
