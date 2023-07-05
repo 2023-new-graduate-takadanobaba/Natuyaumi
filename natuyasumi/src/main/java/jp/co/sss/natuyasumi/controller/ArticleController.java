@@ -123,6 +123,10 @@ public class ArticleController implements WebMvcConfigurer{
 		article.setMonth(form.getMonth());
 		article.setBudget(form.getBudget());
 		article.setImageUrl(form.getImageUrl());
+		//写真アップロード機能
+		article.setImageData(form.getImageData());
+		
+		
 		article.setLevel(form.getLevel());
 		article.setReview(form.getReview());
 		
@@ -167,6 +171,8 @@ public class ArticleController implements WebMvcConfigurer{
 		return "genre";
 		
 	}
+	
+	
 	
 	
 

@@ -154,6 +154,14 @@ public class ArticleEntity {
 		this.imageUrl = imageUrl;
 	}
 
+	public byte[] getImageData() {
+		return imageData;
+	}
+
+	public void setImageData(byte[] imageData) {
+		this.imageData = imageData;
+	}
+
 	public Integer getLevel() {
 		return level;
 	}
