@@ -11,7 +11,7 @@ import jp.co.sss.natuyasumi.repository.GenreRepository;
 public class GenreRegistrationController {
 	@Autowired
 	GenreRepository genreRepository;
-	
+
 	@GetMapping(value = "/InsertGenreColumn")
 	public String insertGenreColumn() {
 		Genre genre = new Genre();
@@ -100,5 +100,5 @@ public class GenreRegistrationController {
 		genreRepository.save(genre20);
 		return "top";
 	}
-	
+
 }

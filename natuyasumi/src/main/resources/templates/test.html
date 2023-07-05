@@ -18,6 +18,8 @@
 	<div class="wrapper">
 	
 	<div th:each="article: ${articles}">
+	
+			<div th:if="${session.sessionId != null}" id="user-form">
 			<div class="article">
 				<img class="genre-img" th:src="${article.imageUrl}" />
 
@@ -36,12 +38,14 @@
 						所在地：<span th:text="${article.address}"></span>
 					</p>
 					<p>(予算：1000～2000円)</p>
+					<p th:text="${article.sessionId}" class="article-name"></p>
 					<!-- 		 	<p th:text="${article.genre.genreName}"> -->
 					<p class="genre-title" th:text="${article.title}"></p>
 						<a th:href="@{/doDisplayAirticle/{id}(id=${article.id})}">記事ページ</a>
 				</div>
 
 
+			</div>
 			</div>
 		</div>
     </div>
