@@ -121,6 +121,7 @@ public class ArticleController implements WebMvcConfigurer{
 		article.setAddress(form.getAddress());
 		article.setHasParking(form.getHasParking());
 		article.setMonth(form.getMonth());
+		article.setBudget(form.getBudget());
 		article.setImageUrl(form.getImageUrl());
 		article.setLevel(form.getLevel());
 		article.setReview(form.getReview());
