@@ -6,7 +6,7 @@
     <title>マイページ</title>
 </head>
 <body>
-<div th:if="${session.sessionName != null}" id="user-form">
+<div th:if="${session.sessionId != null}" id="user-form">
 	<div th:text="${session.sessionName}"></div>さんのマイページ
 	<a th:href="@{/returnTop}">topに戻る</a>
 	<a th:href="@{/doLogout}">ログアウト</a>
@@ -19,7 +19,6 @@
 	
 	<div th:each="article: ${articles}">
 	
-			<div th:if="${session.sessionId != null}" id="user-form">
 			<div class="article">
 				<img class="genre-img" th:src="${article.imageUrl}" />
 
