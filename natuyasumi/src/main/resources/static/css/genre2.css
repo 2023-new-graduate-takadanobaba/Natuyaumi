@@ -31,6 +31,7 @@ body::after {
 	padding: 20px;
 	background: rgba(255, 255, 255, 0.5);
 	border-radius: 5px;
+	margin-top:20px;
 }
 
 .article-name {
