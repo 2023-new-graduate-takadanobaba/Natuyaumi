@@ -1,6 +1,7 @@
 package jp.co.sss.natuyasumi.controller;
 
 import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,10 +59,14 @@ public class ArticleController implements WebMvcConfigurer{
 	}
 	
 	@RequestMapping(path = "/doDisplayAirticle/{id}")
-	 public String doDisplayAirticle(@PathVariable Integer id, Model model, HttpSession session) {
+	 public String doDisplayAirticle(@PathVariable Integer id, Model model, HttpSession session) throws IOException{
 		String sessionId = session.getId();
-		model.addAttribute("article", repository.findById(id).get());
+		ArticleEntity article = repository.findById(id).get();
+		model.addAttribute("article", article);
 		model.addAttribute("bbb", sessionId);
+		byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+	    String base64Encoded = new String(encodeBase64, "UTF-8");
+		model.addAttribute("imageData", base64Encoded);
 	 return "article";
 	}
 	
@@ -126,7 +131,7 @@ public class ArticleController implements WebMvcConfigurer{
 		article.setBudget(form.getBudget());
 		article.setImageUrl(form.getImageUrl());
 //		写真アップロード機能
-		System.out.println(imageData.getBytes().length);
+//		System.out.println(imageData.getBytes().length);
 		article.setImageData(imageData.getBytes());
 		
 		
@@ -137,6 +142,7 @@ public class ArticleController implements WebMvcConfigurer{
 		
 
 		repository.save(article);
+		
 		model.addAttribute("articles", article);
 
 		return "genre";
