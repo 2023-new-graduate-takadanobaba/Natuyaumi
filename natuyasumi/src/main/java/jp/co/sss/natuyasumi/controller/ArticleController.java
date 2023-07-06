@@ -56,6 +56,7 @@ public class ArticleController implements WebMvcConfigurer{
 		}
 		model.addAttribute("imageData", genreArticle);
 		
+		
 
 	 return "genre";
 	}
