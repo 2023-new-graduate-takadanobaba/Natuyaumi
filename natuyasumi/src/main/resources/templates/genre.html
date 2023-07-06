@@ -28,13 +28,11 @@
 	</header>
 	<div class="wrapper">
 
-		<!-- 		<a th:href="@{/returnTop}">戻る</a> -->
-
 
 		<div th:each="article: ${articles}">
 			<div class="article">
-				<img class="genre-img" th:src="${article.imageUrl}" />
 
+				<img th:src="@{'data:image/jpeg;base64,'+${imageData[article.id]}}" />
 				<div class="article-text">
 					<div class="article-katamari">
 						<p>

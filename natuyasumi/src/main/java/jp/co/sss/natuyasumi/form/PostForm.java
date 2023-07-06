@@ -19,7 +19,7 @@ public class PostForm {
 
 //	private byte[] imageData;
 
-	private String imageUrl;
+//	private String imageUrl;
 
 	private Integer level;
 
@@ -82,14 +82,14 @@ public class PostForm {
 	public void setBudget(Integer budget) {
 		this.budget = budget;
 	}
-
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
+//
+//	public String getImageUrl() {
+//		return imageUrl;
+//	}
+//
+//	public void setImageUrl(String imageUrl) {
+//		this.imageUrl = imageUrl;
+//	}
 
 //	public byte[] getImageData() {
 //		return imageData;
