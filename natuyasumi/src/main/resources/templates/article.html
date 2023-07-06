@@ -13,13 +13,11 @@
 	<div class="wrapper">
 		<div id="dehine">
 			<div class="katamari"th:if= "${article.sessionId == bbb}">
-                <!-- <div th:each="article: ${articles}">-->
                 <p class="article-name" th:text="${article.name}"></p>
                 <a href="" id="deleteButton">削除</a>
             </div>
 			<div class="katamari2">
 				<div class="imageUrl">
-<!-- 					<img th:src="${article.imageUrl}" /> -->
 					<img th:src="@{'data:image/jpeg;base64,'+${imageData}}">
 				</div>
 				<div class="nakami">

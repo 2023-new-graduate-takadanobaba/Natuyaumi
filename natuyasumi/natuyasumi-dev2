@@ -1,0 +1,28 @@
+drop table `natyuyasyumi-dev`.`Article`;
+
+create table `natyuyasyumi-dev`.`Article`(
+id int(50) not null auto_increment ,
+session_id varchar(200)not null,
+title varchar(120),
+name varchar(120),
+address varchar(200),
+has_parking boolean,
+month int(4),
+budget int(4),
+image_data LONGBLOB,
+level int(10),
+genre_id int(50) not null references natuyasumi.genre(genre_id),
+genre_id_01 int(50) references natuyasumi.genre(genre_id),
+genre_id_02 int(50) references natuyasumi.genre(genre_id),
+genre_id_03 int(50) references natuyasumi.genre(genre_id),
+genre_id_04 int(50) references natuyasumi.genre(genre_id),
+genre_id_05 int(50) references natuyasumi.genre(genre_id),
+genre_id_06 int(50) references natuyasumi.genre(genre_id),
+genre_id_07 int(50) references natuyasumi.genre(genre_id),
+genre_id_08 int(50) references natuyasumi.genre(genre_id),
+genre_id_09 int(50) references natuyasumi.genre(genre_id),
+review TEXT,
+primary key(id)
+);
+
+SELECT * FROM `Article`;

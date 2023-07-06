@@ -38,18 +38,12 @@ public class ArticleEntity {
 	 @Column
 	 private Integer budget;
 	 
-	 @Column
-	 private String imageUrl;
-	 
 	 @Lob
 	 @Column(columnDefinition="LONGBLOB")
 	 private byte[] imageData;
 	 
 	 @Column
 	 private Integer level;
-	 
-//	 @Column   //GenreIdは外部参照で引っ張ってきているからいらない
-//	 private Integer genreId;
 	 
 	 @Column
 	 private String review;
@@ -147,14 +141,6 @@ public class ArticleEntity {
 		this.budget = budget;
 	}
 
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
-
 	public byte[] getImageData() {
 		return imageData;
 	}
@@ -171,14 +157,6 @@ public class ArticleEntity {
 	public void setLevel(Integer level) {
 		this.level = level;
 	}
-
-//	public Integer getGenreId() {
-//		return genreId;
-//	}
-//
-//	public void setGenreId(Integer genreId) {
-//		this.genreId = genreId;
-//	}
 
 	public String getReview() {
 		return review;
