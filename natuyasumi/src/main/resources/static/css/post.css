@@ -7,8 +7,8 @@ body {
 
 body {
 	position: relative;
-/* 	background-color: rgba(217, 234, 234, 1); */
-	background-color: rgba(	210,180,140, 1);
+	/* 	background-color: rgba(217, 234, 234, 1); */
+	background-color: rgba(210, 180, 140, 1);
 	margin: 0;
 }
 
@@ -19,8 +19,9 @@ body::after {
 	left: 0;
 	width: 100%;
 	height: 100%;
-/* 	background-image: url("https://beiz.jp/images_M/watercolor/watercolor_00602.jpg"); */
-	background-image: url("https://beiz.jp/images_M/pastel/pastel_00118.jpg");
+	/* 	background-image: url("https://beiz.jp/images_M/watercolor/watercolor_00602.jpg"); */
+	background-image:
+		url("https://beiz.jp/images_M/pastel/pastel_00118.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	opacity: 0.75;
@@ -31,9 +32,10 @@ body::after {
 	max-width: 40%;
 	margin: 0 auto;
 	padding: 20px;
-	background:rgba(255,255,255,0.5);
+	background: rgba(255, 255, 255, 0.5);
 	border: 1px solid #ccc;
 	border-radius: 5px;
+	border: none;
 }
 
 .yokonarabi {
@@ -105,8 +107,8 @@ body::after {
 	font-weight: bold;
 }
 
-.checkbox-group{
-	margin-top:15px;
+.checkbox-group {
+	margin-top: 15px;
 }
 
 .checkbox-group label {
@@ -181,7 +183,8 @@ body::after {
 	position: relative;
 	border-radius: 2px;
 	border: 2px solid;
-	border-color: #28495D; border-radius : 50px;
+	border-color: #28495D;
+	border-radius: 50px;
 	background: #ffffff;
 	border-radius: 50px;
 }
@@ -189,7 +192,6 @@ body::after {
 .budget {
 	margin-top: 20px;
 }
-
 
 .number-list {
 	margin-top: 10px;
@@ -209,10 +211,14 @@ body::after {
 	active
 	{
 	
+	
     
+	
 	outline
 	:
+	
 	 
+	
 	none;
 }
 
@@ -245,11 +251,11 @@ body::after {
 .photo-upload-box {
 	display: inline-block;
 	padding: 180px 50px;
-	margin-top: 20px; border : 1px solid #ccc;
+	margin-top: 20px;
 	border-radius: 3px;
 	cursor: pointer;
 	background-color: #f5f5f5;
-	border: 1px solid #ccc;
+	border: none;
 }
 
 .photo-upload-box:hover {
@@ -271,13 +277,14 @@ body::after {
 	vertical-align: middle;
 	text-decoration: none;
 	width: 100px;
-	margin-top:15px;
-	padding:10px;
+	margin-top: 15px;
+	padding: 10px;
 	border-radius: 100vw;
 	border: none;
 	color: #fff;
 	background: #28495D;
 }
+
 .submit-btn:hover {
 /*     background-position: right center; */
 /* 	background-size: 200% auto; */
@@ -294,21 +301,85 @@ body::after {
 }
 
 .error-wrapper {
-	padding-top:200px;
+	padding-top: 200px;
 	margin: 0 auto;
-	width:70%;
-	text-align:center;
+	width: 70%;
+	text-align: center;
 }
 
 .error-img {
-	width:300px;
-	
+	width: 300px;
 }
-.error-message{
-	width:40%;
-	text-align:center;
+
+.error-message {
+	width: 40%;
+	text-align: center;
 	margin: 0 auto;
 }
+
+.preview-uploader1 {
+	display: inline-block;
+	margin-top: 32px;
+	border-radius: 3px;
+/* 	border: 1px solid rgb(191, 194, 199); */
+}
+
+/* .preview-uploader1:hover { /
+/     backg32ound-color: #D3E6E6; /
+/ } */
+
+input[type='file'] {
+	/*   display:none; */
+	width: 300px;
+	border-radius: 3px;
+	border: 1px solid rgb(191, 194, 199);
+}
+
+::file-selector-button, ::-webkit-file-upload-button {
+	color: #FFF;
+	cursor: pointer;
+	background-color: rgba(40, 73, 93,0.7);
+	border: none;
+	cursor: pointer;
+	border-right: 1px solid rgb(191, 194, 199);
+	font-weight:bold;
+	padding:20px;
+}
+
+::file-selector-button:hover, ::-webkit-file-upload-button:hover{
+	background-color: #28495D;
+}
+
+
+
+.preview {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border: none;
+}
+
+.preview-container {
+/* 	background-color: rgba(40, 73, 93,0.7); */
+/* 	position: relative; */
+	width: 300px;
+	height: 300px;
+/* 	width: 100%; */
+/* 	height: 100%; */
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
