@@ -40,18 +40,20 @@ FavoriteRepository FavRepository;
 	    String sessionId = session.getId();
 		model.addAttribute("articles", repository.findAll());
 		model.addAttribute("aaa", sessionId);
-		
+		model.addAttribute("favorite", FavRepository.findAll());
 		return "mypage";
 	}
 	
 	@GetMapping(value = "/addFavoriteList/{id}")
-	public String addFavoriteList(@PathVariable Integer id, HttpSession session) {
+	public String addFavoriteList(@PathVariable Integer id, HttpSession session,Model model) {
 		FavoriteEntity favorite = new FavoriteEntity();
 		String sessionId = session.getId();
 		favorite.setId(id);
 		favorite.setSessionId(sessionId);
 		FavRepository.save(favorite);
-		return "top";
+		model.addAttribute("bbb", sessionId);
+		model.addAttribute("article", repository.findById(id).get());
+		return "article";
 	}
 	 
 	    
