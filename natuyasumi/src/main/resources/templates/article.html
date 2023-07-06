@@ -20,7 +20,7 @@
 			<div class="katamari2">
 				<div class="imageUrl">
 					<img th:src="${article.imageUrl}" />
-					<img th:src="${article.imageData}" />
+					<img th:src="@{'data:image/jpeg;base64,'+${imageData}}">
 				</div>
 				<div class="nakami">
 					<div>
@@ -78,9 +78,7 @@
 
 		<div class="botan">
 			<input value="戻る" onclick="history.back();" type="button" id="modoru">
-			<input value="お気に入り" onclick="history.back();" type="button"
-				id="okiniiri">
-			<a th:href="@{/addFavoriteList/{id}(id=${article.id})}">お気に入り</a>
+			<a th:href="@{/addFavoriteList/{id}(id=${article.id})}"id = "okiniiri"type="button">お気に入り</a>
 		</div>
 
 		<p id="mo">削除されました。</p>

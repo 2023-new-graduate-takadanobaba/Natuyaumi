@@ -1,5 +1,7 @@
 package jp.co.sss.natuyasumi.controller;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import jakarta.servlet.http.HttpSession;
@@ -56,16 +59,20 @@ public class ArticleController implements WebMvcConfigurer{
 	}
 	
 	@RequestMapping(path = "/doDisplayAirticle/{id}")
-	 public String doDisplayAirticle(@PathVariable Integer id, Model model, HttpSession session) {
+	 public String doDisplayAirticle(@PathVariable Integer id, Model model, HttpSession session) throws IOException{
 		String sessionId = session.getId();
-		model.addAttribute("article", repository.findById(id).get());
+		ArticleEntity article = repository.findById(id).get();
+		model.addAttribute("article", article);
 		model.addAttribute("bbb", sessionId);
+		byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+	    String base64Encoded = new String(encodeBase64, "UTF-8");
+		model.addAttribute("imageData", base64Encoded);
 	 return "article";
 	}
 	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
-	 public String doCreatePost(Model model, @Valid PostForm form, HttpSession session,
-			 BindingResult result) {
+	 public String doCreatePost(@RequestParam ("imageData") MultipartFile imageData, Model model, @Valid PostForm form, HttpSession session,
+			 BindingResult result) throws IOException {
 		if(result.hasErrors()) {
 			return "Post";
 
@@ -123,8 +130,9 @@ public class ArticleController implements WebMvcConfigurer{
 		article.setMonth(form.getMonth());
 		article.setBudget(form.getBudget());
 		article.setImageUrl(form.getImageUrl());
-		//写真アップロード機能
-//		article.setImageData(form.getImageData());
+//		写真アップロード機能
+//		System.out.println(imageData.getBytes().length);
+		article.setImageData(imageData.getBytes());
 		
 		
 		article.setLevel(form.getLevel());
@@ -134,6 +142,7 @@ public class ArticleController implements WebMvcConfigurer{
 		
 
 		repository.save(article);
+		
 		model.addAttribute("articles", article);
 
 		return "genre";
