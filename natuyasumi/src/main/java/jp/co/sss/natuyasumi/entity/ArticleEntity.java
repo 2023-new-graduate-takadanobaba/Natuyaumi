@@ -42,7 +42,7 @@ public class ArticleEntity {
 	 private String imageUrl;
 	 
 	 @Lob
-	 @Column
+	 @Column(columnDefinition="LONGBLOB")
 	 private byte[] imageData;
 	 
 	 @Column
