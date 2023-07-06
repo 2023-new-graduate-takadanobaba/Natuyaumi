@@ -317,18 +317,18 @@ body::after {
 
 
 .preview-uploader1 {
-	display: inline-block;
-	margin-top: 20px; 
-	border-radius: 3px;
-	border:none;
-}	
+    display: inline-block;
+    margin-top: 20px; 
+    border-radius: 3px;
+    border:none;
+}
 
-/* .preview-uploader1:hover { */
-/* 	background-color: #D3E6E6; */
-/* } */
+/* .preview-uploader1:hover { /
+/     background-color: #D3E6E6; /
+/ } */
 
 input[type='file'] {
-  display:none;
+/*   display:none; */
   cursor: pointer;
  border-radius: 3px;
   padding-right: 0.5rem;
