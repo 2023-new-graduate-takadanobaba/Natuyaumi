@@ -102,7 +102,7 @@
 					<div th:each="article: ${articles}">
 
 						<div th:if="${article.id == Fav.id}">
-<!-- 								ここにもう一行必要fav.sessionId == aaa　がひつようかな -->
+							<div th:if="${Fav.sessionId == aaa}">
 							<div class="article">
 								<img class="genre-img" th:src="${article.imageUrl}" />
 
@@ -140,6 +140,7 @@
 
 								</div>
 
+							</div>
 							</div>
 
 						</div>
