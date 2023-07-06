@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -40,10 +41,10 @@ public class ArticleEntity {
 	 @Column
 	 private String imageUrl;
 	 
-//	 @Lob
-//	 @Column
-//	  private byte[] imageData;
-//	 
+	 @Lob
+	 @Column
+	 private byte[] imageData;
+	 
 	 @Column
 	 private Integer level;
 	 
@@ -154,13 +155,13 @@ public class ArticleEntity {
 		this.imageUrl = imageUrl;
 	}
 
-//	public byte[] getImageData() {
-//		return imageData;
-//	}
-//
-//	public void setImageData(byte[] imageData) {
-//		this.imageData = imageData;
-//	}
+	public byte[] getImageData() {
+		return imageData;
+	}
+
+	public void setImageData(byte[] imageData) {
+		this.imageData = imageData;
+	}
 
 	public Integer getLevel() {
 		return level;
