@@ -55,10 +55,7 @@ public class ArticleController implements WebMvcConfigurer{
 		    genreArticle.put(article.getId(), base64Encoded);
 		}
 		model.addAttribute("imageData", genreArticle);
-		
-		
-
-	 return "genre";
+		return "genre";
 	}
 	
 	@RequestMapping(path = "/returnTop")
