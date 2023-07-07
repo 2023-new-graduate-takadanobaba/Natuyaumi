@@ -294,7 +294,7 @@ h1 {
 
 .img {
 	width: 95%;
-	height: 400px;
+/* 	height: 30%; */
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -359,7 +359,7 @@ a {
 
 .nav>li {
 	position: relative;
-	width: 147px;
+	width: 14.1%;
 	border-right: 1px solid #004993;
 }
 
@@ -416,6 +416,11 @@ a {
 
 
 /* レスポンシブ */
+@media screen and (min-width: 1899px) {
+	 .nav>li {
+	width: 14.14%;
+	}
+}
 @media screen and (max-width: 1885px) {
 	 .nav>li {
 	width: 14.15%;
