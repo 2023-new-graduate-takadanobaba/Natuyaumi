@@ -414,8 +414,14 @@ a {
 	min-height: 180px;
 }
 
+
 /* レスポンシブ */
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1885px) {
+	 .nav>li {
+	width: 14.15%;
+	}
+}
+@media screen and (max-width: 1510px) {
 	.img-header {
 	height: 180px;
 	}
@@ -462,7 +468,7 @@ a {
 	margin-right: 0;
 	}
 	.nav>li {
-	width: 125px;
+	width: 14.15%;
 	}
 	.indent {
 	line-height: 0.5;
@@ -485,8 +491,10 @@ a {
 	}
 }
 
-@media screen and (max-width: 960px) {
-  
+@media screen and (max-width: 1200px) {
+  .nav>li {
+	width: 14.1%;
+	}
 }
 @media screen and (min-width: 960px) {
   
