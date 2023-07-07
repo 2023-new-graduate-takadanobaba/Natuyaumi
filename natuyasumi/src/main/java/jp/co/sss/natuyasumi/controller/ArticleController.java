@@ -8,7 +8,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 import jp.co.sss.natuyasumi.entity.ArticleEntity;
 import jp.co.sss.natuyasumi.entity.Genre;
 import jp.co.sss.natuyasumi.form.PostForm;
@@ -85,16 +83,7 @@ public class ArticleController implements WebMvcConfigurer{
 	}
 	
 	@RequestMapping(path = "/createPost", method = RequestMethod.POST)
-	 public String doCreatePost(@RequestParam ("imageData") MultipartFile imageData, Model model, @Valid PostForm form, HttpSession session,
-			 BindingResult result) throws IOException {
-		if(result.hasErrors()) {
-			return "Post";
-
-
-		}
-		
-		
-		
+	 public String doCreatePost(@RequestParam ("imageData") MultipartFile imageData, Model model, PostForm form, HttpSession session) throws IOException {
 		
 		ArticleEntity article = new ArticleEntity();
 		
