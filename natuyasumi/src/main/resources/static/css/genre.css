@@ -159,6 +159,39 @@ header > h1 > a {
 }    
 
 
+@media screen and (max-width: 1510px) {
+	header > h1 > a {
+	font-size:28px;
+	}
+	.article{
+	width: 65%; 
+	}
+	.article.done {
+	width: 65%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
