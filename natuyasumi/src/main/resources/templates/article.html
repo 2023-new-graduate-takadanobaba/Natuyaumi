@@ -17,9 +17,19 @@
                 <a href="" id="deleteButton">削除</a>
             </div>
 			<div class="katamari2">
+<!-- 				<div class="imageUrl"> -->
+<!-- 					<img class="genre-img"th:src="@{'data:image/jpeg;base64,'+${imageData}}"> -->
+<!-- 				</div> -->
+
 				<div class="imageUrl">
-					<img class="genre-img"th:src="@{'data:image/jpeg;base64,'+${imageData}}">
+					<img class="genre-img"th:src="@{'data:image/jpeg;base64,'+${imageData}}" onclick="openModal(this)">
 				</div>
+
+				<div id="modal-container" onclick="closeModal()">
+					<img id="modal-image" >
+				</div>
+
+
 				<div class="nakami">
 					<div>
 						穴場度： <span th:switch="${article.level}"> 
@@ -89,9 +99,38 @@
 		<p id="mo">削除されました。</p>
 
 		<a th:href="@{/returnTop}" id="modoru2">戻る</a>
+		
+	
+		
 	</div>
 
+
 	<script>
+	
+	
+	function openModal(img) {
+		  var modal = document.getElementById('modal-container');
+		  var modalImg = document.getElementById('modal-image');
+
+		  modalImg.src = img.src;
+		  modal.style.display = 'block';
+		}
+
+		function closeModal() {
+		  var modal = document.getElementById('modal-container');
+		  modal.style.display = 'none';
+		}
+
+		window.addEventListener('DOMContentLoaded', function() {
+		  var modal = document.getElementById('modal-container');
+		  modal.addEventListener('click', function(e) {
+		    if (e.target === this) {
+		      closeModal();
+		    }
+		  });
+		});
+
+	
 		// ボタンとモーダル要素の参照を取得
 		const deleteButton = document.getElementById('deleteButton');
 		const modal = document.getElementById('modal');
