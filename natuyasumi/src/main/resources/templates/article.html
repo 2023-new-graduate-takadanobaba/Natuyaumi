@@ -77,8 +77,11 @@
 		<div class="botan">
 			<a th:href="@{/doSearchGenre}" type="button" id="modoru">戻る</a>
 			<div th:if="${session.sessionName != null}">
-			<div th:if="${bbb == favorite}">
+			<div th:if="${bbb != favorite}">
 			<a th:href="@{/addFavoriteList/{id}(id=${article.id})}"id = "okiniiri"type="button">お気に入り</a>
+			</div>
+			<div th:if="${bbb == favorite}">
+			<a id = "okiniiri"type="button">お気に入り済み</a>
 			</div>
 			</div>
 		</div>
