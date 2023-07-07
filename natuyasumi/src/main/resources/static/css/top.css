@@ -294,7 +294,7 @@ h1 {
 
 .img {
 	width: 95%;
-	height: 420px;
+	height: 400px;
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -413,3 +413,116 @@ a {
 .sub.active {
 	min-height: 180px;
 }
+
+/* レスポンシブ */
+@media screen and (max-width: 1920px) {
+	.img-header {
+	height: 180px;
+	}
+	.overlay {
+	height: 180px;
+	}
+	.session {
+	position: absolute;
+	color: white;
+	top: 22%;
+	right: -10%;
+	transform: translate(-50%, -50%);
+	}
+	#sessionmessage{
+	margin-bottom:1px;
+	}
+	#user_container {
+	border: 1px solid #fff;
+	padding: 3px;
+	border-radius: 20px;
+	width: 250px;
+	overflow: hidden;
+	}
+	h1 {
+	font-size:30px;
+	top: 25%;
+	}
+	.textalign {
+    width: 70%;
+    }
+    .search {
+	width:70%;
+	padding: 10px;
+	top:60%;
+	}
+    .nav {
+	width: 70%;
+	}
+    #aside {
+    width: 32%;
+	height: 680px;
+	padding-left: 10px;
+	padding-right: 0;
+	margin-right: 0;
+	}
+	.nav>li {
+	width: 125px;
+	}
+	.indent {
+	line-height: 0.5;
+	}
+	.searchform {
+	width: 250px;
+/* 	padding: 7px; */
+	}
+	.nav {
+    margin-bottom: 10px;
+	}
+	.postbutton {
+	padding: 5px;
+	}
+	.postbutton{
+	padding: 5px;
+	}
+	.gomypage-button {
+	margin-right:20px;
+	}
+}
+
+@media screen and (max-width: 960px) {
+  
+}
+@media screen and (min-width: 960px) {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
