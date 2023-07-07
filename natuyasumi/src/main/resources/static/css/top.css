@@ -415,7 +415,7 @@ a {
 }
 
 /* レスポンシブ */
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1366px) {
 	.img-header {
 	height: 180px;
 	}
