@@ -32,7 +32,7 @@
 		<div th:each="article: ${articles}">
 			<div class="article">
 
-				<img th:src="@{'data:image/jpeg;base64,'+${imageData[article.id]}}" />
+				<img class="genre-img" th:src="@{'data:image/jpeg;base64,'+${imageData[article.id]}}" />
 				<div class="article-text">
 					<div class="article-katamari">
 						<p>
