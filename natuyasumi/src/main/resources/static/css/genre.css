@@ -116,12 +116,17 @@ header > h1 > a {
 	padding-top:110px;
 }
 
-.genre-img {
+.genre-img-a{
 	width: 35%;
+}
+.genre-img {
+	width: 100%;
 	height: 250px;
 	object-fit: cover;
 	margin-right: 30px;
 }
+
+
 
 .article-text{
 	width: 60%;
@@ -137,6 +142,7 @@ header > h1 > a {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 }
+
 
 
 #topbutton {

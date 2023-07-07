@@ -31,8 +31,11 @@
 
 		<div th:each="article: ${articles}">
 			<div class="article">
-
+				<div class="genre-img-a">
+				<a  th:href="@{/doDisplayAirticle/{id}(id=${article.id})}">
 				<img class="genre-img" th:src="@{'data:image/jpeg;base64,'+${imageData[article.id]}}" />
+				</a>
+				</div>
 				<div class="article-text">
 					<div class="article-katamari">
 						<p>
