@@ -33,16 +33,10 @@ public class RecommendationController {
 		
 	}
 	
-	@GetMapping(path = "test")
-	public String showLeftRecommendation5() {
-		return "test";
-		
-	}
-	
 	//topページの穴場スポット(左下)
 	
 	@RequestMapping(path = "/leftRecommendation/{level}")
-	 public String doSearchGenre(@PathVariable Integer level, Model model)throws IOException {
+	 public String showLeftRecommendation(@PathVariable Integer level, Model model)throws IOException {
 		List<ArticleEntity> articles = repository.findByLevel(level);
 		model.addAttribute("articles", articles);
 		HashMap<Integer,String> genreArticle = new HashMap<>();
@@ -57,21 +51,21 @@ public class RecommendationController {
 	}
 	
 	
-	//topページの人気スポット(右下)
-//	@RequestMapping(path = "/leftRecommendation/{level1}")
-//	 public String doSearchGenre(@PathVariable Integer level, Model model)throws IOException {
-//		List<ArticleEntity> articles = repository.findByLevel(level);
-//		model.addAttribute("articles", articles);
-//		HashMap<Integer,String> genreArticle = new HashMap<>();
-//		for(ArticleEntity article : articles) {
-//			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
-//		    String base64Encoded = new String(encodeBase64, "UTF-8");
-//		    genreArticle.put(article.getId(), base64Encoded);
-//		}
-//		model.addAttribute("imageData", genreArticle);
-//		
-//	 return "genre";
-//	}
+	//topページの安いスポット(右下)
+	@RequestMapping(path = "/rightRecommendation")
+	 public String showRightRecommendation(Model model)throws IOException {
+		List<ArticleEntity> articles = repository.findAllByOrderByBudgetAsc();
+		model.addAttribute("articles", articles);
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity article : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(article.getId(), base64Encoded);
+		}
+		model.addAttribute("imageData", genreArticle);
+		
+	 return "genre";
+	}
 	
 
 	
