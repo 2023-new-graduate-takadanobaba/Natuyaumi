@@ -77,6 +77,7 @@ public class GenreRegistrationController {
 		Genre genre15 = new Genre();
 		genre15.setGenreId(16);
 		genre15.setGenreName("その他のジャンル");
+		genreRepository.save(genre15);
 		return "top";
 	}
 
