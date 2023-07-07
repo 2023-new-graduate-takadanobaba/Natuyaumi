@@ -51,7 +51,8 @@
 							<div th:if="${article.sessionId == aaa}">
 
 								<div class="article">
-									<img class="genre-img" th:src="${article.imageUrl}" />
+<!-- 									<img class="genre-img" th:src="${article.imageUrl}" /> -->
+									<img th:src="@{'data:image/jpeg;base64,'+${imageData}}">
 
 									<div class="article-text">
 										<div class="article-katamari">
@@ -104,8 +105,8 @@
 						<div th:if="${article.id == Fav.id}">
 							<div th:if="${Fav.sessionId == aaa}">
 							<div class="article">
-								<img class="genre-img" th:src="${article.imageUrl}" />
-
+<!-- 								<img class="genre-img" th:src="${article.imageUrl}" /> -->
+									<img th:src="@{'data:image/jpeg;base64,'+${imageData}}">
 								<div class="article-text">
 									<div class="article-katamari">
 										<p th:text="${article.name}" class="article-name"></p>

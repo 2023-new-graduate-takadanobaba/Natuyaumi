@@ -25,6 +25,7 @@ import jp.co.sss.natuyasumi.entity.ArticleEntity;
 import jp.co.sss.natuyasumi.entity.Genre;
 import jp.co.sss.natuyasumi.form.PostForm;
 import jp.co.sss.natuyasumi.repository.ArticleRepository;
+import jp.co.sss.natuyasumi.repository.FavoriteRepository;
 import jp.co.sss.natuyasumi.repository.GenreRepository;
 
 @Validated
@@ -38,6 +39,9 @@ public class ArticleController implements WebMvcConfigurer{
 
 	@Autowired
 	GenreRepository genreRepository;
+	
+	@Autowired
+	FavoriteRepository FavRepository;
 	
 	@GetMapping(path = "/top")
 	 public String top() {
@@ -89,7 +93,20 @@ public class ArticleController implements WebMvcConfigurer{
 
 		}
 		
+		List<ArticleEntity> articles = repository.findAll();
+		model.addAttribute("articles", articles);
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity article : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(article.getId(), base64Encoded);
+		}
+		
+		model.addAttribute("imageData", genreArticle);
+		
+		
 		ArticleEntity article = new ArticleEntity();
+		
 		
 		String[] alt = form.getGenreId().split(",");
 		
@@ -147,7 +164,6 @@ public class ArticleController implements WebMvcConfigurer{
 		
 
 		repository.save(article);
-		
 		model.addAttribute("articles", article);
 
 		return "genre";
@@ -164,13 +180,25 @@ public class ArticleController implements WebMvcConfigurer{
 	
 	
 	@RequestMapping(path = "/doSearchGenre/{genreId}")
-	 public String doSearchGenre(@PathVariable Integer genreId, Model model) {
+	 public String doSearchGenre(@PathVariable Integer genreId, Model model)throws IOException {
 		Genre genre = new Genre();
 		genre.setGenreId(genreId);
-		List<ArticleEntity> drive = repository.findByGenre(genre);
-		model.addAttribute("articles", drive);
+		List<ArticleEntity> articles = repository.findByGenre(genre);
+		model.addAttribute("articles", articles);
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity article : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(article.getId(), base64Encoded);
+		}
+		model.addAttribute("imageData", genreArticle);
+		
 	 return "genre";
 	}
+	
+	
+	
+	
 	
 	@RequestMapping(path = "/doSearchAddress/{address}")
 	 public String doSearchAddress(@PathVariable String address, Model model) {

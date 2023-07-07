@@ -1,5 +1,10 @@
 package jp.co.sss.natuyasumi.controller;
 
+import java.io.IOException;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.servlet.http.HttpSession;
+import jp.co.sss.natuyasumi.entity.ArticleEntity;
 import jp.co.sss.natuyasumi.entity.FavoriteEntity;
 import jp.co.sss.natuyasumi.form.userForm;
 import jp.co.sss.natuyasumi.repository.ArticleRepository;
@@ -36,13 +42,23 @@ FavoriteRepository FavRepository;
 	}
 	
 	@GetMapping(value = "/moveToMyPage")
-	public String moveToMyPage(Model model, HttpSession session) {
+	public String moveToMyPage(Model model, HttpSession session)throws IOException {
+		List<ArticleEntity> articles = repository.findAll();
+		model.addAttribute("articles", articles);
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity article : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(article.getId(), base64Encoded);
+		}
 	    String sessionId = session.getId();
-		model.addAttribute("articles", repository.findAll());
+	    model.addAttribute("imageData", genreArticle);
 		model.addAttribute("aaa", sessionId);
 		model.addAttribute("favorite", FavRepository.findAll());
 		return "mypage";
 	}
+	
+	
 	
 	@GetMapping(value = "/addFavoriteList/{id}")
 	public String addFavoriteList(@PathVariable Integer id, HttpSession session,Model model) {
