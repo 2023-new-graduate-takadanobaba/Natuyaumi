@@ -93,16 +93,7 @@ public class ArticleController implements WebMvcConfigurer{
 
 		}
 		
-		List<ArticleEntity> articles = repository.findAll();
-		model.addAttribute("articles", articles);
-		HashMap<Integer,String> genreArticle = new HashMap<>();
-		for(ArticleEntity article : articles) {
-			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
-		    String base64Encoded = new String(encodeBase64, "UTF-8");
-		    genreArticle.put(article.getId(), base64Encoded);
-		}
 		
-		model.addAttribute("imageData", genreArticle);
 		
 		
 		ArticleEntity article = new ArticleEntity();
@@ -164,6 +155,17 @@ public class ArticleController implements WebMvcConfigurer{
 		
 
 		repository.save(article);
+		
+		List<ArticleEntity> articles = repository.findAll();
+		model.addAttribute("articles", articles);
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity articless : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(articless.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(articless.getId(), base64Encoded);
+		}
+		
+		model.addAttribute("imageData", genreArticle);
 		model.addAttribute("articles", article);
 
 		return "genre";
@@ -201,15 +203,31 @@ public class ArticleController implements WebMvcConfigurer{
 	
 	
 	@RequestMapping(path = "/doSearchAddress/{address}")
-	 public String doSearchAddress(@PathVariable String address, Model model) {
-		model.addAttribute("articles", repository.findByAddressContaining(address));
+	 public String doSearchAddress(@PathVariable String address, Model model)throws IOException  {
+		List<ArticleEntity> articles = repository.findByAddressContaining(address);
+		model.addAttribute("articles",articles );
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity article : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(article.getId(), base64Encoded);
+		}
+		model.addAttribute("imageData", genreArticle);
 		return "genre";
 	 
 	}
 	
 	@RequestMapping(value = "/doSearchKeyWord",method = RequestMethod.POST)
-	public String doSearchKeyWord(@RequestParam String name,Model model) {	
-		model.addAttribute("articles", repository.findByNameContaining(name));
+	public String doSearchKeyWord(@RequestParam String name,Model model) throws IOException {	
+		List<ArticleEntity> articles = repository.findByNameContaining(name);
+		model.addAttribute("articles",articles);
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity article : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(article.getId(), base64Encoded);
+		}
+		model.addAttribute("imageData", genreArticle);
 		return "genre";
 		
 	}
