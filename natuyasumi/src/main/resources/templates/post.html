@@ -116,10 +116,10 @@
 				<span class="hidden-gem-value"></span>
 			</div>
 			<div class="form-group3">
-				<label class="genre-title">ジャンル(1個~１０個選択できます。):</label>
+				<label class="genre-title">一つ選択してください:</label>
 				<div class="checkbox-group">
 					<label for="genre-drive"> <input type="checkbox"
-						id="genre-drive" name="genreId" value="1"> ドライブ
+						id="genre-drive" name="genreId" value="1"> レジャー施設
 					</label> <label for="genre-history"> <input type="checkbox"
 						id="genre-history" name="genreId" value="2"> 歴史・遺産
 					</label> <label for="genre-nature"> <input type="checkbox"
@@ -131,7 +131,7 @@
 					</label><label for="genre-activity"> <input type="checkbox"
 						id="genre-activity" name="genreId" value="6"> アクティビティ・体験
 					</label> <label for="genre-leisure"> <input type="checkbox"
-						id="genre-leisure" name="genreId" value="7"> レジャー施設
+						id="genre-leisure" name="genreId" value="7"> 心霊スポット
 					</label> <label for="genre-amusement"> <input type="checkbox"
 						id="genre-amusement" name="genreId" value="8">
 						アミューズメント・テーマパーク
@@ -148,25 +148,35 @@
 					</label> <label for="genre-movie"> <input type="checkbox"
 						id="genre-movie" name="genreId" value="14"> 映像
 					</label> <label for="genre-game"> <input type="checkbox"
-						id="genre-game" name="genre" value="15"> ゲーム
-					</label> <label for="genre-car-convenient"> <input type="checkbox"
-						id="genre-car-convenient" name="genreId" value="16"> 車が便利
-					</label> <label for="genre-public-transport"> <input
-						type="checkbox" id="genre-public-transport" name="genreId"
-						value="17"> 公共交通機関で行ける
-					</label> <label for="genre-group-enjoyable"> <input type="checkbox"
-						id="genre-group-enjoyable" name="genreId" value="18">
-						2～5人で楽しめる
-					</label> <label for="genre-solo-enjoyable"> <input type="checkbox"
-						id="genre-solo-enjoyable" name="genreId" value="19">
-						1人で楽しめる
-					</label> <label for="genre-large-group"> <input type="checkbox"
-						id="genre-large-group" name="genreId" value="20"> 大人数可
-					</label> <label for="genre-reservation"> <input type="checkbox"
-						id="genre-reservation" name="genreId" value="21"> 予約可
+						id="genre-game" name="genreId" value="15"> ゲーム
+					</label> <label for="genre-game"> <input type="checkbox"
+						id="genre-other" name="genreId" value="16"> その他のジャンル
 					</label>
-				</div>
+				 </div>
 			</div>
+					
+					<div class="form-group2">
+
+						<label for="visit-month">交通:</label> <select class="visit"
+							id="visit-month" name="transpotation">
+							<option value="1">ドライブで楽しみながら行ける</option>
+							<option value="2">公共交通機関が便利</option>
+						</select>
+					</div>
+					<div class="form-group2">
+
+						<label for="visit-month">どんな人と一緒に行きたい？:</label> <select class="visit"
+							id="visit-month" name="withSomeone">
+							<option value="1">友達</option>
+							<option value="2">恋人</option>
+							<option value="3">家族</option>
+							<option value="4">一人</option>
+						</select>
+						
+					</div>
+					
+				
+				
 			<div class="form-group5">
 				<label for="review">レビュー内容:</label>
 				<textarea id="review" name="review" rows="8" cols="40"

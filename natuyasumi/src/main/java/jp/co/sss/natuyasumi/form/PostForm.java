@@ -15,7 +15,7 @@ public class PostForm {
 
 	private Integer month;
 	
-	private Integer  budget;
+	private Integer budget;
 
 //	private byte[] imageData;
 
@@ -24,6 +24,10 @@ public class PostForm {
 	private Integer level;
 
 	private String genreId;
+	
+	private Integer transpotation;
+	
+	private Integer withSomeone;
 
 	private String review;
 
@@ -113,6 +117,24 @@ public class PostForm {
 
 	public void setGenreId(String genreId) {
 		this.genreId = genreId;
+	}
+	
+	
+
+	public Integer getTranspotation() {
+		return transpotation;
+	}
+
+	public void setTranspotation(Integer transpotation) {
+		this.transpotation = transpotation;
+	}
+
+	public Integer getWithSomeone() {
+		return withSomeone;
+	}
+
+	public void setWithSomeone(Integer withSomeone) {
+		this.withSomeone = withSomeone;
 	}
 
 	public String getReview() {

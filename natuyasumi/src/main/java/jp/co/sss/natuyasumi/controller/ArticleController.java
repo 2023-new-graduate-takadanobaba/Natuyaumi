@@ -150,8 +150,9 @@ public class ArticleController implements WebMvcConfigurer{
 		article.setImageData(imageData.getBytes());
 		article.setLevel(form.getLevel());
 		article.setReview(form.getReview());
-		
 		article.setSessionId(sessionId);
+		article.setTranspotation(form.getTranspotation());
+		article.setWithSomeone(form.getWithSomeone());
 		
 
 		repository.save(article);
@@ -181,10 +182,10 @@ public class ArticleController implements WebMvcConfigurer{
 	
 	
 	
-	@RequestMapping(path = "/doSearchGenre/{id}")
-	 public String doSearchGenre(@PathVariable Integer id, Model model)throws IOException {
+	@RequestMapping(path = "/doSearchGenre/{genreId}")
+	 public String doSearchGenre(@PathVariable Integer genreId, Model model)throws IOException {
 		Genre genre = new Genre();
-		genre.setGenreId(id);
+		genre.setGenreId(genreId);
 		List<ArticleEntity> articles = repository.findByGenre(genre);
 		model.addAttribute("articles", articles);
 		HashMap<Integer,String> genreArticle = new HashMap<>();

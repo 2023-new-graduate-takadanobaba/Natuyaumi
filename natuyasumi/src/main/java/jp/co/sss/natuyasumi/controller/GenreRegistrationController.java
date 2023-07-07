@@ -16,7 +16,7 @@ public class GenreRegistrationController {
 	public String insertGenreColumn() {
 		Genre genre = new Genre();
 		genre.setGenreId(1);
-		genre.setGenreName("ドライブ");
+		genre.setGenreName("レジャー施設");
 		genreRepository.save(genre);
 		Genre genre1 = new Genre();
 		genre1.setGenreId(2);
@@ -76,28 +76,7 @@ public class GenreRegistrationController {
 		genreRepository.save(genre14);
 		Genre genre15 = new Genre();
 		genre15.setGenreId(16);
-		genre15.setGenreName("車が便利");
-		genreRepository.save(genre15);
-		Genre genre16 = new Genre();
-		genre16.setGenreId(17);
-		genre16.setGenreName("公共交通機関で行ける");
-		genreRepository.save(genre16);
-		Genre genre17 = new Genre();
-		genre17.setGenreId(18);
-		genre17.setGenreName("2-5人で楽しめる");
-		genreRepository.save(genre17);
-		Genre genre18 = new Genre();
-		genre18.setGenreId(19);
-		genre18.setGenreName("一人で楽しめる");
-		genreRepository.save(genre18);
-		Genre genre19 = new Genre();
-		genre19.setGenreId(20);
-		genre19.setGenreName("大人数可");
-		genreRepository.save(genre19);
-		Genre genre20 = new Genre();
-		genre20.setGenreId(21);
-		genre20.setGenreName("予約可");
-		genreRepository.save(genre20);
+		genre15.setGenreName("その他のジャンル");
 		return "top";
 	}
 

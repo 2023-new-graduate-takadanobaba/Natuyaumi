@@ -51,6 +51,12 @@ public class ArticleEntity {
 	 @Column
 	 private String sessionId;
 	 
+	 @Column
+	 private Integer transpotation;
+	 
+	 @Column
+	 private Integer withSomeone;
+	 
 //	 MySQLのname=Articleテーブル、ReferencedColumnName=Genreテーブルと対応させる
 //	 テーブルが二つあるからそれを対応させている
 	 
@@ -253,6 +259,24 @@ public class ArticleEntity {
 	public void setSessionId(String sessionId) {
 		this.sessionId = sessionId;
 	}
+
+	public Integer getTranspotation() {
+		return transpotation;
+	}
+
+	public void setTranspotation(Integer transpotation) {
+		this.transpotation = transpotation;
+	}
+
+	public Integer getWithSomeone() {
+		return withSomeone;
+	}
+
+	public void setWithSomeone(Integer withSomeone) {
+		this.withSomeone = withSomeone;
+	}
+	
+	
 	
 	
 	 
