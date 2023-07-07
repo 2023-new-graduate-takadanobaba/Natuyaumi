@@ -61,16 +61,23 @@ FavoriteRepository FavRepository;
 	
 	
 	@GetMapping(value = "/addFavoriteList/{id}")
-	public String addFavoriteList(@PathVariable Integer id, HttpSession session,Model model) {
+	public String addFavoriteList(@PathVariable Integer id, HttpSession session,Model model)throws IOException {
 		FavoriteEntity favorite = new FavoriteEntity();
+		ArticleEntity article = repository.findById(id).get();
 		String sessionId = session.getId();
 		favorite.setId(id);
 		favorite.setSessionId(sessionId);
 		FavRepository.save(favorite);
 		model.addAttribute("bbb", sessionId);
 		model.addAttribute("article", repository.findById(id).get());
+		byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+	    String base64Encoded = new String(encodeBase64, "UTF-8");
+		model.addAttribute("imageData", base64Encoded);
+		model.addAttribute("favorite", favorite.getSessionId());
 		return "article";
 	}
+	
+	
 	 
 	    
 	 

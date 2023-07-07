@@ -18,7 +18,7 @@
             </div>
 			<div class="katamari2">
 				<div class="imageUrl">
-					<img th:src="@{'data:image/jpeg;base64,'+${imageData}}">
+					<img class="genre-img"th:src="@{'data:image/jpeg;base64,'+${imageData}}">
 				</div>
 				<div class="nakami">
 					<div>
@@ -75,8 +75,12 @@
 		</div>
 
 		<div class="botan">
-			<input value="戻る" onclick="history.back();" type="button" id="modoru">
+			<a th:href="@{/doSearchGenre}" type="button" id="modoru">戻る</a>
+			<div th:if="${session.sessionName != null}">
+			<div th:if="${bbb == favorite}">
 			<a th:href="@{/addFavoriteList/{id}(id=${article.id})}"id = "okiniiri"type="button">お気に入り</a>
+			</div>
+			</div>
 		</div>
 
 		<p id="mo">削除されました。</p>

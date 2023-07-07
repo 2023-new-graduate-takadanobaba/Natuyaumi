@@ -44,4 +44,10 @@ public class AdministratorController {
 		model.addAttribute("imageData", base64Encoded);
 	 return "administratorArticle";
 	}
+	
+	@RequestMapping(path = "/delete1/{id}")
+	 public String doDelete(@PathVariable Integer id, Model model) {
+		repository.deleteById(id);
+	 return "administrator";
+	}
 }
