@@ -9,7 +9,7 @@
 <link th:href="@{https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap}" rel="stylesheet">
 
 <meta charset="UTF-8">
-<title>Genre</title>
+<title>管理者ページ</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
 			alt="sea">
 		<div class="overlay"></div>
 		<h1>
-			<a th:href="@{/returnTop}">今日はどこに行こう？</a>
+			<a th:href="@{/administrator}">今日はどこに行こう？</a>
 		</h1>
 	</header>
 	<div class="wrapper">
@@ -32,7 +32,7 @@
 		<div th:each="article: ${articles}">
 			<div class="article">
 
-				<img th:src="@{'data:image/jpeg;base64,'+${imageData[article.id]}}" />
+				<img class = "genre-img"th:src="@{'data:image/jpeg;base64,'+${imageData[article.id]}}" />
 				<div class="article-text">
 					<div class="article-katamari">
 						<p>

@@ -18,8 +18,7 @@
             </div>
 			<div class="katamari2">
 				<div class="imageUrl">
-					<img th:src="${article.imageUrl}" />
-					<img th:src="@{'data:image/jpeg;base64,'+${imageData}}">
+					<img class="genre-img" th:src="@{'data:image/jpeg;base64,'+${imageData}}">
 				</div>
 				<div class="nakami">
 					<div>
@@ -68,7 +67,7 @@
 			<div id="modal" class="modal">
 				<div class="modal-content">
 					<p>本当に削除しますか？</p>
-					<a th:href="@{/delete/{id}(id=${article.id})}"><button
+					<a th:href="@{/delete1/{id}(id=${article.id})}"><button
 							id="confirmButton">はい</button></a>
 					<button id="cancelButton">やっぱりやめる</button>
 				</div>
@@ -81,7 +80,7 @@
 
 		<p id="mo">削除されました。</p>
 
-		<a th:href="@{/returnTop}" id="modoru2">戻る</a>
+		<a th:href="@{/administrator}" id="modoru2">戻る</a>
 	</div>
 
 	<script>
