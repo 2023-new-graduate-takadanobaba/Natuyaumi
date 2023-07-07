@@ -15,5 +15,7 @@ public interface ArticleRepository extends JpaRepository<ArticleEntity, Integer>
 	List<ArticleEntity> findByAddressContaining(String address);
 	List<ArticleEntity> findByNameContaining(String name);
 	List<ArticleEntity> findByLevel(Integer level);
+	List<ArticleEntity> findByTranspotation(Integer transpotation);
+	List<ArticleEntity> findByWithSomeone(Integer WithSomeone);
 
 }

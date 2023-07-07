@@ -233,6 +233,34 @@ public class ArticleController implements WebMvcConfigurer{
 		
 	}
 	
+	@RequestMapping(value = "/searchTranspotation/{transpotation}")
+	public String searchTranspotation(@PathVariable Integer transpotation, Model model) throws IOException {
+		List<ArticleEntity> articles = repository.findByTranspotation(transpotation);
+		model.addAttribute("articles",articles );
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity article : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(article.getId(), base64Encoded);
+		}
+		model.addAttribute("imageData", genreArticle);
+		return "genre";
+	}
+	
+	@RequestMapping(value = "/withSomeone/{withSomeone}")
+	public String withSomeone(@PathVariable Integer withSomeone, Model model) throws IOException {
+		List<ArticleEntity> articles = repository.findByWithSomeone(withSomeone);
+		model.addAttribute("articles",articles );
+		HashMap<Integer,String> genreArticle = new HashMap<>();
+		for(ArticleEntity article : articles) {
+			byte[] encodeBase64 = Base64.getEncoder().encode(article.getImageData());
+		    String base64Encoded = new String(encodeBase64, "UTF-8");
+		    genreArticle.put(article.getId(), base64Encoded);
+		}
+		model.addAttribute("imageData", genreArticle);
+		return "genre";
+	}
+	
 	
 	
 	
