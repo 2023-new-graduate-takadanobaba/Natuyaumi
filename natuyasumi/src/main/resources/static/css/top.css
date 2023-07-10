@@ -147,7 +147,7 @@ h1 {
 	top: 0%;
 	left: 5%;
 	height: 420px;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.2);
 	width: 95%;
 	border-radius: 5px;
 	cursor: pointer;
@@ -158,6 +158,7 @@ h1 {
 #overlay2:hover {
 	opacity: 1;
 }
+
 
 /* 子要素 */
 .search {
@@ -256,6 +257,18 @@ h1 {
 /* 親要素 */
 .textin {
 	position: relative;
+}
+
+.textin2 {
+	padding-right:19px;
+	width: 46%;
+	position: relative;
+	margin-top: 5px;
+}
+
+.textin3 {
+	width: 46%;
+	position: relative;
 	margin-top: 5px;
 }
 
@@ -265,9 +278,21 @@ h1 {
 	position: absolute;
 	top: 85%;
 	left: 8%;
+	background:rgba(255,255,255,0.1);
+	padding:0 3px;
+/* 	border-radius: 2px; */
+/* 	border: 0.3px solid #FFF; */
 }
 
 .texiin-a {
+	text-decoration: none;
+	color: white;
+}
+.texiin-a2 {
+	text-decoration: none;
+	color: white;
+}
+.texiin-a3 {
 	text-decoration: none;
 	color: white;
 }
@@ -294,20 +319,24 @@ h1 {
 
 .img {
 	width: 95%;
-/* 	height: 30%; */
+	height: 420px;
 	border-radius: 5px;
 	cursor: pointer;
-}
-
-.img-sub1 {
-	width: 46.5%;
-	margin-right: 15px;
-	border-radius: 5px;
-	cursor: pointer;
+	object-fit: cover;
 }
 
 .img-sub {
-	width: 46.5%;
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.img-sub2 {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -322,18 +351,66 @@ h1 {
 }
 
 .img-wrapper {
+	position: relative;
 	display: flex;
 	justify-content: right;
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
-.img-wrapper a{
-	display: flex;
-	justify-content: right;
-	margin-top: 15px;
+.texiin-p1{
+	font-weight: bold;
+	background:rgba(255,255,255,0.1);
+	position: absolute;
+	top: 73%;
+	left:2%;
+	padding:0 3px;
+	border-radius: 2px;
+/* 	border: 0.3px solid #FFF; */
 }
 
+.texiin-p2 {
+	font-weight: bold;
+	background:rgba(255,255,255,0.1);
+	position: absolute;
+	top: 73%;
+	left:2%;
+	border-radius: 2px;
+/* 	border: 0.3px solid #FFF; */
+}
 
+#overlay3 {
+	position: absolute;
+	top:0;
+	left:0;
+	width:94.3%;
+	height: 220px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 5px;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+#overlay3:hover {
+	opacity: 1;
+}
+
+#overlay4 {
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height: 220px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 5px;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+#overlay4:hover {
+	opacity: 1;
+}
 
 #aside {
 	width: 30%;
