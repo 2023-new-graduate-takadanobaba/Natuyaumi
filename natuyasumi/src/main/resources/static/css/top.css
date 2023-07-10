@@ -327,9 +327,17 @@ h1 {
 	margin-top: 15px;
 }
 
+.img-wrapper a{
+	display: flex;
+	justify-content: right;
+	margin-top: 15px;
+}
+
+
+
 #aside {
 	width: 30%;
-	height: 800px;
+	height: 830px;
 	background: rgba(255, 255, 255, 0.5);
 	border: dashed 2px #7a9cad;
 	border-radius: 5px;
@@ -465,9 +473,10 @@ a {
     .nav {
 	width: 70%;
 	}
+	
     #aside {
     width: 32%;
-	height: 680px;
+	height: 700px;
 	padding-left: 10px;
 	padding-right: 0;
 	margin-right: 0;
