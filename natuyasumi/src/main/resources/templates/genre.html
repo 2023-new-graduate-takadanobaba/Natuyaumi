@@ -9,7 +9,7 @@
 <link th:href="@{https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap}" rel="stylesheet">
 
 <meta charset="UTF-8">
-<title>Genre</title>
+<title>投稿一覧</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
@@ -153,6 +153,13 @@
 				});
 			}
 		});
+		
+		$('#topbutton').on('click', ()=>{
+		    $('body,html').animate({ scrollTop: 0 }, 800);
+		    return false;   
+		});
+		
+		
 	</script>
 
 
